@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC29AB4321B4F49D0049C079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB4221B4F49D0049C079 /* AppDelegate.swift */; };
+		AC29AB4521B4F49D0049C079 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB4421B4F49D0049C079 /* ViewController.swift */; };
+		AC29AB4821B4F49D0049C079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29AB4621B4F49D0049C079 /* Main.storyboard */; };
+		AC29AB4A21B4F49E0049C079 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC29AB4921B4F49E0049C079 /* Assets.xcassets */; };
+		AC29AB4D21B4F49E0049C079 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29AB4B21B4F49E0049C079 /* LaunchScreen.storyboard */; };
+		AC29AB5821B4F49E0049C079 /* SkiClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB5721B4F49E0049C079 /* SkiClockTests.swift */; };
+		AC29AB6321B4F49E0049C079 /* SkiClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB6221B4F49E0049C079 /* SkiClockUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC29AB5421B4F49E0049C079 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC29AB3721B4F49D0049C079 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC29AB3E21B4F49D0049C079;
+			remoteInfo = SkiClock;
+		};
+		AC29AB5F21B4F49E0049C079 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC29AB3721B4F49D0049C079 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC29AB3E21B4F49D0049C079;
+			remoteInfo = SkiClock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC29AB3F21B4F49D0049C079 /* SkiClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkiClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC29AB4221B4F49D0049C079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC29AB4421B4F49D0049C079 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC29AB4721B4F49D0049C079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC29AB4921B4F49E0049C079 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC29AB4C21B4F49E0049C079 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC29AB4E21B4F49E0049C079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC29AB5321B4F49E0049C079 /* SkiClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkiClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC29AB5721B4F49E0049C079 /* SkiClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiClockTests.swift; sourceTree = "<group>"; };
+		AC29AB5921B4F49E0049C079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC29AB5E21B4F49E0049C079 /* SkiClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkiClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC29AB6221B4F49E0049C079 /* SkiClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiClockUITests.swift; sourceTree = "<group>"; };
+		AC29AB6421B4F49E0049C079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC29AB3C21B4F49D0049C079 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC29AB5021B4F49E0049C079 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC29AB5B21B4F49E0049C079 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC29AB3621B4F49D0049C079 = {
+			isa = PBXGroup;
+			children = (
+				AC29AB4121B4F49D0049C079 /* SkiClock */,
+				AC29AB5621B4F49E0049C079 /* SkiClockTests */,
+				AC29AB6121B4F49E0049C079 /* SkiClockUITests */,
+				AC29AB4021B4F49D0049C079 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC29AB4021B4F49D0049C079 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC29AB3F21B4F49D0049C079 /* SkiClock.app */,
+				AC29AB5321B4F49E0049C079 /* SkiClockTests.xctest */,
+				AC29AB5E21B4F49E0049C079 /* SkiClockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC29AB4121B4F49D0049C079 /* SkiClock */ = {
+			isa = PBXGroup;
+			children = (
+				AC29AB4221B4F49D0049C079 /* AppDelegate.swift */,
+				AC29AB4421B4F49D0049C079 /* ViewController.swift */,
+				AC29AB4621B4F49D0049C079 /* Main.storyboard */,
+				AC29AB4921B4F49E0049C079 /* Assets.xcassets */,
+				AC29AB4B21B4F49E0049C079 /* LaunchScreen.storyboard */,
+				AC29AB4E21B4F49E0049C079 /* Info.plist */,
+			);
+			path = SkiClock;
+			sourceTree = "<group>";
+		};
+		AC29AB5621B4F49E0049C079 /* SkiClockTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC29AB5721B4F49E0049C079 /* SkiClockTests.swift */,
+				AC29AB5921B4F49E0049C079 /* Info.plist */,
+			);
+			path = SkiClockTests;
+			sourceTree = "<group>";
+		};
+		AC29AB6121B4F49E0049C079 /* SkiClockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC29AB6221B4F49E0049C079 /* SkiClockUITests.swift */,
+				AC29AB6421B4F49E0049C079 /* Info.plist */,
+			);
+			path = SkiClockUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC29AB3E21B4F49D0049C079 /* SkiClock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC29AB6721B4F49E0049C079 /* Build configuration list for PBXNativeTarget "SkiClock" */;
+			buildPhases = (
+				AC29AB3B21B4F49D0049C079 /* Sources */,
+				AC29AB3C21B4F49D0049C079 /* Frameworks */,
+				AC29AB3D21B4F49D0049C079 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkiClock;
+			productName = SkiClock;
+			productReference = AC29AB3F21B4F49D0049C079 /* SkiClock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC29AB5221B4F49E0049C079 /* SkiClockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC29AB6A21B4F49E0049C079 /* Build configuration list for PBXNativeTarget "SkiClockTests" */;
+			buildPhases = (
+				AC29AB4F21B4F49E0049C079 /* Sources */,
+				AC29AB5021B4F49E0049C079 /* Frameworks */,
+				AC29AB5121B4F49E0049C079 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC29AB5521B4F49E0049C079 /* PBXTargetDependency */,
+			);
+			name = SkiClockTests;
+			productName = SkiClockTests;
+			productReference = AC29AB5321B4F49E0049C079 /* SkiClockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC29AB5D21B4F49E0049C079 /* SkiClockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC29AB6D21B4F49E0049C079 /* Build configuration list for PBXNativeTarget "SkiClockUITests" */;
+			buildPhases = (
+				AC29AB5A21B4F49E0049C079 /* Sources */,
+				AC29AB5B21B4F49E0049C079 /* Frameworks */,
+				AC29AB5C21B4F49E0049C079 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC29AB6021B4F49E0049C079 /* PBXTargetDependency */,
+			);
+			name = SkiClockUITests;
+			productName = SkiClockUITests;
+			productReference = AC29AB5E21B4F49E0049C079 /* SkiClockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC29AB3721B4F49D0049C079 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Ian Sime";
+				TargetAttributes = {
+					AC29AB3E21B4F49D0049C079 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					AC29AB5221B4F49E0049C079 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AC29AB3E21B4F49D0049C079;
+					};
+					AC29AB5D21B4F49E0049C079 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AC29AB3E21B4F49D0049C079;
+					};
+				};
+			};
+			buildConfigurationList = AC29AB3A21B4F49D0049C079 /* Build configuration list for PBXProject "SkiClock" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC29AB3621B4F49D0049C079;
+			productRefGroup = AC29AB4021B4F49D0049C079 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC29AB3E21B4F49D0049C079 /* SkiClock */,
+				AC29AB5221B4F49E0049C079 /* SkiClockTests */,
+				AC29AB5D21B4F49E0049C079 /* SkiClockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC29AB3D21B4F49D0049C079 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC29AB4D21B4F49E0049C079 /* LaunchScreen.storyboard in Resources */,
+				AC29AB4A21B4F49E0049C079 /* Assets.xcassets in Resources */,
+				AC29AB4821B4F49D0049C079 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC29AB5121B4F49E0049C079 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC29AB5C21B4F49E0049C079 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC29AB3B21B4F49D0049C079 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC29AB4521B4F49D0049C079 /* ViewController.swift in Sources */,
+				AC29AB4321B4F49D0049C079 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC29AB4F21B4F49E0049C079 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC29AB5821B4F49E0049C079 /* SkiClockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC29AB5A21B4F49E0049C079 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC29AB6321B4F49E0049C079 /* SkiClockUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC29AB5521B4F49E0049C079 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC29AB3E21B4F49D0049C079 /* SkiClock */;
+			targetProxy = AC29AB5421B4F49E0049C079 /* PBXContainerItemProxy */;
+		};
+		AC29AB6021B4F49E0049C079 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC29AB3E21B4F49D0049C079 /* SkiClock */;
+			targetProxy = AC29AB5F21B4F49E0049C079 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC29AB4621B4F49D0049C079 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC29AB4721B4F49D0049C079 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC29AB4B21B4F49E0049C079 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC29AB4C21B4F49E0049C079 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC29AB6521B4F49E0049C079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC29AB6621B4F49E0049C079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC29AB6821B4F49E0049C079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SkiClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IanSime.SkiClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AC29AB6921B4F49E0049C079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SkiClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IanSime.SkiClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		AC29AB6B21B4F49E0049C079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SkiClockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IanSime.SkiClockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkiClock.app/SkiClock";
+			};
+			name = Debug;
+		};
+		AC29AB6C21B4F49E0049C079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SkiClockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IanSime.SkiClockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkiClock.app/SkiClock";
+			};
+			name = Release;
+		};
+		AC29AB6E21B4F49E0049C079 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SkiClockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IanSime.SkiClockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SkiClock;
+			};
+			name = Debug;
+		};
+		AC29AB6F21B4F49E0049C079 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SkiClockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IanSime.SkiClockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SkiClock;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC29AB3A21B4F49D0049C079 /* Build configuration list for PBXProject "SkiClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC29AB6521B4F49E0049C079 /* Debug */,
+				AC29AB6621B4F49E0049C079 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC29AB6721B4F49E0049C079 /* Build configuration list for PBXNativeTarget "SkiClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC29AB6821B4F49E0049C079 /* Debug */,
+				AC29AB6921B4F49E0049C079 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC29AB6A21B4F49E0049C079 /* Build configuration list for PBXNativeTarget "SkiClockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC29AB6B21B4F49E0049C079 /* Debug */,
+				AC29AB6C21B4F49E0049C079 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC29AB6D21B4F49E0049C079 /* Build configuration list for PBXNativeTarget "SkiClockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC29AB6E21B4F49E0049C079 /* Debug */,
+				AC29AB6F21B4F49E0049C079 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC29AB3721B4F49D0049C079 /* Project object */;
+}
