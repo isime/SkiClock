@@ -51,7 +51,9 @@ def get_in_stock_equipment():
     for element in helmetData:
         helmetList.append(dict(zip(helmets,element)))
 
-    return jsonify({"skis": skiList, "boots": bootsList, "helmets": helmetList})
+    return jsonify(skiList)
+
+    # return jsonify({"skis": skiList, "boots": bootsList, "helmets": helmetList})
 
 
 @app.route('/all_equipment')
@@ -87,7 +89,9 @@ def get_all_equipment():
     for element in helmetData:
         helmetList.append(dict(zip(helmets,element)))
 
-    return jsonify({"skis": skiList, "boots": bootsList, "helmets": helmetList})
+
+    return jsonify(skiList)
+    # return jsonify({"skis": skiList, "boots": bootsList, "helmets": helmetList})
 
 
 

@@ -35,12 +35,28 @@ struct Helmet: Decodable {
     let size: String?
 }
 
-class EquipmentListController: UIViewController {
+class EquipmentListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var skis = [Ski]()
+    var id = [Int]()
+    var length = [Int]()
+    var manufacturer = [String]()
+    var model = [String]()
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return skis.count
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let skiCell = tableView.dequeueReusableCell(withIdentifier: "skiCell", for: indexPath)
+        skiCell.textLabel?.text = self.model[indexPath.row]
+        return skiCell
+    }
+    
+    @IBOutlet weak var skisTable: UITableView!
+    
+    func getEquipment(){
         let equipmentUrl = "http://127.0.0.1:5000/in_stock"
         guard let url = URL(string: equipmentUrl) else { return }
         
@@ -49,22 +65,33 @@ class EquipmentListController: UIViewController {
             guard let data = data else { return }
             
             do {
-                let equipment = try
-                JSONDecoder().decode(Equipment.self, from: data)
-                print(equipment)
+                 self.skis = try JSONDecoder().decode([Ski].self, from: data)
+//                print(skis)
+                for info in self.skis {
+                    self.id.append(info.ski_id ?? 0)
+                    self.length.append(info.length ?? 0)
+                    self.manufacturer.append(info.manufacturer ?? "N/A")
+                    self.model.append(info.model ?? "N/A")
+                    
+                    DispatchQueue.main.async {
+                        self.skisTable.reloadData()
+                    }
+
+                }
+//                print(self.id)
+//                print("BREAK HERE")
+//                print(self.skis)
             } catch let jsonErr {
                 
             }
-        }.resume()
-        
-//        URLSession.shared.dataTask(with: url) { (data, response, err) in
-//            guard let data = data else { return }
-//
-//            do {
-//                let equipment = try JSONDecoder().decode(Equipment.self, from: data)
-//                print(equipment)
-//            }
-//    }.resume()
+            }.resume()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        getEquipment()
+
+        // Do any additional setup after loading the view.
     
     
     }
