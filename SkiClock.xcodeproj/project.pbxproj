@@ -14,6 +14,8 @@
 		AC29AB4D21B4F49E0049C079 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29AB4B21B4F49E0049C079 /* LaunchScreen.storyboard */; };
 		AC29AB5821B4F49E0049C079 /* SkiClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB5721B4F49E0049C079 /* SkiClockTests.swift */; };
 		AC29AB6321B4F49E0049C079 /* SkiClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB6221B4F49E0049C079 /* SkiClockUITests.swift */; };
+		ACD0E8902230CAAD0047981D /* NewCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E88F2230CAAD0047981D /* NewCustomerController.swift */; };
+		ACD0E8922230CE440047981D /* RentalFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E8912230CE440047981D /* RentalFormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		AC29AB5E21B4F49E0049C079 /* SkiClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkiClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC29AB6221B4F49E0049C079 /* SkiClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiClockUITests.swift; sourceTree = "<group>"; };
 		AC29AB6421B4F49E0049C079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD0E88F2230CAAD0047981D /* NewCustomerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCustomerController.swift; sourceTree = "<group>"; };
+		ACD0E8912230CE440047981D /* RentalFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalFormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				AC29AB4221B4F49D0049C079 /* AppDelegate.swift */,
 				AC29AB4421B4F49D0049C079 /* ViewController.swift */,
 				AC29AB4621B4F49D0049C079 /* Main.storyboard */,
+				ACD0E8912230CE440047981D /* RentalFormController.swift */,
+				ACD0E88F2230CAAD0047981D /* NewCustomerController.swift */,
 				AC29AB4921B4F49E0049C079 /* Assets.xcassets */,
 				AC29AB4B21B4F49E0049C079 /* LaunchScreen.storyboard */,
 				AC29AB4E21B4F49E0049C079 /* Info.plist */,
@@ -258,6 +264,8 @@
 			files = (
 				AC29AB4521B4F49D0049C079 /* ViewController.swift in Sources */,
 				AC29AB4321B4F49D0049C079 /* AppDelegate.swift in Sources */,
+				ACD0E8902230CAAD0047981D /* NewCustomerController.swift in Sources */,
+				ACD0E8922230CE440047981D /* RentalFormController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

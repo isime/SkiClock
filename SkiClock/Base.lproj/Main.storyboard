@@ -66,17 +66,10 @@
                                     <segue destination="OZY-Fg-P9b" kind="show" id="GWk-WJ-O3O"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7S-Ol-NRR">
-                                <rect key="frame" x="293" y="282" width="449" height="190"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="StatePicker" destination="T7S-Ol-NRR" id="nQG-T5-h1V"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="138" y="-953"/>
         </scene>
-        <!--View Controller-->
+        <!--Rental Form Controller-->
         <scene sceneID="haX-tW-HFI">
             <objects>
-                <viewController storyboardIdentifier="SkierForm" id="4H6-vY-kJX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SkierForm" id="4H6-vY-kJX" customClass="RentalFormController" customModule="SkiClock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tE6-AT-vqL">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,10 +391,10 @@
             </objects>
             <point key="canvasLocation" x="138" y="1016"/>
         </scene>
-        <!--View Controller-->
+        <!--New Customer Controller-->
         <scene sceneID="pIH-rp-1WN">
             <objects>
-                <viewController storyboardIdentifier="CustomerForm" id="OZY-Fg-P9b" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomerForm" id="OZY-Fg-P9b" customClass="NewCustomerController" customModule="SkiClock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PFn-ph-YM3">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,13 +488,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pOk-hY-iN3">
-                                <rect key="frame" x="20" y="403" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TGb-E6-rWz">
                                 <rect key="frame" x="411" y="403" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -531,20 +517,23 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ih9-VM-aKo">
-                                <rect key="frame" x="20" y="441" width="202" height="30"/>
+                                <rect key="frame" x="20" y="392" width="202" height="52"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vVY-eX-F87"/>
                     </view>
+                    <connections>
+                        <outlet property="StatePicker" destination="ih9-VM-aKo" id="QfW-PB-SDb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGM-eP-RzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="133"/>
+            <point key="canvasLocation" x="1227.5390625" y="132.8125"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="V7b-MN-DnW"/>
+        <segue reference="mJK-Su-N6f"/>
     </inferredMetricsTieBreakers>
 </document>
