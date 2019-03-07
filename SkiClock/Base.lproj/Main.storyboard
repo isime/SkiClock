@@ -355,10 +355,10 @@
             </objects>
             <point key="canvasLocation" x="-664" y="133"/>
         </scene>
-        <!--View Controller-->
+        <!--Equipment List Controller-->
         <scene sceneID="JDq-uh-ATt">
             <objects>
-                <viewController storyboardIdentifier="EquipmentList" id="PTk-PA-h8z" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EquipmentList" id="PTk-PA-h8z" customClass="EquipmentListController" customModule="SkiClock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lFO-YA-joo">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -534,6 +534,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mJK-Su-N6f"/>
+        <segue reference="n7Z-k1-Fji"/>
     </inferredMetricsTieBreakers>
 </document>
