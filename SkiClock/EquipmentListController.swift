@@ -50,14 +50,18 @@ class EquipmentListController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let skiCell = tableView.dequeueReusableCell(withIdentifier: "skiCell", for: indexPath)
-        skiCell.textLabel?.text = self.model[indexPath.row]
+        
+        let cellText = String(self.length[indexPath.row]) + " | " + self.manufacturer[indexPath.row] + " | " + self.model[indexPath.row] + " | " + String(self.id[indexPath.row])
+        
+        skiCell.textLabel?.text = cellText
+        skiCell.textLabel?.textAlignment = .center
         return skiCell
     }
     
     @IBOutlet weak var skisTable: UITableView!
     
     func getEquipment(){
-        let equipmentUrl = "http://127.0.0.1:5000/in_stock"
+        let equipmentUrl = "http://127.0.0.1:5000/in_stock_skis"
         guard let url = URL(string: equipmentUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

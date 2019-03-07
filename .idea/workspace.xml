@@ -4,7 +4,6 @@
     <list default="true" id="f186f0bb-959a-42d7-8135-962e1b163a99" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock.xcodeproj/project.xcworkspace/xcuserdata/Iansime.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/SkiClock.xcodeproj/project.xcworkspace/xcuserdata/Iansime.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/SkiClock/Base.lproj/Main.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/EquipmentListController.swift" afterPath="$PROJECT_DIR$/SkiClock/EquipmentListController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClockAPI/main.py" afterPath="$PROJECT_DIR$/SkiClockAPI/main.py" />
     </list>
@@ -20,18 +19,19 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="789">
+              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1551961515446" expanded="true" signature="511:586" ph="SELECT lengt... skis" />
-                <marker date="1551961515446" expanded="true" signature="517:586" ph="select lengt... skis" />
-                <marker date="1551961515446" expanded="true" signature="607:696" ph="SELECT size,... " />
-                <marker date="1551961515446" expanded="true" signature="613:696" ph="select size,... " />
-                <marker date="1551961515446" expanded="true" signature="719:785" ph="SELECT size,... " />
-                <marker date="1551961515446" expanded="true" signature="1662:1714" ph="SELECT ski_i... SKIS" />
-                <marker date="1551961515446" expanded="true" signature="1735:1800" ph="SELECT boot_... " />
-                <marker date="1551961515446" expanded="true" signature="1823:1864" ph="SELECT helme... " />
+                <marker date="1551986537081" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
+                <marker date="1551986537081" expanded="true" signature="936:1010" ph="SELECT ski_i... SKIS" />
+                <marker date="1551986537081" expanded="true" signature="1339:1391" ph="SELECT ski_i... SKIS" />
+                <marker date="1551986537081" expanded="true" signature="1733:1822" ph="SELECT boot_... " />
+                <marker date="1551986537081" expanded="true" signature="2189:2277" ph="SELECT boot_... " />
+                <marker date="1551986537081" expanded="true" signature="2624:2689" ph="SELECT boot_... " />
+                <marker date="1551986537081" expanded="true" signature="3052:3118" ph="SELECT helme... " />
+                <marker date="1551986537081" expanded="true" signature="3506:3571" ph="SELECT helme... " />
+                <marker date="1551986537081" expanded="true" signature="3939:3980" ph="SELECT helme... " />
               </folding>
             </state>
           </provider>
@@ -154,10 +154,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1360" height="768" extended-state="6" />
+    <frame x="0" y="32" width="1280" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23529412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -171,6 +171,8 @@
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23529412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -207,18 +209,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="1049">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1551961515446" expanded="true" signature="511:586" ph="SELECT lengt... skis" />
-            <marker date="1551961515446" expanded="true" signature="517:586" ph="select lengt... skis" />
-            <marker date="1551961515446" expanded="true" signature="607:696" ph="SELECT size,... " />
-            <marker date="1551961515446" expanded="true" signature="613:696" ph="select size,... " />
-            <marker date="1551961515446" expanded="true" signature="719:785" ph="SELECT size,... " />
-            <marker date="1551961515446" expanded="true" signature="1662:1714" ph="SELECT ski_i... SKIS" />
-            <marker date="1551961515446" expanded="true" signature="1735:1800" ph="SELECT boot_... " />
-            <marker date="1551961515446" expanded="true" signature="1823:1864" ph="SELECT helme... " />
+            <marker date="1551986537081" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
+            <marker date="1551986537081" expanded="true" signature="936:1010" ph="SELECT ski_i... SKIS" />
+            <marker date="1551986537081" expanded="true" signature="1339:1391" ph="SELECT ski_i... SKIS" />
+            <marker date="1551986537081" expanded="true" signature="1733:1822" ph="SELECT boot_... " />
+            <marker date="1551986537081" expanded="true" signature="2189:2277" ph="SELECT boot_... " />
+            <marker date="1551986537081" expanded="true" signature="2624:2689" ph="SELECT boot_... " />
+            <marker date="1551986537081" expanded="true" signature="3052:3118" ph="SELECT helme... " />
+            <marker date="1551986537081" expanded="true" signature="3506:3571" ph="SELECT helme... " />
+            <marker date="1551986537081" expanded="true" signature="3939:3980" ph="SELECT helme... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SkiClockAPI/config.py" />
+    <entry file="file://$PROJECT_DIR$/SkiClockAPI/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="789">
+          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1551986537081" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
+            <marker date="1551986537081" expanded="true" signature="936:1010" ph="SELECT ski_i... SKIS" />
+            <marker date="1551986537081" expanded="true" signature="1339:1391" ph="SELECT ski_i... SKIS" />
+            <marker date="1551986537081" expanded="true" signature="1733:1822" ph="SELECT boot_... " />
+            <marker date="1551986537081" expanded="true" signature="2189:2277" ph="SELECT boot_... " />
+            <marker date="1551986537081" expanded="true" signature="2624:2689" ph="SELECT boot_... " />
+            <marker date="1551986537081" expanded="true" signature="3052:3118" ph="SELECT helme... " />
+            <marker date="1551986537081" expanded="true" signature="3506:3571" ph="SELECT helme... " />
+            <marker date="1551986537081" expanded="true" signature="3939:3980" ph="SELECT helme... " />
           </folding>
         </state>
       </provider>
