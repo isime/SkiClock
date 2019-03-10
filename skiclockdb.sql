@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS SKIER_INFO (
   skier_id INT(30) NOT NULL AUTO_INCREMENT,
   customer_id INT(30) NOT NULL,
   first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
   height INT(30) NOT NULL,
   weight INT(30) NOT NULL,
   age INT(15) NOT NULL,

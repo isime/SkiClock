@@ -33,6 +33,7 @@ def get_in_stock_skis():
     skiList=[]
     for element in skiData:
         skiList.append(dict(zip(skis,element)))
+    cursor.close()
 
     return jsonify(skiList)
 
@@ -51,6 +52,7 @@ def get_currently_out_skis():
     skiList=[]
     for element in skiData:
         skiList.append(dict(zip(skis,element)))
+    cursor.close()
 
     return jsonify(skiList)
 
@@ -69,6 +71,7 @@ def get_all_skis():
     skiList=[]
     for element in skiData:
         skiList.append(dict(zip(skis,element)))
+    cursor.close()
 
     return jsonify(skiList)
 
@@ -87,6 +90,7 @@ def get_in_stock_boots():
     bootsList=[]
     for element in bootsData:
         bootsList.append(dict(zip(boots,element)))
+    cursor.close()
 
     return jsonify(bootsList)
 
@@ -105,6 +109,7 @@ def get_currently_out_boots():
     bootsList=[]
     for element in bootsData:
         bootsList.append(dict(zip(boots,element)))
+    cursor.close()
 
     return jsonify(bootsList)
 
@@ -123,6 +128,7 @@ def get_all_boots():
     bootsList=[]
     for element in bootsData:
         bootsList.append(dict(zip(boots,element)))
+    cursor.close()
 
     return jsonify(bootsList)
 
@@ -141,6 +147,7 @@ def get_in_stock_helmets():
     helmetList=[]
     for element in helmetData:
         helmetList.append(dict(zip(helmets,element)))
+    cursor.close()
 
     return jsonify(helmetList)
 
@@ -159,6 +166,7 @@ def get_currently_out_helmets():
     helmetList=[]
     for element in helmetData:
         helmetList.append(dict(zip(helmets,element)))
+    cursor.close()
 
     return jsonify(helmetList)
 
@@ -176,8 +184,65 @@ def get_all_helmets():
     helmetList=[]
     for element in helmetData:
         helmetList.append(dict(zip(helmets,element)))
+    cursor.close()
 
     return jsonify(helmetList)
+
+
+@app.route('/new_customer', methods=['Post'])
+def add_new_customer():
+
+    cusJson = request.get_json(force=True)
+
+    fname = str(cusJson["fname"])
+    lname = str(cusJson["lname"])
+    address = str(cusJson["address"])
+    state = str(cusJson["state"])
+    zip = str(cusJson["zip"])
+    city = str(cusJson["city"])
+    phone = str(cusJson["phone"])
+    email = str(cusJson["email"])
+
+    customerQuery = 'INSERT INTO CUSTOMER(first_name, last_name, address, city, state, zip_code, email, phone) VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}");'.format(fname, lname, address, city, state, zip, email, phone)
+    # print(customerQuery)
+    cursor = db.cursor()
+    cursor.execute(customerQuery)
+    db.commit()
+    cursor.close()
+
+    return jsonify("done")
+
+
+@app.route('/new_skier', methods=['Post'])
+def add_new_skier():
+
+    skierJson = request.get_json(force=True)
+
+    fname = str(skierJson["fname"])
+    lname = str(skierJson["lname"])
+    weight = int(str(skierJson["weight"]))
+    heightft = int(str(skierJson["heightft"]))
+    heightin = int(str(skierJson["heightin"]))
+    age = int(str(skierJson["age"]))
+    rawSkierType = str(skierJson["skiertype"])
+
+    height = (heightft * 12) + heightin
+    skiertype = rawSkierType[0]
+    # print(skiertype)
+
+    getCusIDQuery = 'SELECT customer_id FROM CUSTOMER ORDER BY customer_id DESC LIMIT 1;'
+    cursor = db.cursor()
+    cursor.execute(getCusIDQuery)
+    data = cursor.fetchone()
+    cusID = data[0]
+
+    skierQuery = 'INSERT INTO SKIER_INFO(customer_id, first_name, last_name, height, weight, age, skier_type) VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}");'.format(cusID, fname, lname, height, weight, age, skiertype)
+    # print(skierQuery)
+    cursor.execute(skierQuery)
+    db.commit()
+    cursor.close()
+
+    return jsonify("done")
 
 
 if __name__ == "__main__":

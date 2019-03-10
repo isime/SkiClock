@@ -15,6 +15,47 @@ class NewCustomerController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     var StatePickerData: [String] = [String]()
     
+    @IBOutlet weak var CusFname: UITextField!
+    @IBOutlet weak var CusLName: UITextField!
+    @IBOutlet weak var StreetAddress: UITextField!
+    @IBOutlet weak var ZipCode: UITextField!
+    @IBOutlet weak var CityBox: UITextField!
+    @IBOutlet weak var CusPhon: UITextField!
+    @IBOutlet weak var CusEmail: UITextField!
+    
+    
+    @IBAction func SubmitCusInfo(_ sender: Any) {
+        let FName: String = CusFname.text ?? "No First Name"
+        let LName: String = CusLName.text ?? "No Last Name"
+        let Address: String = StreetAddress.text ?? "No Address"
+        let Zip: String = ZipCode.text ?? "0"
+        let City: String = CityBox.text ?? "No City"
+        let Phone: String = CusPhon.text ?? "0"
+        let Email: String = CusEmail.text ?? "no@no.com"
+        let statePicked = StatePickerData[StatePicker.selectedRow(inComponent: 0)]
+    
+        
+        let cusJson: [String: String] = ["fname": FName, "lname": LName, "address": Address, "state": statePicked, "zip": Zip, "city": City, "phone": Phone, "email": Email]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: cusJson)
+        
+        let url = URL(string: "http://127.0.0.1:5000/new_customer")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in guard let data = data, error == nil else {print(error?.localizedDescription ?? "No Data"); return }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+        task.resume()
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,8 +97,6 @@ class NewCustomerController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return StatePickerData[row]
     }
     
-    //    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    //        <#code#>
-    //    }
+    
 
 }

@@ -14,9 +14,13 @@
 		AC29AB4D21B4F49E0049C079 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC29AB4B21B4F49E0049C079 /* LaunchScreen.storyboard */; };
 		AC29AB5821B4F49E0049C079 /* SkiClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB5721B4F49E0049C079 /* SkiClockTests.swift */; };
 		AC29AB6321B4F49E0049C079 /* SkiClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29AB6221B4F49E0049C079 /* SkiClockUITests.swift */; };
+		AC464C7A223494F800F28265 /* AddSkierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC464C79223494F800F28265 /* AddSkierController.swift */; };
+		AC464C7E2234B6F300F28265 /* NextNewSkierController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC464C7D2234B6F300F28265 /* NextNewSkierController.swift */; };
 		ACD0E8902230CAAD0047981D /* NewCustomerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E88F2230CAAD0047981D /* NewCustomerController.swift */; };
 		ACD0E8922230CE440047981D /* RentalFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E8912230CE440047981D /* RentalFormController.swift */; };
 		ACD0E8942230FEC10047981D /* EquipmentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E8932230FEC10047981D /* EquipmentListController.swift */; };
+		ACD0E89E22321B680047981D /* EquipmentHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E89D22321B680047981D /* EquipmentHomeController.swift */; };
+		ACD0E8A0223352BB0047981D /* AllSkisController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD0E89F223352BB0047981D /* AllSkisController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +54,13 @@
 		AC29AB5E21B4F49E0049C079 /* SkiClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkiClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC29AB6221B4F49E0049C079 /* SkiClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiClockUITests.swift; sourceTree = "<group>"; };
 		AC29AB6421B4F49E0049C079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC464C79223494F800F28265 /* AddSkierController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSkierController.swift; sourceTree = "<group>"; };
+		AC464C7D2234B6F300F28265 /* NextNewSkierController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextNewSkierController.swift; sourceTree = "<group>"; };
 		ACD0E88F2230CAAD0047981D /* NewCustomerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCustomerController.swift; sourceTree = "<group>"; };
 		ACD0E8912230CE440047981D /* RentalFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalFormController.swift; sourceTree = "<group>"; };
 		ACD0E8932230FEC10047981D /* EquipmentListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentListController.swift; sourceTree = "<group>"; };
+		ACD0E89D22321B680047981D /* EquipmentHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentHomeController.swift; sourceTree = "<group>"; };
+		ACD0E89F223352BB0047981D /* AllSkisController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSkisController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				AC29AB4221B4F49D0049C079 /* AppDelegate.swift */,
 				AC29AB4421B4F49D0049C079 /* ViewController.swift */,
 				AC29AB4621B4F49D0049C079 /* Main.storyboard */,
+				AC464C7D2234B6F300F28265 /* NextNewSkierController.swift */,
+				AC464C79223494F800F28265 /* AddSkierController.swift */,
+				ACD0E89F223352BB0047981D /* AllSkisController.swift */,
+				ACD0E89D22321B680047981D /* EquipmentHomeController.swift */,
 				ACD0E8932230FEC10047981D /* EquipmentListController.swift */,
 				ACD0E8912230CE440047981D /* RentalFormController.swift */,
 				ACD0E88F2230CAAD0047981D /* NewCustomerController.swift */,
@@ -266,10 +278,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC29AB4521B4F49D0049C079 /* ViewController.swift in Sources */,
+				ACD0E89E22321B680047981D /* EquipmentHomeController.swift in Sources */,
 				AC29AB4321B4F49D0049C079 /* AppDelegate.swift in Sources */,
+				AC464C7E2234B6F300F28265 /* NextNewSkierController.swift in Sources */,
 				ACD0E8942230FEC10047981D /* EquipmentListController.swift in Sources */,
 				ACD0E8902230CAAD0047981D /* NewCustomerController.swift in Sources */,
 				ACD0E8922230CE440047981D /* RentalFormController.swift in Sources */,
+				AC464C7A223494F800F28265 /* AddSkierController.swift in Sources */,
+				ACD0E8A0223352BB0047981D /* AllSkisController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
