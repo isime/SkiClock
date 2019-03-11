@@ -202,11 +202,27 @@ def add_new_customer():
     city = str(cusJson["city"])
     phone = str(cusJson["phone"])
     email = str(cusJson["email"])
+    signature = str(cusJson["signature"])
+
+    date = datetime.datetime.now()
+
+    today = date.strftime("%m") + "/" + date.strftime("%d") + "/" + date.strftime("%Y")
 
     customerQuery = 'INSERT INTO CUSTOMER(first_name, last_name, address, city, state, zip_code, email, phone) VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}");'.format(fname, lname, address, city, state, zip, email, phone)
     # print(customerQuery)
     cursor = db.cursor()
     cursor.execute(customerQuery)
+    db.commit()
+
+    getCusIDQuery = 'SELECT customer_id FROM CUSTOMER ORDER BY customer_id DESC LIMIT 1;'
+    cursor = db.cursor()
+    cursor.execute(getCusIDQuery)
+    data = cursor.fetchone()
+    cusID = data[0]
+
+    rentalQuery = 'INSERT INTO RENTALS(customer_id, signature, date_out) VALUES ("{}", "{}", "{}");'.format(cusID, signature, today)
+    # print(rentalQuery)
+    cursor.execute(rentalQuery)
     db.commit()
     cursor.close()
 
@@ -239,6 +255,22 @@ def add_new_skier():
     skierQuery = 'INSERT INTO SKIER_INFO(customer_id, first_name, last_name, height, weight, age, skier_type) VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}");'.format(cusID, fname, lname, height, weight, age, skiertype)
     # print(skierQuery)
     cursor.execute(skierQuery)
+    db.commit()
+
+    getRentalIDQuery = 'SELECT rental_id FROM RENTALS ORDER BY rental_id DESC LIMIT 1;'
+    cursor = db.cursor()
+    cursor.execute(getRentalIDQuery)
+    data = cursor.fetchone()
+    rentalID = data[0]
+
+    getSkierIDQuery = 'SELECT skier_id FROM SKIER_INFO ORDER BY skier_id DESC LIMIT 1;'
+    cursor = db.cursor()
+    cursor.execute(getSkierIDQuery)
+    data = cursor.fetchone()
+    skierID = data[0]
+
+    rentalHasSkiersQuery = 'INSERT INTO RENTALS_HAS_SKIERS(skier_id, rental_id) VALUES ("{}", "{}");'.format(skierId, rentalID)
+    cursor.execute(rentalHasSkiersQuery)
     db.commit()
     cursor.close()
 

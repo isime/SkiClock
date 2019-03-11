@@ -584,6 +584,19 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="V7b-MN-DnW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SubmitCusInfo" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDl-R2-PUi">
+                                <rect key="frame" x="687" y="709" width="110" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SubmitCusInfo:" destination="OZY-Fg-P9b" eventType="touchUpInside" id="pBb-NH-Tcj"/>
+                                    <segue destination="sZU-k4-DBn" kind="show" id="2kX-0l-2M3"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="FNameLabel" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1N-8F-i3K">
                                 <rect key="frame" x="228" y="72" width="202" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -620,7 +633,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="CusEmailLabel" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaX-rk-d0W">
-                                <rect key="frame" x="595" y="496" width="202" height="64"/>
+                                <rect key="frame" x="411" y="496" width="202" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -634,7 +647,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="CusPhoneLabel" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0M-Uv-uie">
-                                <rect key="frame" x="228" y="496" width="202" height="64"/>
+                                <rect key="frame" x="20" y="496" width="202" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -669,7 +682,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CusEmailBox" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JPk-46-hgM">
-                                <rect key="frame" x="595" y="586" width="202" height="30"/>
+                                <rect key="frame" x="411" y="586" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -683,7 +696,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CusPhoneBox" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjt-dB-9dq">
-                                <rect key="frame" x="228" y="586" width="202" height="30"/>
+                                <rect key="frame" x="20" y="586" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -693,19 +706,20 @@
                                 <rect key="frame" x="20" y="392" width="202" height="52"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SubmitCusInfo" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDl-R2-PUi">
-                                <rect key="frame" x="687" y="709" width="110" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="CusSignatureLabel" text="Electronic Signature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c4-NP-eRT">
+                                <rect key="frame" x="802" y="496" width="202" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="SubmitCusInfo:" destination="OZY-Fg-P9b" eventType="touchUpInside" id="pBb-NH-Tcj"/>
-                                    <segue destination="sZU-k4-DBn" kind="show" id="2kX-0l-2M3"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CusElectronicSignatureBox" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rb5-qy-9QE">
+                                <rect key="frame" x="802" y="586" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vVY-eX-F87"/>
@@ -716,6 +730,7 @@
                         <outlet property="CusFname" destination="ptD-yC-IcD" id="4lP-3U-w4b"/>
                         <outlet property="CusLName" destination="frM-Q7-Va0" id="O4L-YA-KbR"/>
                         <outlet property="CusPhon" destination="wjt-dB-9dq" id="UhT-BD-Jyi"/>
+                        <outlet property="CusSignature" destination="rb5-qy-9QE" id="0Do-Oc-bbr"/>
                         <outlet property="StatePicker" destination="ih9-VM-aKo" id="QfW-PB-SDb"/>
                         <outlet property="StreetAddress" destination="iPY-ga-m0i" id="axC-P3-5uy"/>
                         <outlet property="ZipCode" destination="TGb-E6-rWz" id="8EG-cM-e6K"/>
@@ -723,7 +738,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGM-eP-RzN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="133"/>
+            <point key="canvasLocation" x="836.71875" y="132.8125"/>
         </scene>
         <!--Add Skier Controller-->
         <scene sceneID="8if-Xp-5tx">
@@ -1075,8 +1090,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hYr-3n-ksN"/>
+        <segue reference="2kX-0l-2M3"/>
         <segue reference="q2Q-VR-AYS"/>
-        <segue reference="9ov-pg-mSw"/>
+        <segue reference="V7b-MN-DnW"/>
     </inferredMetricsTieBreakers>
 </document>
