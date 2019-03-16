@@ -4,7 +4,7 @@ import pymysql
 import json
 import datetime
 import random
-import MySQLdb
+# import MySQLdb
 import os
 import re
 
@@ -269,7 +269,7 @@ def add_new_skier():
     data = cursor.fetchone()
     skierID = data[0]
 
-    rentalHasSkiersQuery = 'INSERT INTO RENTALS_HAS_SKIERS(skier_id, rental_id) VALUES ("{}", "{}");'.format(skierId, rentalID)
+    rentalHasSkiersQuery = 'INSERT INTO RENTALS_HAS_SKIERS(skier_id, rental_id) VALUES ("{}", "{}");'.format(skierID, rentalID)
     cursor.execute(rentalHasSkiersQuery)
     db.commit()
     cursor.close()
