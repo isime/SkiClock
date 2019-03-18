@@ -1,5 +1,5 @@
 //
-//  BootsInController.swift
+//  HelmetsOutController.swift
 //  SkiClock
 //
 //  Created by Ian Sime on 3/17/19.
@@ -8,34 +8,32 @@
 
 import UIKit
 
-class BootsInController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HelmetsOutController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var boots = [Boot]()
+    var helmets = [Helmet]()
     var id = [Int]()
-    var sole_length = [Int]()
-    var size = [Float]()
-    var manufacturer = [String]()
-    var model = [String]()
+    var size = [String]()
+    var color = [String]()
 
-    @IBOutlet weak var BootsInTable: UITableView!
+    @IBOutlet weak var HelmetsOutTable: UITableView!
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let bootsInCell = tableView.dequeueReusableCell(withIdentifier: "bootsInCell"/*Identifier*/, for: indexPath as IndexPath)
+        let helmetsOutCell = tableView.dequeueReusableCell(withIdentifier: "helmetsOutCell"/*Identifier*/, for: indexPath as IndexPath)
         
-        let cellText = String(self.size[indexPath.row]) + " | " + self.manufacturer[indexPath.row] + " | " + self.model[indexPath.row] + " | " +  String(self.sole_length[indexPath.row]) + " | " + String(self.id[indexPath.row])
+        let cellText = self.size[indexPath.row] + " | " + self.color[indexPath.row] + " | " +   String(self.id[indexPath.row])
         
-        bootsInCell.textLabel?.text = cellText
-        bootsInCell.textLabel?.textAlignment = .center
+        helmetsOutCell.textLabel?.text = cellText
+        helmetsOutCell.textLabel?.textAlignment = .center
         
-        return bootsInCell
+        return helmetsOutCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return boots.count
+        return helmets.count
     }
     
     func getEquipment(){
-        let equipmentUrl = "http://127.0.0.1:5000/in_stock_boots"
+        let equipmentUrl = "http://127.0.0.1:5000/currently_out_helmets"
         guard let url = URL(string: equipmentUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
@@ -43,22 +41,20 @@ class BootsInController: UIViewController, UITableViewDataSource, UITableViewDel
             guard let data = data else { return }
             
             do {
-                self.boots = try JSONDecoder().decode([Boot].self, from: data)
+                self.helmets = try JSONDecoder().decode([Helmet].self, from: data)
                 //                print(skis)
-                for info in self.boots {
-                    self.id.append(info.boot_id ?? 0)
-                    self.sole_length.append(info.sole_length ?? 0)
-                    self.size.append(info.size ?? 0)
-                    self.manufacturer.append(info.manufacturer ?? "N/A")
-                    self.model.append(info.model ?? "N/A")
+                for info in self.helmets {
+                    self.id.append(info.helmet_id ?? 0)
+                    self.size.append(info.size ?? "N/A")
+                    self.color.append(info.color ?? "N/A")
                     
                     DispatchQueue.main.async {
-                        self.BootsInTable.reloadData()
+                        self.HelmetsOutTable.reloadData()
                     }
                     
                 }
-
-//                print(self.boots)
+                
+                //                print(self.boots)
             } catch let jsonErr {
                 
             }
@@ -68,7 +64,7 @@ class BootsInController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         getEquipment()
-
+        
         // Do any additional setup after loading the view.
     }
     

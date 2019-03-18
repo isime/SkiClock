@@ -1,5 +1,5 @@
 //
-//  BootsInController.swift
+//  AllBootsController.swift
 //  SkiClock
 //
 //  Created by Ian Sime on 3/17/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BootsInController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AllBootsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var boots = [Boot]()
     var id = [Int]()
@@ -16,18 +16,18 @@ class BootsInController: UIViewController, UITableViewDataSource, UITableViewDel
     var size = [Float]()
     var manufacturer = [String]()
     var model = [String]()
-
-    @IBOutlet weak var BootsInTable: UITableView!
+    
+    @IBOutlet weak var AllBootsTable: UITableView!
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let bootsInCell = tableView.dequeueReusableCell(withIdentifier: "bootsInCell"/*Identifier*/, for: indexPath as IndexPath)
+        let allBootsCell = tableView.dequeueReusableCell(withIdentifier: "allBootsCell"/*Identifier*/, for: indexPath as IndexPath)
         
         let cellText = String(self.size[indexPath.row]) + " | " + self.manufacturer[indexPath.row] + " | " + self.model[indexPath.row] + " | " +  String(self.sole_length[indexPath.row]) + " | " + String(self.id[indexPath.row])
         
-        bootsInCell.textLabel?.text = cellText
-        bootsInCell.textLabel?.textAlignment = .center
+        allBootsCell.textLabel?.text = cellText
+        allBootsCell.textLabel?.textAlignment = .center
         
-        return bootsInCell
+        return allBootsCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,7 +35,7 @@ class BootsInController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func getEquipment(){
-        let equipmentUrl = "http://127.0.0.1:5000/in_stock_boots"
+        let equipmentUrl = "http://127.0.0.1:5000/all_boots"
         guard let url = URL(string: equipmentUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
@@ -53,12 +53,12 @@ class BootsInController: UIViewController, UITableViewDataSource, UITableViewDel
                     self.model.append(info.model ?? "N/A")
                     
                     DispatchQueue.main.async {
-                        self.BootsInTable.reloadData()
+                        self.AllBootsTable.reloadData()
                     }
                     
                 }
-
-//                print(self.boots)
+                
+                //                print(self.boots)
             } catch let jsonErr {
                 
             }
@@ -68,7 +68,7 @@ class BootsInController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         getEquipment()
-
+        
         // Do any additional setup after loading the view.
     }
     

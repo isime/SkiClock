@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f186f0bb-959a-42d7-8135-962e1b163a99" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SkiClock/AllBootsController.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SkiClock/AllHelmetsController.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SkiClock/BootsOutController.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SkiClock/HelmetsInController.swift" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SkiClock/HelmetsOutController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock.xcodeproj/project.xcworkspace/xcuserdata/Iansime.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/SkiClock.xcodeproj/project.xcworkspace/xcuserdata/Iansime.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SkiClock.iml" afterPath="$PROJECT_DIR$/.idea/SkiClock.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/SkiClock.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock.xcodeproj/xcuserdata/Iansime.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/SkiClock.xcodeproj/xcuserdata/Iansime.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/AllSkisListController.swift" afterPath="$PROJECT_DIR$/SkiClock/AllSkisListController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/SkiClock/Base.lproj/Main.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/NewCustomerController.swift" afterPath="$PROJECT_DIR$/SkiClock/NewCustomerController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClockAPI/main.py" afterPath="$PROJECT_DIR$/SkiClockAPI/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/BootsInController.swift" afterPath="$PROJECT_DIR$/SkiClock/BootsInController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/SkisOutController.swift" afterPath="$PROJECT_DIR$/SkiClock/SkisOutController.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,41 +26,41 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="224" column="18" lean-forward="false" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
+            <state relative-caret-position="117">
+              <caret line="154" column="13" lean-forward="false" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="34" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1552276881390" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
-                <marker date="1552276881390" expanded="true" signature="955:1029" ph="SELECT ski_i... SKIS" />
-                <marker date="1552276881390" expanded="true" signature="1377:1429" ph="SELECT ski_i... SKIS" />
-                <marker date="1552276881390" expanded="true" signature="1790:1879" ph="SELECT boot_... " />
-                <marker date="1552276881390" expanded="true" signature="2265:2353" ph="SELECT boot_... " />
-                <marker date="1552276881390" expanded="true" signature="2719:2784" ph="SELECT boot_... " />
-                <marker date="1552276881390" expanded="true" signature="3166:3232" ph="SELECT helme... " />
-                <marker date="1552276881390" expanded="true" signature="3639:3704" ph="SELECT helme... " />
-                <marker date="1552276881390" expanded="true" signature="4091:4132" ph="SELECT helme... " />
-                <marker date="1552276881390" expanded="true" signature="5021:5119" ph="INSERT INTO CUSTOMER... " />
-                <marker date="1552276881390" expanded="true" signature="5021:5140" ph="INSERT INTO CUSTOMER... " />
-                <marker date="1552276881390" expanded="true" signature="5021:5164" ph="INSERT INTO CUSTOMER... " />
-                <marker date="1552276881390" expanded="true" signature="5021:5166" ph="INSERT INTO CUSTOMER... " />
-                <marker date="1552276881390" expanded="true" signature="5021:5167" ph="INSERT INTO CUSTOMER... " />
-                <marker date="1552276881390" expanded="true" signature="5355:5421" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="5552:5631" ph="INSERT INTO RENTALS... " />
-                <marker date="1552276881390" expanded="true" signature="6310:6344" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="6310:6348" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="6310:6363" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="6310:6368" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="6310:6374" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="6310:6376" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="6310:6403" ph="SELECT custo... CUSTOMER" />
-                <marker date="1552276881390" expanded="true" signature="6506:6647" ph="INSERT INTO SKIER_INFO... " />
-                <marker date="1552276881390" expanded="true" signature="6806:6867" ph="SELECT renta... RENTALS" />
-                <marker date="1552276881390" expanded="true" signature="7008:7070" ph="SELECT skier... SKIER_INFO" />
-                <marker date="1552276881390" expanded="true" signature="7214:7285" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
+                <marker date="1552584609126" expanded="true" signature="514:589" ph="SELECT ski_i... SKIS" />
+                <marker date="1552584609126" expanded="true" signature="957:1031" ph="SELECT ski_i... SKIS" />
+                <marker date="1552584609126" expanded="true" signature="1379:1431" ph="SELECT ski_i... SKIS" />
+                <marker date="1552584609126" expanded="true" signature="1792:1881" ph="SELECT boot_... " />
+                <marker date="1552584609126" expanded="true" signature="2267:2355" ph="SELECT boot_... " />
+                <marker date="1552584609126" expanded="true" signature="2721:2786" ph="SELECT boot_... " />
+                <marker date="1552584609126" expanded="true" signature="3168:3234" ph="SELECT helme... " />
+                <marker date="1552584609126" expanded="true" signature="3641:3706" ph="SELECT helme... " />
+                <marker date="1552584609126" expanded="true" signature="4093:4134" ph="SELECT helme... " />
+                <marker date="1552584609126" expanded="true" signature="5023:5121" ph="INSERT INTO CUSTOMER... " />
+                <marker date="1552584609126" expanded="true" signature="5023:5142" ph="INSERT INTO CUSTOMER... " />
+                <marker date="1552584609126" expanded="true" signature="5023:5166" ph="INSERT INTO CUSTOMER... " />
+                <marker date="1552584609126" expanded="true" signature="5023:5168" ph="INSERT INTO CUSTOMER... " />
+                <marker date="1552584609126" expanded="true" signature="5023:5169" ph="INSERT INTO CUSTOMER... " />
+                <marker date="1552584609126" expanded="true" signature="5357:5423" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="5554:5633" ph="INSERT INTO RENTALS... " />
+                <marker date="1552584609126" expanded="true" signature="6312:6346" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="6312:6350" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="6312:6365" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="6312:6370" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="6312:6376" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="6312:6378" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="6312:6405" ph="SELECT custo... CUSTOMER" />
+                <marker date="1552584609126" expanded="true" signature="6508:6649" ph="INSERT INTO SKIER_INFO... " />
+                <marker date="1552584609126" expanded="true" signature="6808:6869" ph="SELECT renta... RENTALS" />
+                <marker date="1552584609126" expanded="true" signature="7010:7072" ph="SELECT skier... SKIER_INFO" />
+                <marker date="1552584609126" expanded="true" signature="7216:7287" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
               </folding>
             </state>
           </provider>
@@ -116,7 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -134,12 +143,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -176,37 +186,25 @@
     <frame x="1280" y="0" width="1360" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23529412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23529412" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,14 +218,52 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SkiClockAPI/config.py">
+    <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1552584609126" expanded="true" signature="514:589" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="957:1031" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1379:1431" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1792:1881" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2267:2355" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2721:2786" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="3168:3234" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="3641:3706" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="4093:4134" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5121" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5142" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5166" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5168" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5169" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5357:5423" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="5554:5633" ph="INSERT INTO RENTALS... " />
+            <marker date="1552584609126" expanded="true" signature="6312:6346" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6350" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6365" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6370" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6376" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6378" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6405" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6508:6649" ph="INSERT INTO SKIER_INFO... " />
+            <marker date="1552584609126" expanded="true" signature="6808:6869" ph="SELECT renta... RENTALS" />
+            <marker date="1552584609126" expanded="true" signature="7010:7072" ph="SELECT skier... SKIER_INFO" />
+            <marker date="1552584609126" expanded="true" signature="7216:7287" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SkiClockAPI/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SkiClockAPI/config.py" />
     <entry file="file://$PROJECT_DIR$/SkiClockAPI/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -242,33 +278,33 @@
           <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1552276881390" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="955:1029" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1377:1429" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1790:1879" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2265:2353" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2719:2784" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="3166:3232" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="3639:3704" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="4091:4132" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5119" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5140" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5164" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5166" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5167" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5355:5421" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="5552:5631" ph="INSERT INTO RENTALS... " />
-            <marker date="1552276881390" expanded="true" signature="6310:6344" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6348" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6363" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6368" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6374" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6376" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6403" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6506:6647" ph="INSERT INTO SKIER_INFO... " />
-            <marker date="1552276881390" expanded="true" signature="6806:6867" ph="SELECT renta... RENTALS" />
-            <marker date="1552276881390" expanded="true" signature="7008:7070" ph="SELECT skier... SKIER_INFO" />
-            <marker date="1552276881390" expanded="true" signature="7214:7285" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
+            <marker date="1552584609126" expanded="true" signature="514:589" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="957:1031" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1379:1431" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1792:1881" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2267:2355" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2721:2786" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="3168:3234" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="3641:3706" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="4093:4134" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5121" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5142" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5166" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5168" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5169" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5357:5423" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="5554:5633" ph="INSERT INTO RENTALS... " />
+            <marker date="1552584609126" expanded="true" signature="6312:6346" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6350" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6365" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6370" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6376" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6378" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6405" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6508:6649" ph="INSERT INTO SKIER_INFO... " />
+            <marker date="1552584609126" expanded="true" signature="6808:6869" ph="SELECT renta... RENTALS" />
+            <marker date="1552584609126" expanded="true" signature="7010:7072" ph="SELECT skier... SKIER_INFO" />
+            <marker date="1552584609126" expanded="true" signature="7216:7287" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
           </folding>
         </state>
       </provider>
@@ -288,33 +324,33 @@
           <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1552276881390" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="955:1029" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1377:1429" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1790:1879" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2265:2353" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2719:2784" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="3166:3232" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="3639:3704" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="4091:4132" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5119" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5140" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5164" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5166" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5167" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5355:5421" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="5552:5631" ph="INSERT INTO RENTALS... " />
-            <marker date="1552276881390" expanded="true" signature="6310:6344" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6348" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6363" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6368" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6374" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6376" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6403" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6506:6647" ph="INSERT INTO SKIER_INFO... " />
-            <marker date="1552276881390" expanded="true" signature="6806:6867" ph="SELECT renta... RENTALS" />
-            <marker date="1552276881390" expanded="true" signature="7008:7070" ph="SELECT skier... SKIER_INFO" />
-            <marker date="1552276881390" expanded="true" signature="7214:7285" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
+            <marker date="1552584609126" expanded="true" signature="514:589" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="957:1031" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1379:1431" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1792:1881" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2267:2355" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2721:2786" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="3168:3234" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="3641:3706" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="4093:4134" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5121" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5142" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5166" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5168" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5169" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5357:5423" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="5554:5633" ph="INSERT INTO RENTALS... " />
+            <marker date="1552584609126" expanded="true" signature="6312:6346" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6350" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6365" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6370" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6376" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6378" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6405" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6508:6649" ph="INSERT INTO SKIER_INFO... " />
+            <marker date="1552584609126" expanded="true" signature="6808:6869" ph="SELECT renta... RENTALS" />
+            <marker date="1552584609126" expanded="true" signature="7010:7072" ph="SELECT skier... SKIER_INFO" />
+            <marker date="1552584609126" expanded="true" signature="7216:7287" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
           </folding>
         </state>
       </provider>
@@ -334,33 +370,33 @@
           <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1552276881390" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="955:1029" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1377:1429" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1790:1879" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2265:2353" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2719:2784" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="3166:3232" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="3639:3704" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="4091:4132" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5119" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5140" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5164" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5166" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5167" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5355:5421" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="5552:5631" ph="INSERT INTO RENTALS... " />
-            <marker date="1552276881390" expanded="true" signature="6310:6344" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6348" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6363" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6368" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6374" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6376" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6403" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6506:6647" ph="INSERT INTO SKIER_INFO... " />
-            <marker date="1552276881390" expanded="true" signature="6806:6867" ph="SELECT renta... RENTALS" />
-            <marker date="1552276881390" expanded="true" signature="7008:7070" ph="SELECT skier... SKIER_INFO" />
-            <marker date="1552276881390" expanded="true" signature="7214:7285" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
+            <marker date="1552584609126" expanded="true" signature="514:589" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="957:1031" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1379:1431" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1792:1881" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2267:2355" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2721:2786" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="3168:3234" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="3641:3706" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="4093:4134" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5121" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5142" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5166" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5168" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5169" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5357:5423" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="5554:5633" ph="INSERT INTO RENTALS... " />
+            <marker date="1552584609126" expanded="true" signature="6312:6346" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6350" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6365" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6370" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6376" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6378" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6405" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6508:6649" ph="INSERT INTO SKIER_INFO... " />
+            <marker date="1552584609126" expanded="true" signature="6808:6869" ph="SELECT renta... RENTALS" />
+            <marker date="1552584609126" expanded="true" signature="7010:7072" ph="SELECT skier... SKIER_INFO" />
+            <marker date="1552584609126" expanded="true" signature="7216:7287" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
           </folding>
         </state>
       </provider>
@@ -376,37 +412,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="224" column="18" lean-forward="false" selection-start-line="224" selection-start-column="18" selection-end-line="224" selection-end-column="18" />
+        <state relative-caret-position="117">
+          <caret line="154" column="13" lean-forward="false" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="34" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1552276881390" expanded="true" signature="512:587" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="955:1029" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1377:1429" ph="SELECT ski_i... SKIS" />
-            <marker date="1552276881390" expanded="true" signature="1790:1879" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2265:2353" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="2719:2784" ph="SELECT boot_... " />
-            <marker date="1552276881390" expanded="true" signature="3166:3232" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="3639:3704" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="4091:4132" ph="SELECT helme... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5119" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5140" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5164" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5166" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5021:5167" ph="INSERT INTO CUSTOMER... " />
-            <marker date="1552276881390" expanded="true" signature="5355:5421" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="5552:5631" ph="INSERT INTO RENTALS... " />
-            <marker date="1552276881390" expanded="true" signature="6310:6344" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6348" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6363" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6368" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6374" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6376" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6310:6403" ph="SELECT custo... CUSTOMER" />
-            <marker date="1552276881390" expanded="true" signature="6506:6647" ph="INSERT INTO SKIER_INFO... " />
-            <marker date="1552276881390" expanded="true" signature="6806:6867" ph="SELECT renta... RENTALS" />
-            <marker date="1552276881390" expanded="true" signature="7008:7070" ph="SELECT skier... SKIER_INFO" />
-            <marker date="1552276881390" expanded="true" signature="7214:7285" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
+            <marker date="1552584609126" expanded="true" signature="514:589" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="957:1031" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1379:1431" ph="SELECT ski_i... SKIS" />
+            <marker date="1552584609126" expanded="true" signature="1792:1881" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2267:2355" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="2721:2786" ph="SELECT boot_... " />
+            <marker date="1552584609126" expanded="true" signature="3168:3234" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="3641:3706" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="4093:4134" ph="SELECT helme... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5121" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5142" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5166" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5168" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5023:5169" ph="INSERT INTO CUSTOMER... " />
+            <marker date="1552584609126" expanded="true" signature="5357:5423" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="5554:5633" ph="INSERT INTO RENTALS... " />
+            <marker date="1552584609126" expanded="true" signature="6312:6346" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6350" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6365" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6370" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6376" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6378" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6312:6405" ph="SELECT custo... CUSTOMER" />
+            <marker date="1552584609126" expanded="true" signature="6508:6649" ph="INSERT INTO SKIER_INFO... " />
+            <marker date="1552584609126" expanded="true" signature="6808:6869" ph="SELECT renta... RENTALS" />
+            <marker date="1552584609126" expanded="true" signature="7010:7072" ph="SELECT skier... SKIER_INFO" />
+            <marker date="1552584609126" expanded="true" signature="7216:7287" ph="INSERT INTO RENTALS_HAS_SKIERS... " />
           </folding>
         </state>
       </provider>
