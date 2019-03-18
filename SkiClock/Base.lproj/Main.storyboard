@@ -27,7 +27,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="b22-kI-8bh" kind="show" id="bA9-JF-Apg"/>
+                                    <segue destination="nRf-Z1-5qz" kind="show" id="XRP-Cg-vPM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ToCustomerForm" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn2-vu-ec7">
@@ -733,8 +733,19 @@
                                     <outlet property="delegate" destination="b22-kI-8bh" id="PXY-KU-ZpB"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="TodaysRentalsToRentals" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J44-55-h54">
+                                <rect key="frame" x="689" y="717" width="117" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Rentals Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nRf-Z1-5qz" kind="show" id="aYm-Rr-ROK"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="HomeButtonTodaysRentals" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-uQ-Awt">
-                                <rect key="frame" x="454" y="717" width="117" height="31"/>
+                                <rect key="frame" x="234" y="717" width="117" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Home">
@@ -754,7 +765,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9Y-ho-MXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1318" y="133"/>
+            <point key="canvasLocation" x="-1318.359375" y="132.8125"/>
         </scene>
         <!--Skier List Controller-->
         <scene sceneID="0fo-pa-1hp">
@@ -764,8 +775,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="HomeButtonSkierList" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R21-ca-0WW">
+                                <rect key="frame" x="454" y="717" width="117" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="YsV-ep-bae"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SkierListToRentalList" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWb-0R-PI3">
-                                <rect key="frame" x="680" y="717" width="117" height="31"/>
+                                <rect key="frame" x="139" y="717" width="117" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Rentals">
@@ -794,15 +816,15 @@
                                     <outlet property="delegate" destination="EY0-jd-Y9e" id="nzD-wl-smd"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="HomeButtonSkierList" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R21-ca-0WW">
-                                <rect key="frame" x="249" y="717" width="117" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SkierListToRentalHome" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P0-As-3yA">
+                                <rect key="frame" x="783" y="717" width="117" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Home">
+                                <state key="normal" title="Rentals Home">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="YsV-ep-bae"/>
+                                    <segue destination="nRf-Z1-5qz" kind="show" id="j4V-jA-HT8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -816,6 +838,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F6-nu-AmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2016.2109374999998" y="132.8125"/>
+        </scene>
+        <!--Rental Home Controller-->
+        <scene sceneID="ubU-3s-Tg4">
+            <objects>
+                <viewController id="nRf-Z1-5qz" customClass="RentalHomeController" customModule="SkiClock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lc-Op-4Z7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ToTodaysRentals" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhD-2x-coQ">
+                                <rect key="frame" x="414" y="344" width="196" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Today's Pick-Ups">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="b22-kI-8bh" kind="show" id="O9x-ke-PEf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="HomeButtonRentalsHome" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohW-s4-R90">
+                                <rect key="frame" x="454" y="717" width="117" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ii1-Fy-U2D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6z4-jM-I04"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uGp-kC-K6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-664" y="133"/>
         </scene>
         <!--Equipment List Controller-->
         <scene sceneID="JDq-uh-ATt">
@@ -1872,11 +1934,12 @@
         <segue reference="CUR-Mn-uLW"/>
         <segue reference="fK9-Id-ms5"/>
         <segue reference="mxB-0M-Ulv"/>
-        <segue reference="bA9-JF-Apg"/>
+        <segue reference="j4V-jA-HT8"/>
+        <segue reference="O9x-ke-PEf"/>
         <segue reference="8Br-3m-6yg"/>
         <segue reference="gli-9Y-JyR"/>
         <segue reference="weN-rC-xco"/>
         <segue reference="q2Q-VR-AYS"/>
-        <segue reference="YsV-ep-bae"/>
+        <segue reference="ii1-Fy-U2D"/>
     </inferredMetricsTieBreakers>
 </document>

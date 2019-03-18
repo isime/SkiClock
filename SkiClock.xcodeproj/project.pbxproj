@@ -30,6 +30,7 @@
 		ACF20303223F3F7400FC3B68 /* HelmetsOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF20302223F3F7400FC3B68 /* HelmetsOutController.swift */; };
 		ACF20305223F4B0500FC3B68 /* RentalsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF20304223F4B0500FC3B68 /* RentalsListController.swift */; };
 		ACF20307223F579600FC3B68 /* SkierListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF20306223F579600FC3B68 /* SkierListController.swift */; };
+		ACF2030B2240162400FC3B68 /* RentalHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2030A2240162400FC3B68 /* RentalHomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		ACF20302223F3F7400FC3B68 /* HelmetsOutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelmetsOutController.swift; sourceTree = "<group>"; };
 		ACF20304223F4B0500FC3B68 /* RentalsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsListController.swift; sourceTree = "<group>"; };
 		ACF20306223F579600FC3B68 /* SkierListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkierListController.swift; sourceTree = "<group>"; };
+		ACF2030A2240162400FC3B68 /* RentalHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalHomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				AC29AB4221B4F49D0049C079 /* AppDelegate.swift */,
 				AC29AB4421B4F49D0049C079 /* ViewController.swift */,
 				AC29AB4621B4F49D0049C079 /* Main.storyboard */,
+				ACF2030A2240162400FC3B68 /* RentalHomeController.swift */,
 				ACF20304223F4B0500FC3B68 /* RentalsListController.swift */,
 				ACF202F0223C7A6700FC3B68 /* SkisOutController.swift */,
 				AC464C7D2234B6F300F28265 /* NextNewSkierController.swift */,
@@ -321,6 +324,7 @@
 				AC464C7A223494F800F28265 /* AddSkierController.swift in Sources */,
 				ACF202FD223F36B500FC3B68 /* BootsOutController.swift in Sources */,
 				ACF202F9223F2EE500FC3B68 /* AllBootsController.swift in Sources */,
+				ACF2030B2240162400FC3B68 /* RentalHomeController.swift in Sources */,
 				ACF202FF223F39EA00FC3B68 /* HelmetsInController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
