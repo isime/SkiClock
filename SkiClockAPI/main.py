@@ -13,6 +13,10 @@ app.secret_key = os.urandom(24)
 
 db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
+customer_id = 0
+skier_id = 0
+rental_id = 0
+
 
 @app.route('/')
 def home_page():
@@ -22,7 +26,7 @@ def home_page():
 @app.route('/in_stock_skis')
 def get_in_stock_skis():
 
-    skisQuery = "SELECT ski_id, length, manufacturer, model FROM SKIS WHERE skis_out = FALSE;"
+    skisQuery = "SELECT ski_id, length, manufacturer, model FROM SKIS WHERE skis_out = FALSE ORDER BY manufacturer ASC;"
 
     cursor = db.cursor()
 
@@ -41,7 +45,7 @@ def get_in_stock_skis():
 @app.route('/currently_out_skis')
 def get_currently_out_skis():
 
-    skisQuery = "SELECT ski_id, length, manufacturer, model FROM SKIS WHERE skis_out = TRUE;"
+    skisQuery = "SELECT ski_id, length, manufacturer, model FROM SKIS WHERE skis_out = TRUE ORDER BY manufacturer ASC;"
 
     cursor = db.cursor()
 
@@ -60,7 +64,7 @@ def get_currently_out_skis():
 @app.route('/all_skis')
 def get_all_skis():
 
-    skisQuery = "SELECT ski_id, length, manufacturer, model FROM SKIS;"
+    skisQuery = "SELECT ski_id, length, manufacturer, model FROM SKIS ORDER BY manufacturer ASC;"
 
     cursor = db.cursor()
 
@@ -79,7 +83,7 @@ def get_all_skis():
 @app.route('/in_stock_boots')
 def get_in_stock_boots():
 
-    bootsQuery = "SELECT boot_id, size, manufacturer, model, sole_length FROM BOOTS WHERE boots_out = FALSE;"
+    bootsQuery = "SELECT boot_id, size, manufacturer, model, sole_length FROM BOOTS WHERE boots_out = FALSE ORDER BY manufacturer ASC;"
 
     cursor = db.cursor()
 
@@ -98,7 +102,7 @@ def get_in_stock_boots():
 @app.route('/currently_out_boots')
 def get_currently_out_boots():
 
-    bootsQuery = "SELECT boot_id, size, manufacturer, model, sole_length FROM BOOTS WHERE boots_out = TRUE;"
+    bootsQuery = "SELECT boot_id, size, manufacturer, model, sole_length FROM BOOTS WHERE boots_out = TRUE ORDER BY manufacturer ASC;"
 
     cursor = db.cursor()
 
@@ -117,7 +121,7 @@ def get_currently_out_boots():
 @app.route('/all_boots')
 def get_all_boots():
 
-    bootsQuery = "SELECT boot_id, size, manufacturer, model, sole_length FROM BOOTS;"
+    bootsQuery = "SELECT boot_id, size, manufacturer, model, sole_length FROM BOOTS ORDER BY manufacturer ASC;"
 
     cursor = db.cursor()
 
@@ -136,7 +140,7 @@ def get_all_boots():
 @app.route('/in_stock_helmets')
 def get_in_stock_helmets():
 
-    helmetsQuery = "SELECT helmet_id, size, color FROM HELMET WHERE helmet_out = FALSE;"
+    helmetsQuery = "SELECT helmet_id, size, color FROM HELMET WHERE helmet_out = FALSE ORDER BY size ASC;"
 
     cursor = db.cursor()
 
@@ -155,7 +159,7 @@ def get_in_stock_helmets():
 @app.route('/currently_out_helmets')
 def get_currently_out_helmets():
 
-    helmetsQuery = "SELECT helmet_id, size, color FROM HELMET WHERE helmet_out = TRUE;"
+    helmetsQuery = "SELECT helmet_id, size, color FROM HELMET WHERE helmet_out = TRUE ORDER BY size ASC;"
 
     cursor = db.cursor()
 
@@ -174,7 +178,7 @@ def get_currently_out_helmets():
 @app.route('/all_helmets')
 def get_all_helmets():
 
-    helmetsQuery = "SELECT helmet_id, size, color FROM HELMET;"
+    helmetsQuery = "SELECT helmet_id, size, color FROM HELMET ORDER BY size ASC;"
 
     cursor = db.cursor()
     cursor.execute(helmetsQuery)
@@ -275,6 +279,70 @@ def add_new_skier():
     cursor.close()
 
     return jsonify("done")
+
+
+@app.route('/todays_rentals')
+def get_todays_rentals():
+    date = datetime.datetime.now()
+
+    today = date.strftime("%m") + "/" + date.strftime("%d") + "/" + date.strftime("%Y")
+    print("TODAY: ", today)
+
+    # rentalsQuery = 'SELECT last_name, first_name, rental_id FROM customer, rentals WHERE customer.customer_id = rentals.customer_id and rentals.date_out = "{}" Order BY customer.last_name ASC;'.format(today)
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE customer.customer_id = rentals.customer_id Order BY customer.last_name ASC;'
+
+
+    cursor = db.cursor()
+    cursor.execute(rentalsQuery)
+    rentals = [rentals[0] for rentals in cursor.description]
+
+    rentalData = cursor.fetchall()
+    rentalList=[]
+    for element in rentalData:
+        rentalList.append(dict(zip(rentals,element)))
+    cursor.close()
+
+    return jsonify(rentalList)
+
+
+@app.route('/update_ids')
+def update_ids():
+
+    global customer_id
+    global rental_id
+    global skier_id
+
+    idJSON = request.get_json(force=True)
+
+    customer_id = idJSON('customer_id')
+    rental_id = idJSON('rental_id')
+    skier_id = idJSON('skier_id')
+
+    print(customer_id)
+    print(rental_id)
+    print(skier_id)
+
+    return jsonify("Done")
+
+
+@app.route('/skiers/<rental_id>')
+def get_skeirs(rental_id):
+
+    skiersQuery = 'SELECT * FROM skier_info INNER JOIN (SELECT skier_id FROM rentals_has_skiers WHERE rentals_has_skiers.rental_id = {})AS a ON skier_info.skier_id = a.skier_id ORDER BY first_name ASC;'.format(rental_id)
+    # skiersQuery = 'SELECT * FROM skier_info INNER JOIN (SELECT skier_id FROM rentals_has_skiers WHERE rentals_has_skiers.rental_id = 1)AS a ON skier_info.skier_id = a.skier_id;'
+
+
+    cursor = db.cursor()
+    cursor.execute(skiersQuery)
+    skiers = [skiers[0] for skiers in cursor.description]
+
+    skierData = cursor.fetchall()
+    skierList = []
+    for element in skierData:
+        skierList.append(dict(zip(skiers, element)))
+    cursor.close()
+
+    return jsonify(skierList)
 
 
 if __name__ == "__main__":

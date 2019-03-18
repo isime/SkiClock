@@ -28,6 +28,8 @@
 		ACF202FF223F39EA00FC3B68 /* HelmetsInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF202FE223F39EA00FC3B68 /* HelmetsInController.swift */; };
 		ACF20301223F3D9500FC3B68 /* AllHelmetsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF20300223F3D9500FC3B68 /* AllHelmetsController.swift */; };
 		ACF20303223F3F7400FC3B68 /* HelmetsOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF20302223F3F7400FC3B68 /* HelmetsOutController.swift */; };
+		ACF20305223F4B0500FC3B68 /* RentalsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF20304223F4B0500FC3B68 /* RentalsListController.swift */; };
+		ACF20307223F579600FC3B68 /* SkierListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF20306223F579600FC3B68 /* SkierListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		ACF202FE223F39EA00FC3B68 /* HelmetsInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelmetsInController.swift; sourceTree = "<group>"; };
 		ACF20300223F3D9500FC3B68 /* AllHelmetsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHelmetsController.swift; sourceTree = "<group>"; };
 		ACF20302223F3F7400FC3B68 /* HelmetsOutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelmetsOutController.swift; sourceTree = "<group>"; };
+		ACF20304223F4B0500FC3B68 /* RentalsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalsListController.swift; sourceTree = "<group>"; };
+		ACF20306223F579600FC3B68 /* SkierListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkierListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		AC29AB4121B4F49D0049C079 /* SkiClock */ = {
 			isa = PBXGroup;
 			children = (
+				ACF20306223F579600FC3B68 /* SkierListController.swift */,
 				ACF20302223F3F7400FC3B68 /* HelmetsOutController.swift */,
 				ACF20300223F3D9500FC3B68 /* AllHelmetsController.swift */,
 				ACF202FE223F39EA00FC3B68 /* HelmetsInController.swift */,
@@ -135,6 +140,7 @@
 				AC29AB4221B4F49D0049C079 /* AppDelegate.swift */,
 				AC29AB4421B4F49D0049C079 /* ViewController.swift */,
 				AC29AB4621B4F49D0049C079 /* Main.storyboard */,
+				ACF20304223F4B0500FC3B68 /* RentalsListController.swift */,
 				ACF202F0223C7A6700FC3B68 /* SkisOutController.swift */,
 				AC464C7D2234B6F300F28265 /* NextNewSkierController.swift */,
 				AC464C79223494F800F28265 /* AddSkierController.swift */,
@@ -298,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF20305223F4B0500FC3B68 /* RentalsListController.swift in Sources */,
 				ACF202F7223F290E00FC3B68 /* BootsInController.swift in Sources */,
 				ACF202F1223C7A6700FC3B68 /* SkisOutController.swift in Sources */,
 				ACF20301223F3D9500FC3B68 /* AllHelmetsController.swift in Sources */,
@@ -309,6 +316,7 @@
 				AC464C7E2234B6F300F28265 /* NextNewSkierController.swift in Sources */,
 				ACD0E8942230FEC10047981D /* EquipmentListController.swift in Sources */,
 				ACD0E8902230CAAD0047981D /* NewCustomerController.swift in Sources */,
+				ACF20307223F579600FC3B68 /* SkierListController.swift in Sources */,
 				ACD0E8922230CE440047981D /* RentalFormController.swift in Sources */,
 				AC464C7A223494F800F28265 /* AddSkierController.swift in Sources */,
 				ACF202FD223F36B500FC3B68 /* BootsOutController.swift in Sources */,

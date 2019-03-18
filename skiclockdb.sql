@@ -89,6 +89,7 @@ CREATE TABLE IF NOT EXISTS RENTALS(
   customer_id INT(30) NOT NULL,
   signature VARCHAR(60),
   date_out VARCHAR(30),
+  due_date VARCHAR(30),
   date_in VARCHAR(30),
   PRIMARY KEY(rental_id)
 );
