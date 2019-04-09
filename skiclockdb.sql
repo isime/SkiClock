@@ -91,6 +91,7 @@ CREATE TABLE IF NOT EXISTS RENTALS(
   date_out VARCHAR(30),
   due_date VARCHAR(30),
   date_in VARCHAR(30),
+  current_rental BOOLEAN,
   PRIMARY KEY(rental_id)
 );
 

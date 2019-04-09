@@ -4,18 +4,15 @@ import pymysql
 import json
 import datetime
 import random
-# import MySQLdb
 import os
 import re
+import helperFunctions
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
-
-customer_id = 0
-skier_id = 0
-rental_id = 0
 
 
 @app.route('/')
@@ -304,33 +301,48 @@ def get_todays_rentals():
 
     return jsonify(rentalList)
 
+@app.route('/overdue_rentals')
+def get_overdue_rentals():
+    newDates = helperFunctions.get_overdue_dates()
 
-@app.route('/update_ids')
-def update_ids():
 
-    global customer_id
-    global rental_id
-    global skier_id
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.date_out = "{}" OR rentals.date_out = "{}" OR rentals.date_out = "{}")) Order BY customer.last_name ASC;'.format(newDates[0], newDates[1], newDates[2])
 
-    idJSON = request.get_json(force=True)
+    cursor = db.cursor()
+    cursor.execute(rentalsQuery)
+    rentals = [rentals[0] for rentals in cursor.description]
 
-    customer_id = idJSON('customer_id')
-    rental_id = idJSON('rental_id')
-    skier_id = idJSON('skier_id')
+    rentalData = cursor.fetchall()
+    rentalList=[]
+    for element in rentalData:
+        rentalList.append(dict(zip(rentals,element)))
+    cursor.close()
 
-    print(customer_id)
-    print(rental_id)
-    print(skier_id)
+    return jsonify(rentalList)
 
-    return jsonify("Done")
+@app.route('/tomorrows_rentals')
+def get_tomorrows_rentals():
+    tomorrow = helperFunctions.get_tomorrows_date()
 
+
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.date_out = "{}")) Order BY customer.last_name ASC;'.format(tomorrow)
+
+    cursor = db.cursor()
+    cursor.execute(rentalsQuery)
+    rentals = [rentals[0] for rentals in cursor.description]
+
+    rentalData = cursor.fetchall()
+    rentalList=[]
+    for element in rentalData:
+        rentalList.append(dict(zip(rentals,element)))
+    cursor.close()
+
+    return jsonify(rentalList)
 
 @app.route('/skiers/<rental_id>')
 def get_skeirs(rental_id):
 
     skiersQuery = 'SELECT * FROM skier_info INNER JOIN (SELECT skier_id FROM rentals_has_skiers WHERE rentals_has_skiers.rental_id = {})AS a ON skier_info.skier_id = a.skier_id ORDER BY first_name ASC;'.format(rental_id)
-    # skiersQuery = 'SELECT * FROM skier_info INNER JOIN (SELECT skier_id FROM rentals_has_skiers WHERE rentals_has_skiers.rental_id = 1)AS a ON skier_info.skier_id = a.skier_id;'
-
 
     cursor = db.cursor()
     cursor.execute(skiersQuery)
@@ -343,6 +355,228 @@ def get_skeirs(rental_id):
     cursor.close()
 
     return jsonify(skierList)
+
+
+@app.route('/add_skier_equipment', methods=['POST'])
+def add_skier_equipment(skier_id):
+
+    skierJson = request.get_json(force=True)
+
+    skier_id = skierJson["skier_id"]
+    ski_id = skierJson["skier_id"]
+    boot_id = skierJson["boot_id"]
+    sole_length = skierJson["sole_length"]
+    skier_code = skierJson["skier_code"]
+    din = skierJson["din"]
+
+    print(skier_id, ski_id, boot_id, sole_length, skier_code, din)
+
+    return jsonify('Done')
+
+
+@app.route('/get_return/<asset_id>')
+def get_return(asset_id):
+
+    returnQuery = 'SELECT * FROM skier_equipment WHERE (ski_id = {} OR boot_id = {} OR helmet_id = {}) AND current_equipment = TRUE;'.format(asset_id, asset_id, asset_id)
+    cursor = db.cursor()
+    cursor.execute(returnQuery)
+    skiers = [skiers[0] for skiers in cursor.description]
+
+    returnData = cursor.fetchall()
+    infoList = []
+    for element in returnData:
+        infoList.append(dict(zip(skiers, element)))
+
+    skier_id = infoList[0]["skier_id"]
+    ski_id = infoList[0]["ski_id"]
+    boot_id = infoList[0]["boot_id"]
+    helmet_id = infoList[0]["helmet_id"]
+
+    returnDict = {}
+
+    skierQuery = 'SELECT skier_id, customer_id, first_name, last_name FROM skier_info WHERE skier_id = {};'.format(skier_id)
+    cursor.execute(skierQuery)
+    skier = [skier[0] for skier in cursor.description]
+
+    skierData = cursor.fetchall()
+    skierList = []
+    for element in skierData:
+        skierList.append(dict(zip(skier, element)))
+    skierList[0]["skier_first_name"] = skierList[0].pop("first_name")
+    skierList[0]["skier_last_name"] = skierList[0].pop("last_name")
+
+    returnDict = {**returnDict, **skierList[0]}
+
+    customer_id = skierList[0]['customer_id']
+    customerQuery = 'SELECT first_name, last_name FROM customer WHERE customer_id = {};'.format(customer_id)
+
+    cursor.execute(customerQuery)
+    customer = [customer[0] for customer in cursor.description]
+
+    customerData = cursor.fetchall()
+    customerList = []
+    for element in customerData:
+        customerList.append(dict(zip(customer, element)))
+    customerList[0]["customer_first_name"] = customerList[0].pop("first_name")
+    customerList[0]["customer_last_name"] = customerList[0].pop("last_name")
+
+    returnDict = {**returnDict, **customerList[0]}
+
+    rentalIDQuery = 'SELECT rental_id FROM rentals WHERE (customer_id = {} AND current_rental = TRUE);'.format(customer_id)
+    cursor.execute(rentalIDQuery)
+    rental = [rental[0] for rental in cursor.description]
+
+    rentalIDData = cursor.fetchall()
+    rentalIDList = []
+    for element in rentalIDData:
+        rentalIDList.append(dict(zip(rental, element)))
+    returnDict = {**returnDict, **rentalIDList[0]}
+
+    if ski_id is not None:
+        skiQuery = 'SELECT ski_id, length, manufacturer, model FROM skis WHERE ski_id = {};'.format(ski_id)
+        cursor.execute(skiQuery)
+        ski = [ski[0] for ski in cursor.description]
+
+        skiData = cursor.fetchall()
+        skiList = []
+        for element in skiData:
+            skiList.append(dict(zip(ski, element)))
+        skiList[0]["ski_manufacture"] = skiList[0].pop("manufacturer")
+        skiList[0]["ski_model"] = skiList[0].pop("model")
+
+        returnDict = {**returnDict, **skiList[0]}
+    else:
+        noSkiDict = {'ski_id': 0,
+                     'length': 0,
+                     'ski_manufacturer': 'N/A',
+                     'ski_model': 'N/A'}
+        returnDict = {**returnDict, **noSkiDict}
+
+    if boot_id is not None:
+        bootQuery = 'SELECT boot_id, manufacturer, model, size, sole_length FROM boots WHERE boot_id = {};'.format(boot_id)
+        cursor.execute(bootQuery)
+        boot = [boot[0] for boot in cursor.description]
+
+        bootData = cursor.fetchall()
+        bootList = []
+        for element in bootData:
+            bootList.append(dict(zip(boot, element)))
+        bootList[0]["boot_manufacture"] = bootList[0].pop("manufacturer")
+        bootList[0]["boot_model"] = bootList[0].pop("model")
+        bootList[0]["boot_size"] = bootList[0].pop("size")
+
+        returnDict = {**returnDict, **bootList[0]}
+    else:
+        noBootDict = {'boot_id': 0,
+                     'sole_length': 0,
+                     'boot_manufacturer': 'N/A',
+                     'boot_model': 'N/A',
+                     'boot_size': 0.0}
+        returnDict = {**returnDict, **noBootDict}
+
+    if helmet_id is not None:
+        helmetQuery = 'SELECT helmet_id, size, color FROM helmet WHERE helmet_id = {};'.format(helmet_id)
+        cursor.execute(helmetQuery)
+        helmet = [helmet[0] for helmet in cursor.description]
+
+        helmetData = cursor.fetchall()
+        helmetList = []
+        for element in helmetData:
+            helmetList.append(dict(zip(helmet, element)))
+        helmetList[0]["helmet_size"] = bootList[0].pop("size")
+
+        returnDict = {**returnDict, **helmetList[0]}
+    else:
+        noHelmetDict = {'helmet_id': 0,
+                     'helmet_size': 'N/A',
+                     'Color': 'N/A'}
+        returnDict = {**returnDict, **noHelmetDict}
+
+    cursor.close()
+    return jsonify(returnDict)
+
+@app.route('/get_skier_return/<skier_id>/<customer_id>')
+def get_skier_return(skier_id, customer_id):
+
+    returnQuery = 'SELECT * FROM skier_equipment WHERE skier_id = {} AND current_equipment = TRUE;'.format(skier_id)
+    cursor = db.cursor()
+    cursor.execute(returnQuery)
+    skiers = [skiers[0] for skiers in cursor.description]
+
+    returnData = cursor.fetchall()
+    infoList = []
+    for element in returnData:
+        infoList.append(dict(zip(skiers, element)))
+
+    skier_id = infoList[0]["skier_id"]
+    ski_id = infoList[0]["ski_id"]
+    boot_id = infoList[0]["boot_id"]
+    helmet_id = infoList[0]["helmet_id"]
+
+    returnDict = {}
+
+    if ski_id is not None:
+        skiQuery = 'SELECT ski_id, length, manufacturer, model FROM skis WHERE ski_id = {};'.format(ski_id)
+        cursor.execute(skiQuery)
+        ski = [ski[0] for ski in cursor.description]
+
+        skiData = cursor.fetchall()
+        skiList = []
+        for element in skiData:
+            skiList.append(dict(zip(ski, element)))
+        skiList[0]["ski_manufacture"] = skiList[0].pop("manufacturer")
+        skiList[0]["ski_model"] = skiList[0].pop("model")
+
+        returnDict = {**returnDict, **skiList[0]}
+    else:
+        noSkiDict = {'ski_id': 0,
+                     'length': 0,
+                     'ski_manufacturer': 'N/A',
+                     'ski_model': 'N/A'}
+        returnDict = {**returnDict, **noSkiDict}
+
+    if boot_id is not None:
+        bootQuery = 'SELECT boot_id, manufacturer, model, size, sole_length FROM boots WHERE boot_id = {};'.format(boot_id)
+        cursor.execute(bootQuery)
+        boot = [boot[0] for boot in cursor.description]
+
+        bootData = cursor.fetchall()
+        bootList = []
+        for element in bootData:
+            bootList.append(dict(zip(boot, element)))
+        bootList[0]["boot_manufacture"] = bootList[0].pop("manufacturer")
+        bootList[0]["boot_model"] = bootList[0].pop("model")
+        bootList[0]["boot_size"] = bootList[0].pop("size")
+
+        returnDict = {**returnDict, **bootList[0]}
+    else:
+        noBootDict = {'boot_id': 0,
+                     'sole_length': 0,
+                     'boot_manufacturer': 'N/A',
+                     'boot_model': 'N/A',
+                     'boot_size': 0.0}
+        returnDict = {**returnDict, **noBootDict}
+
+    if helmet_id is not None:
+        helmetQuery = 'SELECT helmet_id, size, color FROM helmet WHERE helmet_id = {};'.format(helmet_id)
+        cursor.execute(helmetQuery)
+        helmet = [helmet[0] for helmet in cursor.description]
+
+        helmetData = cursor.fetchall()
+        helmetList = []
+        for element in helmetData:
+            helmetList.append(dict(zip(helmet, element)))
+        helmetList[0]["helmet_size"] = bootList[0].pop("size")
+
+        returnDict = {**returnDict, **helmetList[0]}
+    else:
+        noHelmetDict = {'helmet_id': 0,
+                     'helmet_size': 'N/A',
+                     'Color': 'N/A'}
+        returnDict = {**returnDict, **noHelmetDict}
+
+    cursor.close()
+    return jsonify(returnDict)
 
 
 if __name__ == "__main__":

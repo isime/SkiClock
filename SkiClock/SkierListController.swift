@@ -50,6 +50,37 @@ class SkierListController: UIViewController, UITableViewDataSource, UITableViewD
         return skierCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "SkierListToEquipmentForm", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SkierListToEquipmentForm"{
+            let nextScene = segue.destination as? SkierEquipmentFormContoller
+            let indexPath = self.SkiersTable.indexPathForSelectedRow
+            
+            let firstName = first_name[indexPath!.row]
+            let lastName = last_name[indexPath!.row]
+            let Age = age[indexPath!.row]
+            let Height = height[indexPath!.row]
+            let Weight = weight[indexPath!.row]
+            let skierType = skier_type[indexPath!.row]
+            let skierID = skier_id[indexPath!.row]
+            let rentalID = rental_id
+            let customerID = customer_id
+            
+            nextScene!.first_name = firstName
+            nextScene!.last_name = lastName
+            nextScene!.age = Age
+            nextScene!.height = Height
+            nextScene!.weight = Weight
+            nextScene!.skier_type = skierType
+            nextScene!.skier_id = skierID
+            nextScene!.rental_id = rentalID
+            nextScene!.customer_id = customerID
+        }
+    }
+    
     
     func getSkiers(){
         let rentalsUrl = "http://127.0.0.1:5000/skiers/" + String(rental_id)
@@ -88,8 +119,6 @@ class SkierListController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(rental_id)
-        print(customer_id)
         getSkiers()
 
         // Do any additional setup after loading the view.
