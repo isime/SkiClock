@@ -32,25 +32,7 @@ struct SkierReturnInfo: Decodable {
 
 class FristSkierReturnController: UIViewController {
     
-    @IBOutlet weak var customerFNameLabel: UILabel!
-    @IBOutlet weak var customerLName: UILabel!
-    @IBOutlet weak var skierFNameLabel: UILabel!
-    @IBOutlet weak var skierLNameLabel: UILabel!
-    @IBOutlet weak var rentalNumberLable: UILabel!
-    @IBOutlet weak var skiIId: UILabel!
-    @IBOutlet weak var skiLength: UILabel!
-    @IBOutlet weak var skiModel: UILabel!
-    @IBOutlet weak var skiManufacturer: UILabel!
-    @IBOutlet weak var bootID: UILabel!
-    @IBOutlet weak var bootSize: UILabel!
-    @IBOutlet weak var bootModel: UILabel!
-    @IBOutlet weak var bootManufacturer: UILabel!
-    @IBOutlet weak var helmetID: UILabel!
-    @IBOutlet weak var helmetSize: UILabel!
-    @IBOutlet weak var helmetColor: UILabel!
-    
     var assetID: String!
-//    var returnData = SkierReturnInfo
     var skier_f_name: String!
     var skier_l_name: String!
     var skier_id: Int!
@@ -70,6 +52,215 @@ class FristSkierReturnController: UIViewController {
     var helmet_size: String!
     var helmet_color: String!
     var rental_id: Int!
+    var helmetTaken: Bool = true
+    var bootsTaken: Bool = true
+    var skisTaken: Bool = true
+    
+    @IBOutlet weak var customerFNameLabel: UILabel!
+    @IBOutlet weak var customerLName: UILabel!
+    @IBOutlet weak var skierFNameLabel: UILabel!
+    @IBOutlet weak var skierLNameLabel: UILabel!
+    @IBOutlet weak var rentalNumberLable: UILabel!
+    @IBOutlet weak var skiIId: UILabel!
+    @IBOutlet weak var skiLength: UILabel!
+    @IBOutlet weak var skiModel: UILabel!
+    @IBOutlet weak var skiManufacturer: UILabel!
+    @IBOutlet weak var bootID: UILabel!
+    @IBOutlet weak var bootSize: UILabel!
+    @IBOutlet weak var bootModel: UILabel!
+    @IBOutlet weak var bootManufacturer: UILabel!
+    @IBOutlet weak var helmetID: UILabel!
+    @IBOutlet weak var helmetSize: UILabel!
+    @IBOutlet weak var helmetColor: UILabel!
+    
+    
+    @IBOutlet weak var SkisButton: UIButton!
+    @IBAction func SkisButtonPress(_ sender: Any) {
+        if SkisButton.currentTitle == "Skis" {
+        skisBack()
+            checkAllEquipment()
+        }
+        else if SkisButton.currentTitle == "Skis Back" {
+            skisNotBack()
+            allEquipmentNotBack()
+        }
+    }
+    
+    @IBOutlet weak var BootsButton: UIButton!
+    @IBAction func BootsReturnedButton(_ sender: Any) {
+        if BootsButton.currentTitle == "Boots"{
+            bootsBack()
+            checkAllEquipment()
+        }
+        else if BootsButton.currentTitle == "Boots Back"{
+            bootsNotBack()
+            allEquipmentNotBack()
+        }
+    }
+    
+    @IBOutlet weak var HelmetButton: UIButton!
+    @IBAction func HelemetButtonPress(_ sender: Any) {
+        if HelmetButton.currentTitle == "Helmet"{
+            helmetBack()
+            checkAllEquipment()
+        }
+        else if HelmetButton.currentTitle == "Helmet Back"{
+            helmetNotBack()
+            allEquipmentNotBack()
+        }
+    }
+    
+    @IBOutlet weak var AllEquipmentButton: UIButton!
+    @IBAction func AllEquipmentButtonPress(_ sender: Any) {
+        if AllEquipmentButton.currentTitle == "All Equipment"{
+            allEquipmentBack()
+        }
+        else if AllEquipmentButton.currentTitle == "All Equipment Back"{
+            allEquipmentNotBack()
+            skisNotBack()
+            bootsNotBack()
+            helmetNotBack()
+        }
+    }
+    
+    func checkTaken(){
+        if self.ski_id == 0{
+            self.skisTaken = false
+        }
+        if self.boot_id == 0{
+            self.bootsTaken = false
+        }
+        if self.helmet_id == 0{
+            self.helmetTaken = false
+        }
+    }
+    
+    func setNotTakenButtons(){
+        if skisTaken == false{
+            setSkisNotTaken()
+        }
+        if bootsTaken == false{
+            setBootsNotTaken()
+        }
+        if helmetTaken == false{
+            setHelmetNotTaken()
+        }
+    }
+    
+    func setSkisNotTaken(){
+        SkisButton.setTitle("No Skis", for: .normal)
+        SkisButton.backgroundColor = UIColor.red
+    }
+    
+    func setBootsNotTaken(){
+        BootsButton.setTitle("No Boots", for: .normal)
+        BootsButton.backgroundColor = UIColor.red
+    }
+    
+    func setHelmetNotTaken(){
+        HelmetButton.setTitle("No Helmet", for: .normal)
+        HelmetButton.backgroundColor = UIColor.red
+    }
+    
+    func allEquipmentNotBack(){
+        AllEquipmentButton.setTitle("All Equipment", for: .normal)
+        AllEquipmentButton.backgroundColor = UIColor.black
+    }
+    func allEquipmentBack(){
+        AllEquipmentButton.setTitle("All Equipment Back", for: .normal)
+        AllEquipmentButton.backgroundColor = UIColor.blue
+        skisBack()
+        bootsBack()
+        helmetBack()
+    }
+    
+    func skisBack(){
+        if skisTaken == true{
+        SkisButton.setTitle("Skis Back", for: .normal)
+        }
+        SkisButton.backgroundColor = UIColor.blue
+    }
+    func skisNotBack(){
+        if skisTaken == true{
+        SkisButton.setTitle("Skis", for: .normal)
+        SkisButton.backgroundColor = UIColor.black
+        }
+    }
+    
+    func bootsBack(){
+        if bootsTaken == true{
+        BootsButton.setTitle("Boots Back", for: .normal)
+        }
+        BootsButton.backgroundColor = UIColor.blue
+    }
+    func bootsNotBack(){
+        if bootsTaken == true{
+        BootsButton.setTitle("Boots", for: .normal)
+        BootsButton.backgroundColor = UIColor.black
+        }
+    }
+    
+    func helmetBack(){
+        if helmetTaken == true{
+        HelmetButton.setTitle("Helmet Back", for: .normal)
+        }
+        HelmetButton.backgroundColor = UIColor.blue
+    }
+    func helmetNotBack(){
+        if helmetTaken == true{
+        HelmetButton.setTitle("Helmet", for: .normal)
+        HelmetButton.backgroundColor = UIColor.black
+        }
+    }
+    
+    func checkAllEquipment(){
+        if skisTaken == true && bootsTaken == true && helmetTaken == true{
+        if SkisButton.currentTitle == "Skis Back"{
+            if BootsButton.currentTitle == "Boots Back"{
+                if HelmetButton.currentTitle == "Helmet Back"{
+                    allEquipmentBack()
+                }
+            }
+        }
+    }
+        if skisTaken == false && bootsTaken == true && helmetTaken == true{
+            if BootsButton.currentTitle == "Boots Back"{
+                if HelmetButton.currentTitle == "Helmet Back"{
+                    allEquipmentBack()
+                }
+            }
+        }
+        if skisTaken == true && bootsTaken == true && helmetTaken == false{
+            if SkisButton.currentTitle == "Skis Back"{
+                if BootsButton.currentTitle == "Boots Back"{
+                    allEquipmentBack()
+                }
+            }
+        }
+        if skisTaken == true && bootsTaken == false && helmetTaken == true{
+            if SkisButton.currentTitle == "Skis Back"{
+                if HelmetButton.currentTitle == "Helmet Back"{
+                    allEquipmentBack()
+                }
+            }
+        }
+        if skisTaken == true && bootsTaken == false && helmetTaken == false{
+            if SkisButton.currentTitle == "Skis Back"{
+                allEquipmentBack()
+            }
+        }
+        if skisTaken == false && bootsTaken == true && helmetTaken == false {
+            if BootsButton.currentTitle == "Boots Back"{
+                allEquipmentBack()
+            }
+        }
+        if skisTaken == false && bootsTaken == false && helmetTaken == true{
+            if HelmetButton.currentTitle == "Helmet Back"{
+                allEquipmentBack()
+            }
+        }
+    }
+    
     
     func getRenturnInfo(){
         let rentalsUrl = "http://127.0.0.1:5000/get_return/" + String(assetID)
@@ -104,6 +295,8 @@ class FristSkierReturnController: UIViewController {
                 
                     DispatchQueue.main.async {
                        self.initialText()
+                        self.checkTaken()
+                      self.setNotTakenButtons()
                     }
                 
                 //                print(self.id)
@@ -147,6 +340,7 @@ class FristSkierReturnController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRenturnInfo()
+        print(helmetTaken)
 //        initialText()
 
         // Do any additional setup after loading the view.
