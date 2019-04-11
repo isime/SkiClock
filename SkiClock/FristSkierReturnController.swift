@@ -57,7 +57,7 @@ class FristSkierReturnController: UIViewController {
     var skisTaken: Bool = true
     
     @IBOutlet weak var customerFNameLabel: UILabel!
-    @IBOutlet weak var customerLName: UILabel!
+    @IBOutlet weak var customerLNameLabel: UILabel!
     @IBOutlet weak var skierFNameLabel: UILabel!
     @IBOutlet weak var skierLNameLabel: UILabel!
     @IBOutlet weak var rentalNumberLable: UILabel!
@@ -278,6 +278,7 @@ class FristSkierReturnController: UIViewController {
                     self.skier_l_name = returnData.skier_last_name
                     self.skier_id = returnData.skier_id ?? 0
                     self.customer_f_name = returnData.customer_first_name
+                self.customer_l_name = returnData.customer_last_name
                     self.customer_id = returnData.customer_id
                     self.ski_id = returnData.ski_id
                 self.ski_manufacture = returnData.ski_manufacture
@@ -310,7 +311,7 @@ class FristSkierReturnController: UIViewController {
     
     func initialText(){
         customerFNameLabel.text = customer_f_name
-        customerLName.text = customer_l_name
+        customerLNameLabel.text = customer_l_name
         skierFNameLabel.text = skier_f_name
         skierLNameLabel.text = skier_l_name
         rentalNumberLable.text = String(rental_id)

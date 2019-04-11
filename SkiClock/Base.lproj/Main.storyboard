@@ -1413,13 +1413,6 @@
                                     <segue destination="Avb-7X-57l" kind="show" id="Bqa-Zu-xH4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="customerLName" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYc-Gc-c14">
-                                <rect key="frame" x="231" y="66" width="291" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="bootModel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ped-Ms-i0Q">
                                 <rect key="frame" x="579" y="511" width="118" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1463,6 +1456,13 @@
                                     <action selector="AllEquipmentButtonPress:" destination="RLb-GG-6RH" eventType="touchUpInside" id="hyd-Xn-IXr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="customerLName" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6m-kk-Fr4">
+                                <rect key="frame" x="231" y="66" width="291" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CgY-zf-ByY"/>
@@ -1477,7 +1477,7 @@
                         <outlet property="bootModel" destination="Ped-Ms-i0Q" id="DdC-z1-avW"/>
                         <outlet property="bootSize" destination="c1K-p6-Eel" id="d34-qH-SR1"/>
                         <outlet property="customerFNameLabel" destination="g6N-Ox-6rl" id="ANn-Ub-rCS"/>
-                        <outlet property="customerLName" destination="VYc-Gc-c14" id="rBc-c5-hKF"/>
+                        <outlet property="customerLNameLabel" destination="C6m-kk-Fr4" id="vSX-iA-C2q"/>
                         <outlet property="helmetColor" destination="lRS-jw-kRg" id="QL7-Co-BT1"/>
                         <outlet property="helmetID" destination="t86-LF-2oM" id="a7q-eu-3ke"/>
                         <outlet property="helmetSize" destination="oMB-WY-yDK" id="Qgy-G6-xyb"/>
