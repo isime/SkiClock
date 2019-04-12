@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS SKIS (
   manufacturer VARCHAR(30) NOT NULL,
   model VARCHAR(30) NOT NULL,
   binding VARCHAR(20) NOT NULL,
-  skis_out BOOLEAN,
+  skis_out BOOLEAN DEFAULT FALSE,
   PRIMARY KEY(ski_id)
 );
 
@@ -60,9 +60,12 @@ CREATE TABLE IF NOT EXISTS SKIER_EQUIPMENT (
   skier_equipment_id INT(30) NOT NULL AUTO_INCREMENT,
   skier_id INT(30),
   ski_id INT(30),
+  skis_returned VARCHAR(30),
   boot_id INT(30),
+  boots_returned VARCHAR(30),
   helmet_id INT(30),
-  current_equipment BOOLEAN,
+  helmet_returned VARCHAR(30),
+  current_equipment BOOLEAN DEFAULT TRUE,
   PRIMARY KEY(skier_equipment_id)
 );
 
@@ -72,7 +75,7 @@ CREATE TABLE IF NOT EXISTS BOOTS(
   model VARCHAR(30) NOT NULL,
   size FLOAT(15) NOT NULL,
   sole_length INT(30) NOT NULL,
-  boots_out BOOLEAN,
+  boots_out BOOLEAN DEFAULT TRUE,
   PRIMARY KEY(boot_id)
 );
 
@@ -80,7 +83,7 @@ CREATE TABLE IF NOT EXISTS HELMET(
   helmet_id INT(30) NOT NULL,
   size VARCHAR(15) NOT NULL,
   color VARCHAR(30) NOT NULL,
-  helmet_out BOOLEAN,
+  helmet_out BOOLEAN DEFAULT FALSE,
   PRIMARY KEY(helmet_id)
 );
 
@@ -91,7 +94,7 @@ CREATE TABLE IF NOT EXISTS RENTALS(
   date_out VARCHAR(30),
   due_date VARCHAR(30),
   date_in VARCHAR(30),
-  current_rental BOOLEAN,
+  current_rental BOOLEAN DEFAULT TRUE,
   PRIMARY KEY(rental_id)
 );
 

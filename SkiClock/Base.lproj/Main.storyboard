@@ -1398,6 +1398,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="ToSkierListButtonPress:" destination="RLb-GG-6RH" eventType="touchUpInside" id="LrM-KK-4rn"/>
                                     <segue destination="RoX-Ru-8y2" kind="show" identifier="firstSkierReturnToReturnSkierList" id="EYM-Gg-6kt"/>
                                 </connections>
                             </button>

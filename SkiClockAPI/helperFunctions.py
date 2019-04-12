@@ -127,3 +127,22 @@ def get_one_day_forward(today):
     tomorrow = {"month": newMonth, "day": newDay, "year": newYear}
 
     return tomorrow
+
+
+def get_today_string():
+    date = datetime.datetime.now()
+    month = date.strftime("%m")
+    day = date.strftime("%d")
+    year = date.strftime("%Y")
+    today = month + "/" + day + "/" + year
+
+    return today
+
+
+def check_equipment_return(equipment):
+    if equipment == 'true':
+        returned = True
+    else:
+        returned = False
+
+    return returned

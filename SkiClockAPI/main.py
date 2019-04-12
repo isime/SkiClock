@@ -391,9 +391,20 @@ def get_return(asset_id):
     ski_id = infoList[0]["ski_id"]
     boot_id = infoList[0]["boot_id"]
     helmet_id = infoList[0]["helmet_id"]
+    skis_returned = infoList[0]["skis_returned"]
+    boots_returned = infoList[0]["boots_returned"]
+    helmet_returned = infoList[0]["helmet_returned"]
 
-    returnDict = {}
+    if skis_returned is None:
+        skis_returned = "00/00/0000"
+    if boots_returned is None:
+        boots_returned = "00/00/0000"
+    if helmet_returned is None:
+        helmet_returned = "00/00/0000"
 
+    returnDict = {"skis_returned": skis_returned,
+                 "boots_returned": boots_returned,
+                 "helmet_returned": helmet_returned}
     skierQuery = 'SELECT skier_id, customer_id, first_name, last_name FROM skier_info WHERE skier_id = {};'.format(skier_id)
     cursor.execute(skierQuery)
     skier = [skier[0] for skier in cursor.description]
@@ -483,7 +494,7 @@ def get_return(asset_id):
         helmetList = []
         for element in helmetData:
             helmetList.append(dict(zip(helmet, element)))
-        helmetList[0]["helmet_size"] = bootList[0].pop("size")
+        helmetList[0]["helmet_size"] = helmetList[0].pop("size")
 
         returnDict = {**returnDict, **helmetList[0]}
     else:
@@ -512,8 +523,20 @@ def get_skier_return(skier_id, customer_id):
     ski_id = infoList[0]["ski_id"]
     boot_id = infoList[0]["boot_id"]
     helmet_id = infoList[0]["helmet_id"]
+    skis_returned = infoList[0]["skis_returned"]
+    boots_returned = infoList[0]["boots_returned"]
+    helmet_returned = infoList[0]["helmet_returned"]
 
-    returnDict = {}
+    if skis_returned is None:
+        skis_returned = "00/00/0000"
+    if boots_returned is None:
+        boots_returned = "00/00/0000"
+    if helmet_returned is None:
+        helmet_returned = "00/00/0000"
+
+    returnDict = {"skis_returned": skis_returned,
+                  "boots_returned": boots_returned,
+                  "helmet_returned": helmet_returned}
 
     if ski_id is not None:
         skiQuery = 'SELECT ski_id, length, manufacturer, model FROM skis WHERE ski_id = {};'.format(ski_id)
@@ -577,6 +600,75 @@ def get_skier_return(skier_id, customer_id):
 
     cursor.close()
     return jsonify(returnDict)
+
+@app.route('/return_skier_equipment', methods=['Post'])
+def return_skier_equipment():
+
+    skierJson = request.get_json(force=True)
+
+    skier_id = int(str(skierJson["skier_id"]))
+    ski_id = int(str(skierJson["ski_id"]))
+    skis_returned = helperFunctions.check_equipment_return(str(skierJson["skis_back"]))
+    skis_already = helperFunctions.check_equipment_return(str(skierJson["skis_already"]))
+    boot_id = int(str(skierJson["boot_id"]))
+    boots_returned = helperFunctions.check_equipment_return(str(skierJson["boots_back"]))
+    boots_already = helperFunctions.check_equipment_return(str(skierJson["boots_already"]))
+    helmet_id = int(str(skierJson["helmet_id"]))
+    helmet_returned = helperFunctions.check_equipment_return(str(skierJson["helmet_back"]))
+    helmet_already = helperFunctions.check_equipment_return(str(skierJson["helmet_already"]))
+    today = helperFunctions.get_today_string()
+
+
+    if not skis_already:
+        if skis_returned:
+            skierEquipmentQuery = 'UPDATE skier_equipment set skis_returned = {} WHERE skier_id = {} AND current_equipment = TRUE'.format(today,skier_id)
+            cursor = db.cursor()
+            cursor.execute(skierEquipmentQuery)
+            db.commit()
+            cursor.close()
+            if ski_id != 0:
+                skisQuery = 'UPDATE skis SET skis_out = FALSE WHERE ski_id = {}'.format(ski_id)
+                cursor = db.cursor()
+                cursor.execute(skisQuery)
+                db.commit()
+                cursor.close()
+
+    if not boots_already:
+        if boots_returned:
+            skierEquipmentQuery = 'UPDATE skier_equipment set boots_returned = {} WHERE skier_id = {} AND current_equipment = TRUE'.format(today, skier_id)
+            cursor = db.cursor()
+            cursor.execute(skierEquipmentQuery)
+            db.commit()
+            if boot_id != 0:
+                bootsQuery = 'UPDATE boots SET boots_out = FALSE WHERE boot_id = {}'.format(boot_id)
+                cursor = db.cursor()
+                cursor.execute(bootsQuery)
+                db.commit()
+                cursor.close()
+
+    if not helmet_already:
+        if helmet_returned:
+            skierEquipmentQuery = 'UPDATE skier_equipment set helmet_returned = {} WHERE skier_id = {} AND current_equipment = TRUE'.format(today, skier_id)
+            cursor = db.cursor()
+            cursor.execute(skierEquipmentQuery)
+            db.commit()
+            cursor.close()
+            if helmet_id != 0:
+                helmetQuery = 'UPDATE helmet SET helmet_out = FALSE WHERE helmet_id = {}'.format(helmet_id)
+                cursor.execute(helmetQuery)
+                db.commit()
+                cursor.close()
+
+    if skis_returned and boots_returned and helmet_returned:
+        skierEquipmentQuery = 'UPDATE skier_equipment set current_equipment = FALSE WHERE skier_id = {} AND current_equipment = TRUE'.format(skier_id)
+        cursor = db.cursor()
+        cursor.execute(skierEquipmentQuery)
+        db.commit()
+        cursor.close()
+
+
+
+    return jsonify("done")
 
 
 if __name__ == "__main__":
