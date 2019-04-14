@@ -26,6 +26,8 @@
 		ACD270DF225D1676002B9C5B /* ReturnSkierFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270DE225D1676002B9C5B /* ReturnSkierFormController.swift */; };
 		ACD270E5225D4A2C002B9C5B /* OverduePickUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270E4225D4A2C002B9C5B /* OverduePickUpsController.swift */; };
 		ACD270E7225D52EC002B9C5B /* TomorrowsPickUpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270E6225D52EC002B9C5B /* TomorrowsPickUpsController.swift */; };
+		ACD270E92262F296002B9C5B /* FrontPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270E82262F296002B9C5B /* FrontPageController.swift */; };
+		ACD270EB2262F2FD002B9C5B /* EmployeeLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270EA2262F2FD002B9C5B /* EmployeeLoginController.swift */; };
 		ACF202EF223AC99700FC3B68 /* AllSkisListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF202EE223AC99700FC3B68 /* AllSkisListController.swift */; };
 		ACF202F1223C7A6700FC3B68 /* SkisOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF202F0223C7A6700FC3B68 /* SkisOutController.swift */; };
 		ACF202F7223F290E00FC3B68 /* BootsInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF202F6223F290E00FC3B68 /* BootsInController.swift */; };
@@ -83,6 +85,8 @@
 		ACD270DE225D1676002B9C5B /* ReturnSkierFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnSkierFormController.swift; sourceTree = "<group>"; };
 		ACD270E4225D4A2C002B9C5B /* OverduePickUpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverduePickUpsController.swift; sourceTree = "<group>"; };
 		ACD270E6225D52EC002B9C5B /* TomorrowsPickUpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowsPickUpsController.swift; sourceTree = "<group>"; };
+		ACD270E82262F296002B9C5B /* FrontPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageController.swift; sourceTree = "<group>"; };
+		ACD270EA2262F2FD002B9C5B /* EmployeeLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeLoginController.swift; sourceTree = "<group>"; };
 		ACF202EE223AC99700FC3B68 /* AllSkisListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSkisListController.swift; sourceTree = "<group>"; };
 		ACF202F0223C7A6700FC3B68 /* SkisOutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkisOutController.swift; sourceTree = "<group>"; };
 		ACF202F6223F290E00FC3B68 /* BootsInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootsInController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				AC29AB4221B4F49D0049C079 /* AppDelegate.swift */,
 				AC29AB4421B4F49D0049C079 /* ViewController.swift */,
 				AC29AB4621B4F49D0049C079 /* Main.storyboard */,
+				ACD270EA2262F2FD002B9C5B /* EmployeeLoginController.swift */,
+				ACD270E82262F296002B9C5B /* FrontPageController.swift */,
 				ACD270E4225D4A2C002B9C5B /* OverduePickUpsController.swift */,
 				ACD270DC225D00AC002B9C5B /* ReturnSkierListController.swift */,
 				ACD270DE225D1676002B9C5B /* ReturnSkierFormController.swift */,
@@ -333,6 +339,7 @@
 				ACF202F7223F290E00FC3B68 /* BootsInController.swift in Sources */,
 				ACF202F1223C7A6700FC3B68 /* SkisOutController.swift in Sources */,
 				ACF20301223F3D9500FC3B68 /* AllHelmetsController.swift in Sources */,
+				ACD270EB2262F2FD002B9C5B /* EmployeeLoginController.swift in Sources */,
 				ACF20303223F3F7400FC3B68 /* HelmetsOutController.swift in Sources */,
 				AC29AB4521B4F49D0049C079 /* ViewController.swift in Sources */,
 				ACD0E89E22321B680047981D /* EquipmentHomeController.swift in Sources */,
@@ -351,6 +358,7 @@
 				ACD270E7225D52EC002B9C5B /* TomorrowsPickUpsController.swift in Sources */,
 				ACF202FD223F36B500FC3B68 /* BootsOutController.swift in Sources */,
 				ACF2030D224019F300FC3B68 /* SkierEquipmentFormContoller.swift in Sources */,
+				ACD270E92262F296002B9C5B /* FrontPageController.swift in Sources */,
 				ACF202F9223F2EE500FC3B68 /* AllBootsController.swift in Sources */,
 				ACF2030B2240162400FC3B68 /* RentalHomeController.swift in Sources */,
 				ACF202FF223F39EA00FC3B68 /* HelmetsInController.swift in Sources */,
