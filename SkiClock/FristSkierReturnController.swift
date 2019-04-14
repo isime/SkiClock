@@ -27,7 +27,7 @@ struct SkierReturnInfo: Decodable {
     let sole_length: Int?
     let boots_returned: String?
     let helmet_id: Int?
-    let Color: String?
+    let color: String?
     let helmet_size: String?
     let helmet_returned: String?
     let rental_id: Int?
@@ -84,8 +84,18 @@ class FristSkierReturnController: UIViewController {
     @IBOutlet weak var helmetID: UILabel!
     @IBOutlet weak var helmetSize: UILabel!
     @IBOutlet weak var helmetColor: UILabel!
+
    
     @IBAction func ToSkierListButtonPress(_ sender: Any) {
+        sendSkierReturn()
+    }
+    @IBAction func ToRentalSearchButtonPress(_ sender: Any) {
+        sendSkierReturn()
+    }
+    @IBAction func ToHomeButtonPress(_ sender: Any) {
+        sendSkierReturn()
+    }
+    @IBAction func ToRentalsHomeButtonPress(_ sender: Any) {
         sendSkierReturn()
     }
     
@@ -320,7 +330,6 @@ class FristSkierReturnController: UIViewController {
             
             do {
                 let returnData = try JSONDecoder().decode(SkierReturnInfo.self, from: data)
-                    print(returnData)
                 
                     self.skier_f_name = returnData.skier_first_name
                     self.skier_l_name = returnData.skier_last_name
@@ -341,7 +350,7 @@ class FristSkierReturnController: UIViewController {
                 self.boots_returned = returnData.boots_returned
                     self.helmet_id = returnData.helmet_id
                     self.helmet_size = returnData.helmet_size
-                    self.helmet_color = returnData.Color
+                    self.helmet_color = returnData.color
                 self.helmet_returned = returnData.helmet_returned
                     self.rental_id = returnData.rental_id ?? 0
                 
@@ -383,7 +392,7 @@ class FristSkierReturnController: UIViewController {
     }
     
     func sendSkierReturn(){
-        let returnSkierJson: [String: String] = [ "skier_id": String(skier_id), "ski_id": String(ski_id), "skis_back": skis_back, "skis_already": skis_already, "boot_id": String(boot_id), "boots_back": boots_back, "boots_already": boots_already, "helmet_id": String(helmet_id), "helmet_back": helmet_back, "helmet_already": helmet_already]
+        let returnSkierJson: [String: String] = ["skier_id": String(skier_id), "ski_id": String(ski_id), "skis_back": skis_back, "skis_already": skis_already, "boot_id": String(boot_id), "boots_back": boots_back, "boots_already": boots_already, "helmet_id": String(helmet_id), "helmet_back": helmet_back, "helmet_already": helmet_already]
         
         let jsonData = try? JSONSerialization.data(withJSONObject: returnSkierJson)
         
@@ -414,7 +423,7 @@ class FristSkierReturnController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRenturnInfo()
-        print(helmet_already)
+        print(helmet_color)
 //        initialText()
 
         // Do any additional setup after loading the view.

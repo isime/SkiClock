@@ -94,7 +94,10 @@ CREATE TABLE IF NOT EXISTS RENTALS(
   date_out VARCHAR(30),
   due_date VARCHAR(30),
   date_in VARCHAR(30),
+  total_skiers INT(30),
+  skiers_returned INT(30) DEFAULT 0,
   current_rental BOOLEAN DEFAULT TRUE,
+  overdue BOOLEAN DEFAULT FALSE,
   PRIMARY KEY(rental_id)
 );
 

@@ -60,6 +60,7 @@ class ReturnSkierListController: UIViewController, UITableViewDataSource, UITabl
             nextScene!.rental_id = self.rental_id
             nextScene!.customer_f_name = self.customer_f_name
             nextScene!.customer_l_name = self.customer_l_name
+            nextScene!.customer_id = self.customer_id
         }
     }
     
