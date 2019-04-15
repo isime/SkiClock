@@ -868,6 +868,18 @@ def get_skier_info(skier_id):
     infoList = []
     for element in returnData:
         infoList.append(dict(zip(skiers, element)))
+    if infoList == []:
+        noEquipmentDict = {'ski_id': 0,
+                     'length': 0,
+                     'ski_manufacturer': 'N/A',
+                     'ski_model': 'N/A',
+                     'boot_id': 0,
+                     'sole_length': 0,
+                     'boot_manufacturer': 'N/A',
+                     'boot_model': 'N/A',
+                     'boot_size': 0.0
+                    }
+        return jsonify(noEquipmentDict)
 
     ski_id = infoList[0]["ski_id"]
     boot_id = infoList[0]["boot_id"]
@@ -930,6 +942,51 @@ def get_skier_info(skier_id):
     return jsonify(returnDict)
 
 
+@app.route('/customer_new_skier', methods=['Post'])
+def customer_new_skier():
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    skierJson = request.get_json(force=True)
+
+    fname = str(skierJson["fname"])
+    lname = str(skierJson["lname"])
+    weight = int(str(skierJson["weight"]))
+    heightft = int(str(skierJson["heightft"]))
+    heightin = int(str(skierJson["heightin"]))
+    age = int(str(skierJson["age"]))
+    rawSkierType = str(skierJson["skiertype"])
+    customer_id = str(skierJson["customer_id"])
+
+    height = (heightft * 12) + heightin
+    skiertype = rawSkierType[0]
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    skierQuery = 'INSERT INTO SKIER_INFO(customer_id, first_name, last_name, height, weight, age, skier_type) VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}");'.format(customer_id, fname, lname, height, weight, age, skiertype)
+    cursor = db.cursor()
+    cursor.execute(skierQuery)
+    db.commit()
+    cursor.close()
+
+    return jsonify("done")
+
+@app.route('/customer_rentals/<customer_id>')
+def get_customer_rentals(customer_id):
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    rentalsQuery = 'SELECT rental_id, date_out, due_date, date_in FROM rentals WHERE customer_id = {};'.format(customer_id)
+
+    cursor = db.cursor()
+    cursor.execute(rentalsQuery)
+    rentals = [rentals[0] for rentals in cursor.description]
+
+    rentalData = cursor.fetchall()
+    rentalList=[]
+    for element in rentalData:
+        rentalList.append(dict(zip(rentals,element)))
+    cursor.close()
+
+    return jsonify(rentalList)
 
 
 if __name__ == "__main__":

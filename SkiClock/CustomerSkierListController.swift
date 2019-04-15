@@ -33,7 +33,9 @@ class CustomerSkierListController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var CustomerSkierTable: UITableView!
     @IBAction func ToCustomerHomeButtonPress(_ sender: Any) {
     }
-    @IBAction func ToNewSkierButtonPress(_ sender: Any) {
+
+    @IBAction func NewSkierButtonPress(_ sender: Any) {
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +45,7 @@ class CustomerSkierListController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let customerSkierCell = tableView.dequeueReusableCell(withIdentifier: "customerSkierCell", for: indexPath)
         
-        let cellText = self.first_name[indexPath.row] + ", " + self.last_name[indexPath.row]
+        let cellText = self.first_name[indexPath.row] + " " + self.last_name[indexPath.row]
         
         customerSkierCell.textLabel?.text = cellText
         customerSkierCell.textLabel?.textAlignment = .center
@@ -71,6 +73,10 @@ class CustomerSkierListController: UIViewController, UITableViewDataSource, UITa
             nextScene!.weight = self.weight[indexPath!.row]
             nextScene!.age = self.age[indexPath!.row]
             nextScene!.skier_type = self.skier_type[indexPath!.row]
+        }
+        if segue.identifier == "SkierListToCustomerNewSkier"{
+            let nextScene = segue.destination as? CustomerNewSkierFormController
+            nextScene!.customer_id = self.customer_id
         }
     }
     

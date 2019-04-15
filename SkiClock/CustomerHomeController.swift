@@ -16,6 +16,10 @@ class CustomerHomeController: UIViewController {
             let nextScene = segue.destination as? CustomerSkierListController
             nextScene!.customer_id = self.customer_id
         }
+        if segue.identifier == "CustomerHomeToRentalList"{
+            let nextScene = segue.destination as? CustomerRentalsListController
+            nextScene!.customer_id = self.customer_id
+        }
     }
     
     override func viewDidLoad() {
