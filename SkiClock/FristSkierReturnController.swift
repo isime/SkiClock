@@ -423,8 +423,6 @@ class FristSkierReturnController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRenturnInfo()
-        print(helmet_color)
-//        initialText()
 
         // Do any additional setup after loading the view.
     }

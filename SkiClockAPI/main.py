@@ -782,5 +782,24 @@ def return_skier_equipment():
     return jsonify("done")
 
 
+@app.route('/overdue_returns')
+def get_overdue_returns():
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.overdue = TRUE)) Order BY customer.last_name ASC;'
+
+    cursor = db.cursor()
+    cursor.execute(rentalsQuery)
+    rentals = [rentals[0] for rentals in cursor.description]
+
+    rentalData = cursor.fetchall()
+    rentalList=[]
+    for element in rentalData:
+        rentalList.append(dict(zip(rentals,element)))
+    cursor.close()
+
+    return jsonify(rentalList)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

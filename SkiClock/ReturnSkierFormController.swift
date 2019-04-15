@@ -295,13 +295,13 @@ class ReturnSkierFormController: UIViewController {
         }
     }
     
-    func checkAlready() {
+    func checkAlready(){
         if skis_returned != "00/00/0000"{
             skis_already = "true"
             skis_back = "true"
             skisBack()
         }
-        if boots_returned != " 00/00/0000"{
+        if boots_returned != "00/00/0000"{
             boots_already = "true"
             boots_back = "true"
             bootsBack()
@@ -359,6 +359,10 @@ class ReturnSkierFormController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.initialText()
+                    self.checkTaken()
+                    self.checkAlready()
+                    self.checkAllEquipment()
+                    self.setNotTakenButtons()
                 }
                 
             } catch let jsonErr {
@@ -368,7 +372,7 @@ class ReturnSkierFormController: UIViewController {
     }
     
     func sendReturnData(){
-        let returnJson: [String: String] = ["skier_id": String(skier_id), "ski_id": String(ski_id), "skis_back": skis_back, "skis_already": skis_already, "boot_id": String(boot_id), "boots_back": boots_back, "boots_already": boots_already, "helmet_id": String(helmet_id), "helmet_back": helmet_back, "helmet_alread": helmet_already]
+        let returnJson: [String: String] = ["skier_id": String(skier_id), "ski_id": String(ski_id), "skis_back": skis_back, "skis_already": skis_already, "boot_id": String(boot_id), "boots_back": boots_back, "boots_already": boots_already, "helmet_id": String(helmet_id), "helmet_back": helmet_back, "helmet_already": helmet_already]
         
         let jsonData = try? JSONSerialization.data(withJSONObject: returnJson)
         
