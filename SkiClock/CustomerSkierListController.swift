@@ -52,7 +52,7 @@ class CustomerSkierListController: UIViewController, UITableViewDataSource, UITa
         return customerSkierCell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPAth: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "CustomerSkierListToSkierInfo", sender: nil)
     }
     

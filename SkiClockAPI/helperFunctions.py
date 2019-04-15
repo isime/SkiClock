@@ -93,6 +93,27 @@ def get_tomorrows_date():
     return tomorrowString
 
 
+def get_due_date(days, am):
+    date = datetime.datetime.now()
+
+    month = int(date.strftime("%m"))
+    day = int(date.strftime("%d"))
+    year = int(date.strftime("%Y"))
+
+    due_date = {"month": month, "day": day, "year": year}
+    if am:
+        i = 1
+    else:
+        i = 0
+    while i < days:
+        due_date = get_one_day_forward(due_date)
+        i += 1
+
+    due_date_string = get_date_string(due_date)
+
+    return due_date_string
+
+
 def get_one_day_forward(today):
     shortMonths = [4, 6, 9, 11]
     month = today['month']
@@ -146,3 +167,7 @@ def check_equipment_return(equipment):
         returned = False
 
     return returned
+
+
+# if __name__ == "__main__":
+#     print(get_due_date(1, False))

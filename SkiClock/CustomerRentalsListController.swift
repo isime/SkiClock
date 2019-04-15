@@ -40,10 +40,20 @@ class CustomerRentalsListController: UIViewController, UITableViewDataSource, UI
         return rentalCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        self.performSegue(withIdentifier: "CustomerRentalListToRentalSkierList", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier ==  "CustomerRentalListToCustomerHome"{
             let nextScene = segue.destination as? CustomerHomeController
             nextScene!.customer_id = self.customer_id
+        }
+        if segue.identifier == "CustomerRentalListToRentalSkierList"{
+            let nextScene = segue.destination as? CustomerRentalsSkierListController
+            let indexPath = self.CustomerRentalsTable.indexPathForSelectedRow
+            nextScene!.customer_id = self.customer_id
+            nextScene!.rental_id = self.rental_id[indexPath!.row]
         }
     }
     

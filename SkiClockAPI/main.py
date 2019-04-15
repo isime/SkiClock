@@ -211,7 +211,6 @@ def add_new_customer():
     city = str(cusJson["city"])
     phone = str(cusJson["phone"])
     email = str(cusJson["email"])
-    signature = str(cusJson["signature"])
 
     date = datetime.datetime.now()
 
@@ -234,7 +233,7 @@ def add_new_customer():
     cursor.close()
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
-    rentalQuery = 'INSERT INTO RENTALS(customer_id, signature, date_out) VALUES ("{}", "{}", "{}");'.format(cusID, signature, today)
+    rentalQuery = 'INSERT INTO RENTALS(customer_id, date_out) VALUES ("{}", "{}");'.format(cusID, today)
     # print(rentalQuery)
     cursor.execute(rentalQuery)
     db.commit()
@@ -842,6 +841,24 @@ def get_customer_skiers(customer_id):
 
     skiersQuery = 'SELECT skier_id, first_name, last_name, height, weight, age, skier_type FROM skier_info WHERE customer_id = {} ORDER BY first_name ASC;'.format(customer_id)
 
+    cursor = db.cursor()
+    cursor.execute(skiersQuery)
+    skiers = [skiers[0] for skiers in cursor.description]
+
+    skierData = cursor.fetchall()
+    skierList = []
+    for element in skierData:
+        skierList.append(dict(zip(skiers, element)))
+    cursor.close()
+
+    return jsonify(skierList)
+
+@app.route('/customer_rental_skiers/<rental_id>')
+def get_customer_rental_skiers(rental_id):
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    skiersQuery = 'SELECT skier_info.skier_id, first_name, last_name, height, weight, age, skier_type FROM skier_info INNER JOIN (SELECT skier_id FROM rentals_has_skiers WHERE rentals_has_skiers.rental_id = {})AS a ON skier_info.skier_id = a.skier_id ORDER BY first_name ASC;'.format(
+        rental_id)
     cursor = db.cursor()
     cursor.execute(skiersQuery)
     skiers = [skiers[0] for skiers in cursor.description]

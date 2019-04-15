@@ -22,7 +22,6 @@ class NewCustomerController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var CityBox: UITextField!
     @IBOutlet weak var CusPhon: UITextField!
     @IBOutlet weak var CusEmail: UITextField!
-    @IBOutlet weak var CusSignature: UITextField!
     
     
     @IBAction func SubmitCusInfo(_ sender: Any) {
@@ -34,10 +33,9 @@ class NewCustomerController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let Phone: String = CusPhon.text ?? "0"
         let Email: String = CusEmail.text ?? "no@no.com"
         let statePicked = StatePickerData[StatePicker.selectedRow(inComponent: 0)]
-        let Signature = CusSignature.text ?? "No Signature"
     
         
-        let cusJson: [String: String] = ["fname": FName, "lname": LName, "address": Address, "state": statePicked, "zip": Zip, "city": City, "phone": Phone, "email": Email, "signature": Signature]
+        let cusJson: [String: String] = ["fname": FName, "lname": LName, "address": Address, "state": statePicked, "zip": Zip, "city": City, "phone": Phone, "email": Email]
         
         let jsonData = try? JSONSerialization.data(withJSONObject: cusJson)
         

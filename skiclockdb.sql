@@ -65,7 +65,9 @@ CREATE TABLE IF NOT EXISTS SKIER_EQUIPMENT (
   boots_returned VARCHAR(30),
   helmet_id INT(30),
   helmet_returned VARCHAR(30),
+  signature VARCHAR(60),
   current_equipment BOOLEAN DEFAULT TRUE,
+  latest_equipment BOOLEAN DEAFAULT TRUE,
   PRIMARY KEY(skier_equipment_id)
 );
 
@@ -90,7 +92,6 @@ CREATE TABLE IF NOT EXISTS HELMET(
 CREATE TABLE IF NOT EXISTS RENTALS(
   rental_id INT(30) NOT NULL AUTO_INCREMENT,
   customer_id INT(30) NOT NULL,
-  signature VARCHAR(60),
   date_out VARCHAR(30),
   due_date VARCHAR(30),
   date_in VARCHAR(30),
