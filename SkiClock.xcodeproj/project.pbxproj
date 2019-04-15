@@ -29,6 +29,12 @@
 		ACD270E92262F296002B9C5B /* FrontPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270E82262F296002B9C5B /* FrontPageController.swift */; };
 		ACD270EB2262F2FD002B9C5B /* EmployeeLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270EA2262F2FD002B9C5B /* EmployeeLoginController.swift */; };
 		ACD270EF22640916002B9C5B /* OverdueReturnsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270EE22640916002B9C5B /* OverdueReturnsListController.swift */; };
+		ACD270F122644E24002B9C5B /* TodaysReturnsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270F022644E24002B9C5B /* TodaysReturnsListController.swift */; };
+		ACD270F3226456CA002B9C5B /* TomorrowsReturnsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270F2226456CA002B9C5B /* TomorrowsReturnsListController.swift */; };
+		ACD270F522646040002B9C5B /* CustomerLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270F42264603F002B9C5B /* CustomerLoginController.swift */; };
+		ACD270F722646161002B9C5B /* CustomerHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270F622646161002B9C5B /* CustomerHomeController.swift */; };
+		ACD270FB22646FEB002B9C5B /* CustomerSkierListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270FA22646FEB002B9C5B /* CustomerSkierListController.swift */; };
+		ACD270FD226488CF002B9C5B /* SkierInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD270FC226488CF002B9C5B /* SkierInfoController.swift */; };
 		ACF202EF223AC99700FC3B68 /* AllSkisListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF202EE223AC99700FC3B68 /* AllSkisListController.swift */; };
 		ACF202F1223C7A6700FC3B68 /* SkisOutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF202F0223C7A6700FC3B68 /* SkisOutController.swift */; };
 		ACF202F7223F290E00FC3B68 /* BootsInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF202F6223F290E00FC3B68 /* BootsInController.swift */; };
@@ -89,6 +95,12 @@
 		ACD270E82262F296002B9C5B /* FrontPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageController.swift; sourceTree = "<group>"; };
 		ACD270EA2262F2FD002B9C5B /* EmployeeLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeLoginController.swift; sourceTree = "<group>"; };
 		ACD270EE22640916002B9C5B /* OverdueReturnsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverdueReturnsListController.swift; sourceTree = "<group>"; };
+		ACD270F022644E24002B9C5B /* TodaysReturnsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysReturnsListController.swift; sourceTree = "<group>"; };
+		ACD270F2226456CA002B9C5B /* TomorrowsReturnsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowsReturnsListController.swift; sourceTree = "<group>"; };
+		ACD270F42264603F002B9C5B /* CustomerLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerLoginController.swift; sourceTree = "<group>"; };
+		ACD270F622646161002B9C5B /* CustomerHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerHomeController.swift; sourceTree = "<group>"; };
+		ACD270FA22646FEB002B9C5B /* CustomerSkierListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSkierListController.swift; sourceTree = "<group>"; };
+		ACD270FC226488CF002B9C5B /* SkierInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkierInfoController.swift; sourceTree = "<group>"; };
 		ACF202EE223AC99700FC3B68 /* AllSkisListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSkisListController.swift; sourceTree = "<group>"; };
 		ACF202F0223C7A6700FC3B68 /* SkisOutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkisOutController.swift; sourceTree = "<group>"; };
 		ACF202F6223F290E00FC3B68 /* BootsInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootsInController.swift; sourceTree = "<group>"; };
@@ -151,6 +163,10 @@
 		AC29AB4121B4F49D0049C079 /* SkiClock */ = {
 			isa = PBXGroup;
 			children = (
+				ACD270FC226488CF002B9C5B /* SkierInfoController.swift */,
+				ACD270FA22646FEB002B9C5B /* CustomerSkierListController.swift */,
+				ACD270F42264603F002B9C5B /* CustomerLoginController.swift */,
+				ACD270F2226456CA002B9C5B /* TomorrowsReturnsListController.swift */,
 				ACD270EE22640916002B9C5B /* OverdueReturnsListController.swift */,
 				ACD270E6225D52EC002B9C5B /* TomorrowsPickUpsController.swift */,
 				AC7D040B2255496D00721EAF /* FristSkierReturnController.swift */,
@@ -166,6 +182,8 @@
 				AC29AB4221B4F49D0049C079 /* AppDelegate.swift */,
 				AC29AB4421B4F49D0049C079 /* ViewController.swift */,
 				AC29AB4621B4F49D0049C079 /* Main.storyboard */,
+				ACD270F622646161002B9C5B /* CustomerHomeController.swift */,
+				ACD270F022644E24002B9C5B /* TodaysReturnsListController.swift */,
 				ACD270EA2262F2FD002B9C5B /* EmployeeLoginController.swift */,
 				ACD270E82262F296002B9C5B /* FrontPageController.swift */,
 				ACD270E4225D4A2C002B9C5B /* OverduePickUpsController.swift */,
@@ -344,22 +362,28 @@
 				ACF20301223F3D9500FC3B68 /* AllHelmetsController.swift in Sources */,
 				ACD270EB2262F2FD002B9C5B /* EmployeeLoginController.swift in Sources */,
 				ACF20303223F3F7400FC3B68 /* HelmetsOutController.swift in Sources */,
+				ACD270F522646040002B9C5B /* CustomerLoginController.swift in Sources */,
 				AC29AB4521B4F49D0049C079 /* ViewController.swift in Sources */,
 				ACD0E89E22321B680047981D /* EquipmentHomeController.swift in Sources */,
+				ACD270FB22646FEB002B9C5B /* CustomerSkierListController.swift in Sources */,
 				AC7D040C2255496D00721EAF /* FristSkierReturnController.swift in Sources */,
 				AC29AB4321B4F49D0049C079 /* AppDelegate.swift in Sources */,
 				ACD270DD225D00AC002B9C5B /* ReturnSkierListController.swift in Sources */,
 				ACF202EF223AC99700FC3B68 /* AllSkisListController.swift in Sources */,
+				ACD270F122644E24002B9C5B /* TodaysReturnsListController.swift in Sources */,
 				ACD270E5225D4A2C002B9C5B /* OverduePickUpsController.swift in Sources */,
 				AC464C7E2234B6F300F28265 /* NextNewSkierController.swift in Sources */,
 				ACD0E8942230FEC10047981D /* EquipmentListController.swift in Sources */,
 				ACD270EF22640916002B9C5B /* OverdueReturnsListController.swift in Sources */,
 				ACD0E8902230CAAD0047981D /* NewCustomerController.swift in Sources */,
+				ACD270F3226456CA002B9C5B /* TomorrowsReturnsListController.swift in Sources */,
 				ACF20307223F579600FC3B68 /* SkierListController.swift in Sources */,
 				ACD270DF225D1676002B9C5B /* ReturnSkierFormController.swift in Sources */,
 				ACD0E8922230CE440047981D /* RentalFormController.swift in Sources */,
 				AC464C7A223494F800F28265 /* AddSkierController.swift in Sources */,
 				ACD270E7225D52EC002B9C5B /* TomorrowsPickUpsController.swift in Sources */,
+				ACD270FD226488CF002B9C5B /* SkierInfoController.swift in Sources */,
+				ACD270F722646161002B9C5B /* CustomerHomeController.swift in Sources */,
 				ACF202FD223F36B500FC3B68 /* BootsOutController.swift in Sources */,
 				ACF2030D224019F300FC3B68 /* SkierEquipmentFormContoller.swift in Sources */,
 				ACD270E92262F296002B9C5B /* FrontPageController.swift in Sources */,

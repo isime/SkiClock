@@ -586,8 +586,6 @@ def get_return(asset_id):
 
 @app.route('/get_skier_return/<skier_id>')
 def get_skier_return(skier_id):
-    print("FROM SKIER LIST ID: ", skier_id)
-
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
     returnQuery = 'SELECT * FROM skier_equipment WHERE skier_id = {} AND current_equipment = TRUE;'.format(skier_id)
@@ -799,6 +797,139 @@ def get_overdue_returns():
     cursor.close()
 
     return jsonify(rentalList)
+
+@app.route('/todays_returns')
+def get_todays_returns():
+    today = helperFunctions.get_today_string()
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.due_date = "{}")) Order BY customer.last_name ASC;'.format(today)
+
+    cursor = db.cursor()
+    cursor.execute(rentalsQuery)
+    rentals = [rentals[0] for rentals in cursor.description]
+
+    rentalData = cursor.fetchall()
+    rentalList=[]
+    for element in rentalData:
+        rentalList.append(dict(zip(rentals,element)))
+    cursor.close()
+
+    return jsonify(rentalList)
+
+@app.route('/tomorrows_returns')
+def get_tomorrows_returns():
+    tomorrow = helperFunctions.get_tomorrows_date()
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.due_date = "{}")) Order BY customer.last_name ASC;'.format(tomorrow)
+
+    cursor = db.cursor()
+    cursor.execute(rentalsQuery)
+    rentals = [rentals[0] for rentals in cursor.description]
+
+    rentalData = cursor.fetchall()
+    rentalList=[]
+    for element in rentalData:
+        rentalList.append(dict(zip(rentals,element)))
+    cursor.close()
+
+    return jsonify(rentalList)
+
+@app.route('/customer_skiers/<customer_id>')
+def get_customer_skiers(customer_id):
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    skiersQuery = 'SELECT skier_id, first_name, last_name, height, weight, age, skier_type FROM skier_info WHERE customer_id = {} ORDER BY first_name ASC;'.format(customer_id)
+
+    cursor = db.cursor()
+    cursor.execute(skiersQuery)
+    skiers = [skiers[0] for skiers in cursor.description]
+
+    skierData = cursor.fetchall()
+    skierList = []
+    for element in skierData:
+        skierList.append(dict(zip(skiers, element)))
+    cursor.close()
+
+    return jsonify(skierList)
+
+
+@app.route('/get_skier_info/<skier_id>')
+def get_skier_info(skier_id):
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    returnQuery = 'SELECT ski_id, boot_id FROM skier_equipment WHERE skier_id = {} AND latest_equipment = TRUE;'.format(skier_id)
+    cursor = db.cursor()
+    cursor.execute(returnQuery)
+    skiers = [skiers[0] for skiers in cursor.description]
+
+    returnData = cursor.fetchall()
+    infoList = []
+    for element in returnData:
+        infoList.append(dict(zip(skiers, element)))
+
+    ski_id = infoList[0]["ski_id"]
+    boot_id = infoList[0]["boot_id"]
+
+    returnDict = {}
+    cursor.close()
+
+    if ski_id is not None:
+        db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+        skiQuery = 'SELECT ski_id, length, manufacturer, model FROM skis WHERE ski_id = {};'.format(ski_id)
+        cursor = db.cursor()
+        cursor.execute(skiQuery)
+        ski = [ski[0] for ski in cursor.description]
+
+        skiData = cursor.fetchall()
+        skiList = []
+        for element in skiData:
+            skiList.append(dict(zip(ski, element)))
+        skiList[0]["ski_manufacture"] = skiList[0].pop("manufacturer")
+        skiList[0]["ski_model"] = skiList[0].pop("model")
+
+        returnDict = {**returnDict, **skiList[0]}
+        cursor.close()
+    else:
+        noSkiDict = {'ski_id': 0,
+                     'length': 0,
+                     'ski_manufacturer': 'N/A',
+                     'ski_model': 'N/A'}
+        returnDict = {**returnDict, **noSkiDict}
+
+    if boot_id is not None:
+        db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+        bootQuery = 'SELECT boot_id, manufacturer, model, size, sole_length FROM boots WHERE boot_id = {};'.format(boot_id)
+        cursor = db.cursor()
+        cursor.execute(bootQuery)
+        boot = [boot[0] for boot in cursor.description]
+
+        bootData = cursor.fetchall()
+        bootList = []
+        for element in bootData:
+            bootList.append(dict(zip(boot, element)))
+        bootList[0]["boot_manufacture"] = bootList[0].pop("manufacturer")
+        bootList[0]["boot_model"] = bootList[0].pop("model")
+        bootList[0]["boot_size"] = bootList[0].pop("size")
+
+        returnDict = {**returnDict, **bootList[0]}
+        cursor.close()
+    else:
+        noBootDict = {'boot_id': 0,
+                     'sole_length': 0,
+                     'boot_manufacturer': 'N/A',
+                     'boot_model': 'N/A',
+                     'boot_size': 0.0}
+        returnDict = {**returnDict, **noBootDict}
+
+    if cursor is not None:
+        cursor.close()
+    return jsonify(returnDict)
+
+
 
 
 if __name__ == "__main__":
