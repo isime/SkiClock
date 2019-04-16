@@ -42,18 +42,6 @@
                                     <segue destination="b1K-vO-oKl" kind="show" id="r4t-nd-jPg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="agreementbutton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgb-H5-YLE">
-                                <rect key="frame" x="425" y="506" width="174" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Agreement">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="MD2-kT-pdo" kind="show" id="obB-Zx-pt3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="S1G-uF-OBn"/>
@@ -2356,7 +2344,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitSkierEquipment:" destination="P3k-4g-hMf" eventType="touchUpInside" id="akv-uT-jWc"/>
+                                    <action selector="ToRentalAgreementButtonPress:" destination="P3k-4g-hMf" eventType="touchUpInside" id="jvl-PJ-nzV"/>
+                                    <segue destination="MD2-kT-pdo" kind="show" identifier="SkierEquipmentToRentalAgreeMent" id="qxk-VW-WUO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2517,8 +2506,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Electronic Signature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mxW-fX-EFM">
+                                <rect key="frame" x="361" y="637" width="303" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SubmitSignatureAndAgree" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h35-Qh-Flk">
+                                <rect key="frame" x="794" y="637" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Submit Signature">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SubmtSignatureButtonPress:" destination="XCA-63-vtE" eventType="touchUpInside" id="uC9-LF-N88"/>
+                                    <segue destination="EY0-jd-Y9e" kind="show" identifier="SecondRentalAgreeMentToSkierList" id="TYs-IV-HNd"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ToFirstRentalAgreementPage" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjH-8v-wrT">
-                                <rect key="frame" x="148" y="717" width="117" height="31"/>
+                                <rect key="frame" x="147" y="637" width="117" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Previous Page">
@@ -2529,24 +2537,6 @@
                                     <segue destination="MD2-kT-pdo" kind="show" identifier="SecondRentalAgreementToFirstRentalAgreement" id="Ihp-Fv-UPA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Electronic Signature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mxW-fX-EFM">
-                                <rect key="frame" x="361" y="717" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SubmitSignatureAndAgree" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h35-Qh-Flk">
-                                <rect key="frame" x="802" y="715" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Submit Signature">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitSkierEquipment:" destination="P3k-4g-hMf" eventType="touchUpInside" id="pj8-hk-PsX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bwT-PP-JUF"/>
@@ -2554,6 +2544,7 @@
                     <connections>
                         <outlet property="RentalAgreement10" destination="gOk-t1-9PV" id="fqW-i3-3Pe"/>
                         <outlet property="RentalAgreement9" destination="fIS-9z-HVr" id="dSd-m5-i0z"/>
+                        <outlet property="SignatureBox" destination="mxW-fX-EFM" id="zfa-d2-inf"/>
                         <outlet property="TermsLabel" destination="adX-P0-vSN" id="219-hq-rMD"/>
                     </connections>
                 </viewController>
@@ -2873,6 +2864,7 @@
                                 <connections>
                                     <action selector="RentalsHomeButtonPress:" destination="hXi-BF-eH8" eventType="touchUpInside" id="xRi-67-mWT"/>
                                     <action selector="ToRentalsHomeButtonPress:" destination="RLb-GG-6RH" eventType="touchUpInside" id="YDD-Zh-ojW"/>
+                                    <segue destination="nRf-Z1-5qz" kind="show" id="KsI-pJ-jv4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="FirstSkierReturnToHomeSkierReturn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRX-DE-xWt">
@@ -3947,6 +3939,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="NumberOfDaysLabel" text="Number Of Days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuK-cg-qgB">
+                                <rect key="frame" x="802" y="496" width="202" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="CusCityLabel" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nts-Vk-yGG">
                                 <rect key="frame" x="20" y="309" width="202" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -4014,6 +4013,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="NumberofDaysBox" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qyM-rE-qCH">
+                                <rect key="frame" x="802" y="586" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vVY-eX-F87"/>
@@ -4024,6 +4030,7 @@
                         <outlet property="CusFname" destination="ptD-yC-IcD" id="4lP-3U-w4b"/>
                         <outlet property="CusLName" destination="frM-Q7-Va0" id="O4L-YA-KbR"/>
                         <outlet property="CusPhon" destination="wjt-dB-9dq" id="UhT-BD-Jyi"/>
+                        <outlet property="NumberOfDaysBox" destination="qyM-rE-qCH" id="Kfa-5G-FzX"/>
                         <outlet property="StatePicker" destination="ih9-VM-aKo" id="QfW-PB-SDb"/>
                         <outlet property="StreetAddress" destination="iPY-ga-m0i" id="axC-P3-5uy"/>
                         <outlet property="ZipCode" destination="TGb-E6-rWz" id="8EG-cM-e6K"/>
@@ -4644,7 +4651,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2kX-0l-2M3"/>
+        <segue reference="hYr-3n-ksN"/>
         <segue reference="kzs-v8-CrU"/>
         <segue reference="dn7-sQ-f0e"/>
         <segue reference="Daa-o8-Fa1"/>
@@ -4652,9 +4659,9 @@
         <segue reference="BhL-zW-jjl"/>
         <segue reference="mxB-0M-Ulv"/>
         <segue reference="9TI-AC-OZ1"/>
-        <segue reference="lUW-wJ-78P"/>
-        <segue reference="XcC-BU-neU"/>
-        <segue reference="4oZ-nI-BeG"/>
+        <segue reference="HYP-xE-9Az"/>
+        <segue reference="gVk-6y-m9o"/>
+        <segue reference="TYs-IV-HNd"/>
         <segue reference="Ihp-Fv-UPA"/>
         <segue reference="Pzt-xP-fnb"/>
         <segue reference="O9x-ke-PEf"/>
@@ -4663,7 +4670,7 @@
         <segue reference="S2G-f9-32q"/>
         <segue reference="weN-rC-xco"/>
         <segue reference="q2Q-VR-AYS"/>
-        <segue reference="V7b-MN-DnW"/>
+        <segue reference="PmR-Zx-njV"/>
         <segue reference="VTZ-Tu-Oa9"/>
         <segue reference="38j-0C-hw6"/>
         <segue reference="jZJ-cZ-NNI"/>

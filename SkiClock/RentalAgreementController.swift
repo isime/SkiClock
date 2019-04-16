@@ -9,6 +9,8 @@
 import UIKit
 
 class RentalAgreementController: UIViewController {
+    var skier_id: Int!
+    var rental_id: Int!
 
     @IBOutlet weak var RentalAgreementLabel1: UILabel!
     @IBOutlet weak var RentalAgreementLabel2: UILabel!
@@ -65,10 +67,17 @@ class RentalAgreementController: UIViewController {
     
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RentalAgreementToSecondPageRentalAgreement" {
+            let nextScene = segue.destination as? SecondRentalAgreementPageController
+            nextScene!.skier_id = self.skier_id
+            nextScene!.rental_id = self.rental_id
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setAgreementLabels()
-
         // Do any additional setup after loading the view.
     }
     

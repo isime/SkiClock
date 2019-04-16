@@ -12,6 +12,12 @@ CREATE TABLE IF NOT EXISTS SKIS (
 CREATE TABLE IF NOT EXISTS TESTS (
   test_id INT(30) NOT NULL AUTO_INCREMENT,
   ski_id INT(30) NOT NULL,
+  test_skier_code VARCHAR(10) NOT NULL,
+  test_boot_sole_length Int(30) NOT NULL,
+  min_toe INT(10) NOT NULL,
+  max_toe INT(10) NOT NULL,
+  min_heel INT(10) NOT NULL,
+  max_hell INT(10) NOT NULL,
   left_toe BOOLEAN,
   left_heel BOOLEAN,
   right_toe BOOLEAN,
@@ -29,6 +35,7 @@ CREATE TABLE IF NOT EXISTS CUSTOMER (
   zip_code VARCHAR(15) NOT NULL,
   email VARCHAR(30) NOT NULL,
   phone VARCHAR(30) NOT NULL,
+  passwor VARCHAR(30),
   drivers_license VARCHAR(60),
   credit_card VARCHAR(60),
   PRIMARY KEY(customer_id)
@@ -53,6 +60,7 @@ CREATE TABLE IF NOT EXISTS SKIER_SETTINGS (
   skier_code VARCHAR(10),
   reccomended_din FLOAT(15),
   actual_din FLOAT(15),
+  latest_settings BOOLEAN DEFAULT TRUE,
   PRIMARY KEY(settings_id)
 );
 
@@ -107,6 +115,15 @@ CREATE TABLE IF NOT EXISTS RENTALS_HAS_SKIERS(
   skier_id INT(30),
   rental_id INT(30),
   PRIMARY KEY(rentals_has_skiers_id)
+);
+
+CREATE TABLE IF NOT EXISTS EMPLOYEE(
+  employee_id INT(30) NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(30),
+  last_name VARCHAR(30),
+  email VARCHAR(30),
+  password VARCHAR(30),
+  PRIMARY KEY(employee_id)
 );
 
 

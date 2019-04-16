@@ -40,6 +40,9 @@ class SkierEquipmentFormContoller: UIViewController {
     @IBOutlet weak var skiLengthBox: UITextField!
     @IBOutlet weak var skiIDBox: UITextField!
     
+    @IBAction func ToRentalAgreementButtonPress(_ sender: Any) {
+        sendSkierEquipment()
+    }
     
     func initialText() {
         fNameLabel.text = first_name
@@ -52,7 +55,17 @@ class SkierEquipmentFormContoller: UIViewController {
         
     }
     
-    @IBAction func submitSkierEquipment(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SkierEquipmentToRentalAgreeMent"{
+            let nextScene = segue.destination as? RentalAgreementController
+            nextScene!.skier_id = self.skier_id
+            nextScene!.rental_id = self.rental_id
+        }
+    }
+    
+   
+    
+    func sendSkierEquipment() {
         let skiID = skiIDBox.text ?? "0"
         let bootID = bootIDBox.text ?? "0"
         let soleLength = soleLengthBox.text ?? "0"
@@ -64,7 +77,7 @@ class SkierEquipmentFormContoller: UIViewController {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: equipmentJSON)
         
-        let url = URL(string: "http://127.0.0.1:5000/new_skier")
+        let url = URL(string: "http://127.0.0.1:5000/add_skier_equipment")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         
@@ -78,6 +91,7 @@ class SkierEquipmentFormContoller: UIViewController {
         }
         task.resume()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialText()

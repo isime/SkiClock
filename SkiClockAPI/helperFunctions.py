@@ -26,6 +26,20 @@ def get_overdue_dates():
     return datesList
 
 
+def get_yesterday():
+    date = datetime.datetime.now()
+
+    month = int(date.strftime("%m"))
+    day = int(date.strftime("%d"))
+    year = int(date.strftime("%Y"))
+
+    today = {"month": month, "day": day, "year": year}
+    yesterday = get_one_day_back(today)
+    yesterdayString = yesterday["string"]
+
+    return yesterdayString
+
+
 def get_one_day_back(date):
     shortMonths = [4, 6, 9, 11]
     month = date["month"]
@@ -93,12 +107,17 @@ def get_tomorrows_date():
     return tomorrowString
 
 
-def get_due_date(days, am):
+def get_due_date(days):
     date = datetime.datetime.now()
 
+    hour = int(date.strftime("%H"))
     month = int(date.strftime("%m"))
     day = int(date.strftime("%d"))
     year = int(date.strftime("%Y"))
+    am = True
+
+    if hour >= 12:
+        am = False
 
     due_date = {"month": month, "day": day, "year": year}
     if am:
@@ -169,5 +188,5 @@ def check_equipment_return(equipment):
     return returned
 
 
-# if __name__ == "__main__":
-#     print(get_due_date(1, False))
+if __name__ == "__main__":
+    print(get_due_date(1))

@@ -211,6 +211,7 @@ def add_new_customer():
     city = str(cusJson["city"])
     phone = str(cusJson["phone"])
     email = str(cusJson["email"])
+    days = int(str(cusJson["days"]))
 
     date = datetime.datetime.now()
 
@@ -232,9 +233,9 @@ def add_new_customer():
     cusID = data[0]
     cursor.close()
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
-
-    rentalQuery = 'INSERT INTO RENTALS(customer_id, date_out) VALUES ("{}", "{}");'.format(cusID, today)
-    # print(rentalQuery)
+    due_date = helperFunctions.get_due_date(days)
+    rentalQuery = 'INSERT INTO RENTALS(customer_id, date_out, due_date) VALUES ("{}", "{}");'.format(cusID, today, due_date)
+    cursor = db.cursor()
     cursor.execute(rentalQuery)
     db.commit()
     cursor.close()
@@ -388,23 +389,74 @@ def get_skeirs(rental_id):
 
 
 @app.route('/add_skier_equipment', methods=['POST'])
-def add_skier_equipment(skier_id):
+def add_skier_equipment():
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
     skierJson = request.get_json(force=True)
 
-    skier_id = skierJson["skier_id"]
-    ski_id = skierJson["skier_id"]
-    boot_id = skierJson["boot_id"]
-    sole_length = skierJson["sole_length"]
+    skier_id = int(str(skierJson["skier_id"]))
+    ski_id = int(str(skierJson["skier_id"]))
+    boot_id = int(str(skierJson["boot_id"]))
+    sole_length = int(str(skierJson["sole_length"]))
     skier_code = skierJson["skier_code"]
-    din = skierJson["din"]
+    din = float(str(skierJson["din"]))
 
-    print(skier_id, ski_id, boot_id, sole_length, skier_code, din)
+    cursor = db.cursor()
+    settingsQuery = 'INSERT INTO skier_settings (skier_id, boot_sole_length, skier_code, reccomended_din, actual_din) VALUES ({}, {}, "{}", {}, {});'.format(skier_id, sole_length, skier_code, din, din)
+    cursor.execute(settingsQuery)
+    db.commit()
+    cursor.close()
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    equipmentUpdateQuery = 'UPDATE skier_equipment set current_equipment = FALSE, latest_equipment = FALSE WHERE skier_id = {};'.format(skier_id)
+    cursor.execute(equipmentUpdateQuery)
+    db.commit()
+    cursor.close()
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    equipmentQuery = 'INSERT INTO skier_equipment (skier_id, ski_id, boot_id) VALUES ({}, {}, {});'.format(skier_id, ski_id, boot_id)
+    cursor.execute(equipmentQuery)
+    db.commit()
+    cursor.close()
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    skisUpdateQuery = 'UPDATE skis set skis_out = TRUEWHERE ski_id = {};'.format(ski_id)
+    cursor.execute(skisUpdateQuery)
+    db.commit()
+    cursor.close()
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    bootsUpdateQuery = 'UPDATE boots set bootss_out = TRUEWHERE ski_id = {};'.format(boot_id)
+    cursor.execute(bootsUpdateQuery)
+    db.commit()
+    cursor.close()
 
     return jsonify('Done')
 
+
+@app.route('/add_skier_signature', methods=['POST'])
+def add_skier_signature():
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    skierJson = request.get_json(force=True)
+
+    skier_id = int(str(skierJson["skier_id"]))
+    signature = str(skierJson["signature"])
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    signatureQuery = 'UPDATE skier_equipment SET signature = "{}" WHERE skier_id = {} AND current_equipment = TRUE;'.format(signature, skier_id)
+    cursor.execute(signatureQuery)
+    db.commit()
+    cursor.close()
+
+    return jsonify('Done')
 
 @app.route('/get_return/<asset_id>')
 def get_return(asset_id):
@@ -706,6 +758,7 @@ def get_skier_return(skier_id):
 
 @app.route('/return_skier_equipment', methods=['Post'])
 def return_skier_equipment():
+    today = helperFunctions.get_today_string()
 
     skierJson = request.get_json(force=True)
 
@@ -719,6 +772,7 @@ def return_skier_equipment():
     helmet_id = int(str(skierJson["helmet_id"]))
     helmet_returned = helperFunctions.check_equipment_return(str(skierJson["helmet_back"]))
     helmet_already = helperFunctions.check_equipment_return(str(skierJson["helmet_already"]))
+    rental_id = int(str(skierJson['rental_id']))
 
     if not skis_already:
         if skis_returned:
@@ -753,7 +807,6 @@ def return_skier_equipment():
     if not helmet_already:
         if helmet_returned:
             db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
-            today = helperFunctions.get_today_string()
             skierEquipmentQuery = 'UPDATE skier_equipment set helmet_returned = "{}" WHERE skier_id = {} AND current_equipment = TRUE;'.format(today, skier_id)
             print(skierEquipmentQuery)
             cursor = db.cursor()
@@ -773,14 +826,33 @@ def return_skier_equipment():
         db.commit()
         cursor.close()
 
+        db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+        updateSkiersReturnedQuey = 'UPDATE rentals set skiers_returned = skiers_returned + 1 WHERE rental_id = {};'.format(rental_id)
+        cursor = db.cursor()
+        cursor.execute(updateSkiersReturnedQuey)
+        db.commit()
+        cursor.close()
 
-
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    setDateIn = 'UPDATE rentals set date_in = "{}" WHERE total_skiers = skiers_returned AND rental_id = {};'.format(today, rental_id)
+    cursor = db.cursor()
+    cursor.execute(setDateIn)
+    db.commit()
+    cursor.close()
 
     return jsonify("done")
 
 
 @app.route('/overdue_returns')
 def get_overdue_returns():
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    yesterday = helperFunctions.get_yesterday()
+    updateOverdueQuery = 'update rentals set overdue = TRUE where due_date = "{}";'.format(yesterday)
+    cursor.execute(updateOverdueQuery)
+    db.commit()
+    cursor.close()
+
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
     rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.overdue = TRUE)) Order BY customer.last_name ASC;'

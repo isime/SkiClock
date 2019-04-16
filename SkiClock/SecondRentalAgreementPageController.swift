@@ -9,10 +9,19 @@
 import UIKit
 
 class SecondRentalAgreementPageController: UIViewController {
+    var skier_id: Int!
+    var rental_id: Int!
 
     @IBOutlet weak var RentalAgreement9: UILabel!
     @IBOutlet weak var RentalAgreement10: UILabel!
     @IBOutlet weak var TermsLabel: UILabel!
+    @IBOutlet weak var SignatureBox: UITextField!
+    
+    @IBAction func SubmtSignatureButtonPress(_ sender: Any) {
+        sendSignature()
+    }
+    
+    
     
     func setAgreements(){
         setAgreement9()
@@ -34,9 +43,38 @@ class SecondRentalAgreementPageController: UIViewController {
         TermsLabel.numberOfLines = 3
         TermsLabel.textColor = UIColor.red
     }
+    
+    func sendSignature() {
+        let signature = SignatureBox.text ?? "N/A"
+        let signatureJSON: [String: String] = ["skier_id": String(skier_id), "signature": signature]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: signatureJSON)
+        
+        let url = URL(string: "http://127.0.0.1:5000/add_skier_signature")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "Post"
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in guard let data = data, error == nil else {print(error?.localizedDescription ?? "No Data");  return }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+            }
+        task.resume()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SecondRentalAgreeMentToSkierList"{
+            let nextScene = segue.destination as? SkierListController
+            nextScene!.rental_id = self.rental_id
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setAgreements()
+        print(skier_id)
 
         // Do any additional setup after loading the view.
     }

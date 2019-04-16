@@ -392,7 +392,7 @@ class FristSkierReturnController: UIViewController {
     }
     
     func sendSkierReturn(){
-        let returnSkierJson: [String: String] = ["skier_id": String(skier_id), "ski_id": String(ski_id), "skis_back": skis_back, "skis_already": skis_already, "boot_id": String(boot_id), "boots_back": boots_back, "boots_already": boots_already, "helmet_id": String(helmet_id), "helmet_back": helmet_back, "helmet_already": helmet_already]
+        let returnSkierJson: [String: String] = ["skier_id": String(skier_id), "ski_id": String(ski_id), "skis_back": skis_back, "skis_already": skis_already, "boot_id": String(boot_id), "boots_back": boots_back, "boots_already": boots_already, "helmet_id": String(helmet_id), "helmet_back": helmet_back, "helmet_already": helmet_already, "rental_id": String(rental_id)]
         
         let jsonData = try? JSONSerialization.data(withJSONObject: returnSkierJson)
         
