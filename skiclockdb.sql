@@ -683,3 +683,21 @@ UPDATE SKIS SET skis_out = TRUE WHERE ski_id = 190119;
 UPDATE BOOTS SET boots_out = TRUE WHERE boot_id = 190033;
 INSERT INTO RENTALS(customer_id, date_out, due_date, total_skiers, skiers_picked_up) VALUES (43, "04/18/2019", "04/24/2019", 1, 1);
 INSERT INTO RENTALS_HAS_SKIERS(skier_id, rental_id) VALUES (70, 42);
+
+INSERT INTO CUSTOMER(first_name, last_name, address, city, state, zip_code, email, phone) VALUES ("Jake", "Clifford", "1300 E 1840 S", "Salt Lake City", "UT", "84105", "colesmith@email.com", "8017336502");
+INSERT INTO SKIER_INFO(customer_id, first_name, last_name, height, weight, age, skier_type) VALUES (44, "Jake", "Clifford", 69, 175, 30, 3);
+INSERT INTO SKIER_SETTINGS(skier_id, boot_sole_length, skier_code, reccomended_din, actual_din) VALUES (71, 276, "M", 8.0, 8.0);
+INSERT INTO SKIER_EQUIPMENT(skier_id, ski_id, boot_id, signature) VALUES (71, 190100, 190028, "Jake Clifford");
+UPDATE SKIS SET skis_out = TRUE WHERE ski_id = 190100;
+UPDATE BOOTS SET boots_out = TRUE WHERE boot_id = 190028;
+INSERT INTO RENTALS(customer_id, date_out, due_date, total_skiers, skiers_picked_up) VALUES (44, "04/18/2019", "04/24/2019", 1, 1);
+INSERT INTO RENTALS_HAS_SKIERS(skier_id, rental_id) VALUES (71, 43);
+
+INSERT INTO CUSTOMER(first_name, last_name, address, city, state, zip_code, email, phone) VALUES ("Levi", "Frost", "1300 E 1840 S", "Salt Lake City", "UT", "84105", "colesmith@email.com", "8017536502");
+INSERT INTO SKIER_INFO(customer_id, first_name, last_name, height, weight, age, skier_type) VALUES (45, "Levi", "Frost", 64, 140, 23, 3);
+INSERT INTO SKIER_SETTINGS(skier_id, boot_sole_length, skier_code, reccomended_din, actual_din) VALUES (72, 253, "K", 7.0, 7.0);
+INSERT INTO SKIER_EQUIPMENT(skier_id, ski_id, boot_id, signature) VALUES (72, 190016, 190067, "Levi Frost");
+UPDATE SKIS SET skis_out = TRUE WHERE ski_id = 190016;
+UPDATE BOOTS SET boots_out = TRUE WHERE boot_id = 190067;
+INSERT INTO RENTALS(customer_id, date_out, due_date, total_skiers, skiers_picked_up) VALUES (45, "04/18/2019", "04/25/2019", 1, 1);
+INSERT INTO RENTALS_HAS_SKIERS(skier_id, rental_id) VALUES (72, 44);

@@ -45,7 +45,7 @@ class OverduePickUpsController: UIViewController, UITableViewDataSource, UITable
     }
     
     func getOverdueRentals(){
-        let overdueRentalUrl = "http://127.0.0.1:5000/overdue_rentals"
+        let overdueRentalUrl = "http://10.0.0.7:5000/overdue_rentals"
         guard let url = URL(string: overdueRentalUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

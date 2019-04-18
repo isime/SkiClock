@@ -72,7 +72,7 @@ class CustomerRentalsSkierListController: UIViewController, UITableViewDataSourc
     }
     
     func getCustomerSkier(){
-        let customerSkiersUrl = "http://127.0.0.1:5000/customer_rental_skiers/" + String(rental_id)
+        let customerSkiersUrl = "http://10.0.0.7:5000/customer_rental_skiers/" + String(rental_id)
         
         guard let url = URL(string: customerSkiersUrl) else { return }
         

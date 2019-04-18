@@ -39,6 +39,7 @@ class SkierEquipmentFormContoller: UIViewController {
     @IBOutlet weak var skiModelBox: UITextField!
     @IBOutlet weak var skiLengthBox: UITextField!
     @IBOutlet weak var skiIDBox: UITextField!
+    @IBOutlet weak var helmetIDBox: UITextField!
     
     @IBAction func ToRentalAgreementButtonPress(_ sender: Any) {
         sendSkierEquipment()
@@ -66,18 +67,19 @@ class SkierEquipmentFormContoller: UIViewController {
    
     
     func sendSkierEquipment() {
-        let skiID = skiIDBox.text ?? "0"
-        let bootID = bootIDBox.text ?? "0"
+        let skiID = skiIDBox.text ?? "NULL"
+        let bootID = bootIDBox.text ?? "NULL"
         let soleLength = soleLengthBox.text ?? "0"
         let skierCode = skierCodeBox.text ?? "A"
-        let din = dinBox.text ?? "0"
+        let din = dinBox.text ?? "0.0"
+        let helmet_id = helmetIDBox.text ?? "NULL"
         
         let equipmentJSON: [String: String] =
-            ["skier_id": String(skier_id), "ski_id": skiID, "boot_id": bootID, "sole_length": soleLength, "skier_code": skierCode, "din": din ]
+            ["skier_id": String(skier_id), "ski_id": skiID, "boot_id": bootID, "sole_length": soleLength, "skier_code": skierCode, "din": din, "rental_id": String(rental_id), "helmet_id": helmet_id ]
         
         let jsonData = try? JSONSerialization.data(withJSONObject: equipmentJSON)
         
-        let url = URL(string: "http://127.0.0.1:5000/add_skier_equipment")
+        let url = URL(string: "http://10.0.0.7:5000/add_skier_equipment")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         

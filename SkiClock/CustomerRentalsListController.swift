@@ -58,7 +58,7 @@ class CustomerRentalsListController: UIViewController, UITableViewDataSource, UI
     }
     
     func getCustomerRentals(){
-        let rentalsUrl = "http://127.0.0.1:5000/customer_rentals/" + String(customer_id)
+        let rentalsUrl = "http://10.0.0.7:5000/customer_rentals/" + String(customer_id)
         
         guard let url = URL(string: rentalsUrl) else { return }
         

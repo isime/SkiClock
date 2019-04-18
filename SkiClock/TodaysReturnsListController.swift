@@ -47,7 +47,7 @@ class TodaysReturnsListController: UIViewController, UITableViewDataSource, UITa
     }
     
     func getTodaysReturns(){
-        let todaysReturnsUrl = "http://127.0.0.1:5000/todays_returns"
+        let todaysReturnsUrl = "http://10.0.0.7:5000/todays_returns"
         guard let url = URL(string: todaysReturnsUrl) else { return }
         
         URLSession.shared.dataTask(with: url) {

@@ -35,6 +35,13 @@ def get_in_stock_skis():
         skiList.append(dict(zip(skis,element)))
     cursor.close()
 
+    if skiList == []:
+        noSkis = {"length": 0,
+        "manufacturer": "No",
+        "model": "Records",
+        "ski_id": 0}
+        skiList.append(noSkis)
+
     return jsonify(skiList)
 
 
@@ -54,6 +61,13 @@ def get_currently_out_skis():
     for element in skiData:
         skiList.append(dict(zip(skis,element)))
     cursor.close()
+
+    if skiList == []:
+        noSkis = {"length": 0,
+        "manufacturer": "No",
+        "model": "Records",
+        "ski_id": 0}
+        skiList.append(noSkis)
 
     return jsonify(skiList)
 
@@ -75,6 +89,13 @@ def get_all_skis():
         skiList.append(dict(zip(skis,element)))
     cursor.close()
 
+    if skiList == []:
+        noSkis = {"length": 0,
+        "manufacturer": "No",
+        "model": "Records",
+        "ski_id": 0}
+        skiList.append(noSkis)
+
     return jsonify(skiList)
 
 
@@ -94,6 +115,16 @@ def get_in_stock_boots():
     for element in bootsData:
         bootsList.append(dict(zip(boots,element)))
     cursor.close()
+
+    if bootsList == []:
+        noBoots = {
+        "boot_id": 0,
+        "manufacturer": "No",
+        "model": "Records",
+        "size": 0,
+        "sole_length": 0
+        }
+        bootsList.append(noBoots)
 
     return jsonify(bootsList)
 
@@ -115,6 +146,16 @@ def get_currently_out_boots():
         bootsList.append(dict(zip(boots,element)))
     cursor.close()
 
+    if bootsList == []:
+        noBoots = {
+        "boot_id": 0,
+        "manufacturer": "No",
+        "model": "Records",
+        "size": 0,
+        "sole_length": 0
+        }
+        bootsList.append(noBoots)
+
     return jsonify(bootsList)
 
 
@@ -134,6 +175,16 @@ def get_all_boots():
     for element in bootsData:
         bootsList.append(dict(zip(boots,element)))
     cursor.close()
+
+    if bootsList == []:
+        noBoots = {
+        "boot_id": 0,
+        "manufacturer": "No",
+        "model": "Records",
+        "size": 0,
+        "sole_length": 0
+        }
+        bootsList.append(noBoots)
 
     return jsonify(bootsList)
 
@@ -155,6 +206,14 @@ def get_in_stock_helmets():
         helmetList.append(dict(zip(helmets,element)))
     cursor.close()
 
+    if helmetList == []:
+        noHelmet = {
+            "color": "Black",
+            "helmet_id": 19051,
+            "size": "L"
+        }
+        helmetList.append(noHelmet)
+
     return jsonify(helmetList)
 
 
@@ -175,6 +234,14 @@ def get_currently_out_helmets():
         helmetList.append(dict(zip(helmets,element)))
     cursor.close()
 
+    if helmetList == []:
+        noHelmet = {
+            "color": "Black",
+            "helmet_id": 19051,
+            "size": "L"
+        }
+        helmetList.append(noHelmet)
+
     return jsonify(helmetList)
 
 
@@ -193,6 +260,14 @@ def get_all_helmets():
     for element in helmetData:
         helmetList.append(dict(zip(helmets,element)))
     cursor.close()
+
+    if helmetList == []:
+        noHelmet = {
+            "color": "Black",
+            "helmet_id": 19051,
+            "size": "L"
+        }
+        helmetList.append(noHelmet)
 
     return jsonify(helmetList)
 
@@ -218,7 +293,7 @@ def add_new_customer():
     today = date.strftime("%m") + "/" + date.strftime("%d") + "/" + date.strftime("%Y")
 
     customerQuery = 'INSERT INTO CUSTOMER(first_name, last_name, address, city, state, zip_code, email, phone) VALUES ("{}", "{}", "{}", "{}", "{}", "{}", "{}", "{}");'.format(fname, lname, address, city, state, zip, email, phone)
-    # print(customerQuery)
+    print(customerQuery)
     cursor = db.cursor()
     cursor.execute(customerQuery)
     db.commit()
@@ -232,9 +307,11 @@ def add_new_customer():
     data = cursor.fetchone()
     cusID = data[0]
     cursor.close()
+
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
     due_date = helperFunctions.get_due_date(days)
-    rentalQuery = 'INSERT INTO RENTALS(customer_id, date_out, due_date) VALUES ("{}", "{}");'.format(cusID, today, due_date)
+    rentalQuery = 'INSERT INTO RENTALS(customer_id, total_skiers, date_out, due_date) VALUES ("{}", 0, "{}", "{}");'.format(cusID, today, due_date)
+    print(rentalQuery)
     cursor = db.cursor()
     cursor.execute(rentalQuery)
     db.commit()
@@ -303,6 +380,13 @@ def add_new_skier():
     db.commit()
     cursor.close()
 
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    rentalSkiersQuery = "UPDATE rentals SET total_skiers = total_skiers+1 WHERE rental_id = {}".format(rentalID)
+    cursor = db.cursor()
+    cursor.execute(rentalSkiersQuery)
+    db.commit()
+    cursor.close()
+
     return jsonify("done")
 
 
@@ -311,10 +395,10 @@ def get_todays_rentals():
     date = datetime.datetime.now()
 
     today = date.strftime("%m") + "/" + date.strftime("%d") + "/" + date.strftime("%Y")
-    print("TODAY: ", today)
+    # print("TODAY: ", today)
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
-    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE customer.customer_id = rentals.customer_id and date_out = "{}" Order BY customer.last_name ASC;'.format(today)
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE customer.customer_id = rentals.customer_id AND date_out = "{}" AND rentals.skiers_picked_up < rentals.total_skiers Order BY customer.last_name ASC;'.format(today)
 
 
     cursor = db.cursor()
@@ -335,7 +419,7 @@ def get_overdue_rentals():
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
-    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.date_out = "{}" OR rentals.date_out = "{}" OR rentals.date_out = "{}")) Order BY customer.last_name ASC;'.format(newDates[0], newDates[1], newDates[2])
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.date_out = "{}" OR rentals.date_out = "{}" OR rentals.date_out = "{}") AND rentals.skiers_picked_up < rentals.total_skiers) Order BY customer.last_name ASC;'.format(newDates[0], newDates[1], newDates[2])
 
     cursor = db.cursor()
     cursor.execute(rentalsQuery)
@@ -355,7 +439,7 @@ def get_tomorrows_rentals():
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
-    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.date_out = "{}")) Order BY customer.last_name ASC;'.format(tomorrow)
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.date_out = "{}") AND rentals.skiers_picked_up < rentals.total_skiers) Order BY customer.last_name ASC;'.format(tomorrow)
 
     cursor = db.cursor()
     cursor.execute(rentalsQuery)
@@ -396,14 +480,24 @@ def add_skier_equipment():
     skierJson = request.get_json(force=True)
 
     skier_id = int(str(skierJson["skier_id"]))
-    ski_id = int(str(skierJson["skier_id"]))
-    boot_id = int(str(skierJson["boot_id"]))
+    ski_id = str(skierJson["ski_id"])
+    boot_id = str(skierJson["boot_id"])
+    helmet_id = str(skierJson["helmet_id"])
     sole_length = int(str(skierJson["sole_length"]))
     skier_code = skierJson["skier_code"]
     din = float(str(skierJson["din"]))
+    rental_id = int(str(skierJson["rental_id"]))
+
+    if helmet_id == "":
+        helmet_id = "NULL"
+    if boot_id == "":
+        boot_id = "NULL"
+    if ski_id == "":
+        ski_id = "NULL"
 
     cursor = db.cursor()
     settingsQuery = 'INSERT INTO skier_settings (skier_id, boot_sole_length, skier_code, reccomended_din, actual_din) VALUES ({}, {}, "{}", {}, {});'.format(skier_id, sole_length, skier_code, din, din)
+    # print(settingsQuery)
     cursor.execute(settingsQuery)
     db.commit()
     cursor.close()
@@ -411,28 +505,44 @@ def add_skier_equipment():
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
     cursor = db.cursor()
     equipmentUpdateQuery = 'UPDATE skier_equipment set current_equipment = FALSE, latest_equipment = FALSE WHERE skier_id = {};'.format(skier_id)
+    # print(equipmentUpdateQuery)
     cursor.execute(equipmentUpdateQuery)
     db.commit()
     cursor.close()
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
     cursor = db.cursor()
-    equipmentQuery = 'INSERT INTO skier_equipment (skier_id, ski_id, boot_id) VALUES ({}, {}, {});'.format(skier_id, ski_id, boot_id)
+    rentalPickUpUpdateQuery = 'UPDATE rentals set skiers_picked_up = skiers_picked_up+1 WHERE rental_id = {};'.format(rental_id)
+    cursor.execute(rentalPickUpUpdateQuery)
+    db.commit()
+    cursor.close()
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    equipmentQuery = 'INSERT INTO skier_equipment (skier_id, ski_id, boot_id, helmet_id) VALUES ({}, {}, {}, {});'.format(skier_id, ski_id, boot_id, helmet_id)
+    # print(equipmentQuery)
     cursor.execute(equipmentQuery)
     db.commit()
     cursor.close()
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
     cursor = db.cursor()
-    skisUpdateQuery = 'UPDATE skis set skis_out = TRUEWHERE ski_id = {};'.format(ski_id)
+    skisUpdateQuery = 'UPDATE skis set skis_out = TRUE WHERE ski_id = {};'.format(ski_id)
     cursor.execute(skisUpdateQuery)
     db.commit()
     cursor.close()
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
     cursor = db.cursor()
-    bootsUpdateQuery = 'UPDATE boots set bootss_out = TRUEWHERE ski_id = {};'.format(boot_id)
+    bootsUpdateQuery = 'UPDATE boots set boots_out = TRUE WHERE boot_id = {};'.format(boot_id)
     cursor.execute(bootsUpdateQuery)
+    db.commit()
+    cursor.close()
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+    cursor = db.cursor()
+    helmtUpdateQuery = 'UPDATE helmet set helmet_out = TRUE WHERE helmet_id = {};'.format(helmet_id)
+    cursor.execute(helmtUpdateQuery)
     db.commit()
     cursor.close()
 
@@ -474,7 +584,7 @@ def get_return(asset_id):
         infoList.append(dict(zip(skiers, element)))
     cursor.close()
 
-    if infoList is None:
+    if infoList == []:
         db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
         returnQuery = 'SELECT * FROM skier_equipment WHERE (ski_id = {} OR boot_id = {} OR helmet_id = {}) AND latest_equipment = TRUE ORDER BY skier_equipment_id DESC;'.format(asset_id, asset_id, asset_id)
@@ -485,6 +595,32 @@ def get_return(asset_id):
         returnData = cursor.fetchall()
         for element in returnData:
             infoList.append(dict(zip(skiers, element)))
+    if infoList == []:
+        noInfo = {
+            "boot_id": 0,
+            "boot_manufacture": "NO",
+            "boot_model": "Record",
+            "boot_size": 0.5,
+            "boots_returned": "00/00/0000",
+            "color": "N/A",
+            "customer_first_name": "No",
+            "customer_id": 0,
+            "customer_last_name": "Record",
+            "helmet_id": 0,
+            "helmet_returned": "00/00/0000",
+            "helmet_size": "N/A",
+            "length": 0,
+            "rental_id": 0,
+            "ski_id": 0,
+            "ski_manufacture": "No",
+            "ski_model": "Record",
+            "skier_first_name": "No",
+            "skier_id": 0,
+            "skier_last_name": "Record",
+            "skis_returned": "00/00/0000",
+            "sole_length": 0
+            }
+        return jsonify(noInfo)
 
     skier_id = infoList[0]["skier_id"]
     print('SKIER ID: ', skier_id)
@@ -660,6 +796,33 @@ def get_skier_return(skier_id):
         returnData = cursor.fetchall()
         for element in returnData:
             infoList.append(dict(zip(skiers, element)))
+
+    if infoList == []:
+        noInfo = {
+            "boot_id": 0,
+            "boot_manufacture": "NO",
+            "boot_model": "Record",
+            "boot_size": 0.5,
+            "boots_returned": "00/00/0000",
+            "color": "N/A",
+            "customer_first_name": "No",
+            "customer_id": 0,
+            "customer_last_name": "Record",
+            "helmet_id": 0,
+            "helmet_returned": "00/00/0000",
+            "helmet_size": "N/A",
+            "length": 0,
+            "rental_id": 0,
+            "ski_id": 0,
+            "ski_manufacture": "No",
+            "ski_model": "Record",
+            "skier_first_name": "No",
+            "skier_id": 0,
+            "skier_last_name": "Record",
+            "skis_returned": "00/00/0000",
+            "sole_length": 0
+            }
+        return jsonify(noInfo)
 
     ski_id = infoList[0]["ski_id"]
     boot_id = infoList[0]["boot_id"]
@@ -848,7 +1011,7 @@ def get_overdue_returns():
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
     cursor = db.cursor()
     yesterday = helperFunctions.get_yesterday()
-    updateOverdueQuery = 'update rentals set overdue = TRUE where due_date = "{}";'.format(yesterday)
+    updateOverdueQuery = 'update rentals set overdue = TRUE where due_date = "{}" AND skiers_picked_up = total_skiers;'.format(yesterday)
     cursor.execute(updateOverdueQuery)
     db.commit()
     cursor.close()
@@ -886,6 +1049,15 @@ def get_todays_returns():
         rentalList.append(dict(zip(rentals,element)))
     cursor.close()
 
+    if rentalList == []:
+        noReturns = {
+        "customer_id": 0,
+        "first_name": "No",
+        "last_name": "Record",
+        "rental_id": 0
+        }
+        return jsonify(noReturns)
+
     return jsonify(rentalList)
 
 @app.route('/tomorrows_returns')
@@ -905,6 +1077,15 @@ def get_tomorrows_returns():
         rentalList.append(dict(zip(rentals,element)))
     cursor.close()
 
+    if rentalList == []:
+        noReturns = {
+        "customer_id": 0,
+        "first_name": "No",
+        "last_name": "Record",
+        "rental_id": 0
+        }
+        return jsonify(noReturns)
+
     return jsonify(rentalList)
 
 @app.route('/customer_skiers/<customer_id>')
@@ -923,6 +1104,18 @@ def get_customer_skiers(customer_id):
         skierList.append(dict(zip(skiers, element)))
     cursor.close()
 
+    if skierList == []:
+        noSkiers = {
+            "age": 0,
+            "first_name": "No",
+            "height": 0,
+            "last_name": "Record",
+            "skier_id": 0,
+            "skier_type": 0,
+            "weight": 0
+        }
+        return jsonify(noSkiers)
+
     return jsonify(skierList)
 
 @app.route('/customer_rental_skiers/<rental_id>')
@@ -940,6 +1133,18 @@ def get_customer_rental_skiers(rental_id):
     for element in skierData:
         skierList.append(dict(zip(skiers, element)))
     cursor.close()
+
+    if skierList == []:
+        noSkiers = {
+            "age": 0,
+            "first_name": "No",
+            "height": 0,
+            "last_name": "Record",
+            "skier_id": 0,
+            "skier_type": 0,
+            "weight": 0
+        }
+        return jsonify(noSkiers)
 
     return jsonify(skierList)
 
@@ -1075,8 +1280,17 @@ def get_customer_rentals(customer_id):
         rentalList.append(dict(zip(rentals,element)))
     cursor.close()
 
+    if rentalList == []:
+        noRentals = {
+            "date_in": "No Record",
+            "date_out": "No Record",
+            "due_date": "No Record",
+            "rental_id": 0
+        }
+        return jsonify(noRentals)
+
     return jsonify(rentalList)
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)

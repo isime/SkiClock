@@ -50,7 +50,7 @@ class SecondRentalAgreementPageController: UIViewController {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: signatureJSON)
         
-        let url = URL(string: "http://127.0.0.1:5000/add_skier_signature")
+        let url = URL(string: "http://10.0.0.7:5000/add_skier_signature")
         var request = URLRequest(url: url!)
         request.httpMethod = "Post"
         request.httpBody = jsonData
