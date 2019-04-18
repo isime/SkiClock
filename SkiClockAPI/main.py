@@ -314,7 +314,7 @@ def get_todays_rentals():
     print("TODAY: ", today)
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
-    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE customer.customer_id = rentals.customer_id Order BY customer.last_name ASC;'
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE customer.customer_id = rentals.customer_id and date_out = "{}" Order BY customer.last_name ASC;'.format(today)
 
 
     cursor = db.cursor()

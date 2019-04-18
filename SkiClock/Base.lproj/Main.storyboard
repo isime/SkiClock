@@ -1293,6 +1293,9 @@
                                 <state key="normal" title="Skis Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="HOd-dV-fCo" kind="show" id="wYY-Kq-c5b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ToInStockBoots" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hil-AW-kF3">
                                 <rect key="frame" x="425" y="131" width="174" height="81"/>
@@ -1687,7 +1690,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Avb-7X-57l" kind="show" id="gV0-al-oqC"/>
+                                    <segue destination="nRf-Z1-5qz" kind="show" id="e84-iO-uXv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="TomorrowsReturnsToHome" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvz-LA-ddh">
@@ -4652,25 +4655,25 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="hYr-3n-ksN"/>
-        <segue reference="kzs-v8-CrU"/>
-        <segue reference="dn7-sQ-f0e"/>
-        <segue reference="Daa-o8-Fa1"/>
+        <segue reference="gIG-ap-UUu"/>
+        <segue reference="gKw-OD-kbf"/>
+        <segue reference="i2r-Ea-1ft"/>
         <segue reference="CUR-Mn-uLW"/>
         <segue reference="BhL-zW-jjl"/>
         <segue reference="mxB-0M-Ulv"/>
-        <segue reference="9TI-AC-OZ1"/>
-        <segue reference="HYP-xE-9Az"/>
-        <segue reference="gVk-6y-m9o"/>
-        <segue reference="TYs-IV-HNd"/>
+        <segue reference="e84-iO-uXv"/>
+        <segue reference="3eI-Nz-wpQ"/>
+        <segue reference="XcC-BU-neU"/>
+        <segue reference="lrP-BH-mN6"/>
         <segue reference="Ihp-Fv-UPA"/>
         <segue reference="Pzt-xP-fnb"/>
         <segue reference="O9x-ke-PEf"/>
         <segue reference="PZp-mm-aaM"/>
-        <segue reference="83F-lA-LjO"/>
-        <segue reference="S2G-f9-32q"/>
+        <segue reference="8Br-3m-6yg"/>
+        <segue reference="gli-9Y-JyR"/>
         <segue reference="weN-rC-xco"/>
-        <segue reference="q2Q-VR-AYS"/>
-        <segue reference="PmR-Zx-njV"/>
+        <segue reference="3yr-7T-43I"/>
+        <segue reference="inW-wg-wsr"/>
         <segue reference="VTZ-Tu-Oa9"/>
         <segue reference="38j-0C-hw6"/>
         <segue reference="jZJ-cZ-NNI"/>
