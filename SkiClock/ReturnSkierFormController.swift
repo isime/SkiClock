@@ -366,9 +366,17 @@ class ReturnSkierFormController: UIViewController {
                 }
                 
             } catch let jsonErr {
-                
+                self.noReturnData()
             }
         }.resume()
+    }
+    
+    func setNames(){
+        customerFName.text = customer_f_name
+        customerLName.text = customer_l_name
+        skierFName.text = skier_f_name
+        skierLName.text = skier_l_name
+        rentalID.text = String(self.rental_id)
     }
     
     func sendReturnData(){
@@ -390,6 +398,25 @@ class ReturnSkierFormController: UIViewController {
         task.resume()
     }
     
+    func noReturnData() {
+        self.ski_id = 0
+        self.ski_manufacturer = "N/A"
+        self.ski_model = "N/A"
+        self.ski_length = 0
+        self.skis_returned = "00/00/0000"
+        self.boot_id = 0
+        self.boot_manufacture = "N/A"
+        self.boot_model = "N/A"
+        self.boot_size = 0.0
+        self.boot_sole_length = 0
+        self.boots_returned = "00/00/0000"
+        self.helmet_id = 0
+        self.helmet_size = "N/A"
+        self.helmet_color = "N/A"
+        self.helmet_returned = "00/00/0000"
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toReturnSkierList"{
             let nextScene = segue.destination as? ReturnSkierListController
@@ -402,9 +429,8 @@ class ReturnSkierFormController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNames()
         getSkierReturnInfo()
-        print("RENTAL ID SKIER FORM: " + String(rental_id))
-
         // Do any additional setup after loading the view.
     }
     

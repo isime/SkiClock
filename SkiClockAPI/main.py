@@ -823,6 +823,13 @@ def get_skier_return(skier_id):
             "skier_id": 0,
             "skier_last_name": "Record",
         }
+        skis_returned = "00/00/0000"
+        boots_returned = "00/00/0000"
+        helmet_returned = "00/00/0000"
+        ski_id = None
+        boot_id = None
+        helmet_id = None
+
 
     if skis_returned is None:
         skis_returned = "00/00/0000"
@@ -984,7 +991,7 @@ def return_skier_equipment():
         cursor.close()
 
         db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
-        updateSkiersReturnedQuey = 'UPDATE rentals set skiers_returned = skiers_returned + 1 WHERE rental_id = {};'.format(rental_id)
+        updateSkiersReturnedQuey = 'UPDATE rentals set skiers_returned = skiers_returned + 1 WHERE rental_id = {} AND skiers_returned < skiers_picked_up;'.format(rental_id)
         cursor = db.cursor()
         cursor.execute(updateSkiersReturnedQuey)
         db.commit()
@@ -1012,7 +1019,8 @@ def get_overdue_returns():
 
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
-    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.overdue = TRUE)) Order BY customer.last_name ASC;'
+    # rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.overdue = TRUE)) Order BY customer.last_name ASC;'
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.overdue = TRUE AND rentals.skiers_picked_up > 0 AND rentals.skiers_returned < rentals.skiers_picked_up)) Order BY customer.last_name ASC;'
 
     cursor = db.cursor()
     cursor.execute(rentalsQuery)
@@ -1031,7 +1039,7 @@ def get_todays_returns():
     today = helperFunctions.get_today_string()
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
-    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.due_date = "{}")) Order BY customer.last_name ASC;'.format(today)
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.due_date = "{}" AND rentals.skiers_picked_up > 0 AND rentals.skiers_returned < rentals.skiers_picked_up)) Order BY customer.last_name ASC;'.format(today)
 
     cursor = db.cursor()
     cursor.execute(rentalsQuery)
@@ -1059,7 +1067,7 @@ def get_tomorrows_returns():
     tomorrow = helperFunctions.get_tomorrows_date()
     db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
 
-    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.due_date = "{}")) Order BY customer.last_name ASC;'.format(tomorrow)
+    rentalsQuery = 'SELECT last_name, first_name, rental_id, rentals.customer_id FROM customer, rentals WHERE (customer.customer_id = rentals.customer_id AND (rentals.due_date = "{}" AND rentals.skiers_picked_up > 0 AND rentals.skiers_returned < rentals.skiers_picked_up)) Order BY customer.last_name ASC;'.format(tomorrow)
 
     cursor = db.cursor()
     cursor.execute(rentalsQuery)

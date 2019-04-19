@@ -27,6 +27,9 @@ class CustomerNewSkierFormController: UIViewController, UIPickerViewDelegate, UI
     @IBAction func ToSkierListButtonPress(_ sender: Any) {
         sendCustomerSkier()
     }
+    @IBAction func FinishedButtonPress(_ sender: Any) {
+        sendCustomerSkier()
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
