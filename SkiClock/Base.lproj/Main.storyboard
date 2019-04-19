@@ -3403,14 +3403,14 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="assetIDSearch" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Asset ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfA-Pn-5pM">
-                                <rect key="frame" x="417" y="369" width="191" height="30"/>
+                                <rect key="frame" x="417" y="181" width="191" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SubmitRentalSearch" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-n5-f3D">
-                                <rect key="frame" x="645" y="368" width="117" height="31"/>
+                                <rect key="frame" x="635" y="181" width="117" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Searh">
@@ -3513,7 +3513,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ToTodaysReturns" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GT2-Ha-hsp">
-                                <rect key="frame" x="598" y="550" width="196" height="81"/>
+                                <rect key="frame" x="808" y="344" width="196" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -3525,7 +3525,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="ToTomorrowsReturns" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-cj-v6T">
-                                <rect key="frame" x="799" y="344" width="205" height="81"/>
+                                <rect key="frame" x="589" y="550" width="205" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -4600,8 +4600,8 @@
         <segue reference="CUR-Mn-uLW"/>
         <segue reference="BhL-zW-jjl"/>
         <segue reference="mxB-0M-Ulv"/>
-        <segue reference="KsI-pJ-jv4"/>
-        <segue reference="HYP-xE-9Az"/>
+        <segue reference="YOi-Aq-E5Z"/>
+        <segue reference="lUW-wJ-78P"/>
         <segue reference="gVk-6y-m9o"/>
         <segue reference="lrP-BH-mN6"/>
         <segue reference="kqZ-ZZ-1rC"/>
@@ -4612,7 +4612,7 @@
         <segue reference="gli-9Y-JyR"/>
         <segue reference="weN-rC-xco"/>
         <segue reference="3yr-7T-43I"/>
-        <segue reference="PmR-Zx-njV"/>
+        <segue reference="Zhp-Vu-HoI"/>
         <segue reference="BqZ-eu-WRI"/>
         <segue reference="sfP-pC-TCO"/>
         <segue reference="OiK-lG-b0d"/>

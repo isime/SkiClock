@@ -83,7 +83,7 @@ class SkierListController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func getSkiers(){
-        let rentalsUrl = "http://10.0.0.7:5000/skiers/" + String(rental_id)
+        let rentalsUrl = "http://146.86.199.28:5000/skiers/" + String(rental_id)
         guard let url = URL(string: rentalsUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

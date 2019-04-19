@@ -134,7 +134,7 @@ class SkierEquipmentFormContoller: UIViewController {
         
         let jsonData = try? JSONSerialization.data(withJSONObject: equipmentJSON)
         
-        let url = URL(string: "http://10.0.0.7:5000/add_skier_equipment")
+        let url = URL(string: "http://146.86.199.28:5000/add_skier_equipment")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         

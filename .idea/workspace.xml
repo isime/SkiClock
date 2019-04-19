@@ -3,11 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="f186f0bb-959a-42d7-8135-962e1b163a99" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock.xcodeproj/project.xcworkspace/xcuserdata/Iansime.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/SkiClock.xcodeproj/project.xcworkspace/xcuserdata/Iansime.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/SkiClock/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock.xcodeproj/xcuserdata/Iansime.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/SkiClock.xcodeproj/xcuserdata/Iansime.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/AddSkierController.swift" afterPath="$PROJECT_DIR$/SkiClock/AddSkierController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/AllBootsController.swift" afterPath="$PROJECT_DIR$/SkiClock/AllBootsController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/AllHelmetsController.swift" afterPath="$PROJECT_DIR$/SkiClock/AllHelmetsController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/AllSkisListController.swift" afterPath="$PROJECT_DIR$/SkiClock/AllSkisListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/BootsInController.swift" afterPath="$PROJECT_DIR$/SkiClock/BootsInController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/BootsOutController.swift" afterPath="$PROJECT_DIR$/SkiClock/BootsOutController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/CustomerNewSkierFormController.swift" afterPath="$PROJECT_DIR$/SkiClock/CustomerNewSkierFormController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/CustomerRentalSkierInfoController.swift" afterPath="$PROJECT_DIR$/SkiClock/CustomerRentalSkierInfoController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/CustomerRentalsListController.swift" afterPath="$PROJECT_DIR$/SkiClock/CustomerRentalsListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/CustomerRentalsSkierListController.swift" afterPath="$PROJECT_DIR$/SkiClock/CustomerRentalsSkierListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/CustomerSkierListController.swift" afterPath="$PROJECT_DIR$/SkiClock/CustomerSkierListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/EquipmentListController.swift" afterPath="$PROJECT_DIR$/SkiClock/EquipmentListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/FristSkierReturnController.swift" afterPath="$PROJECT_DIR$/SkiClock/FristSkierReturnController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/HelmetsInController.swift" afterPath="$PROJECT_DIR$/SkiClock/HelmetsInController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/HelmetsOutController.swift" afterPath="$PROJECT_DIR$/SkiClock/HelmetsOutController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/NewCustomerController.swift" afterPath="$PROJECT_DIR$/SkiClock/NewCustomerController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/NextNewSkierController.swift" afterPath="$PROJECT_DIR$/SkiClock/NextNewSkierController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/OverduePickUpsController.swift" afterPath="$PROJECT_DIR$/SkiClock/OverduePickUpsController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/OverdueReturnsListController.swift" afterPath="$PROJECT_DIR$/SkiClock/OverdueReturnsListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/RentalsListController.swift" afterPath="$PROJECT_DIR$/SkiClock/RentalsListController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/ReturnSkierFormController.swift" afterPath="$PROJECT_DIR$/SkiClock/ReturnSkierFormController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClockAPI/main.py" afterPath="$PROJECT_DIR$/SkiClockAPI/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/ReturnSkierListController.swift" afterPath="$PROJECT_DIR$/SkiClock/ReturnSkierListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/SecondRentalAgreementPageController.swift" afterPath="$PROJECT_DIR$/SkiClock/SecondRentalAgreementPageController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/SkierEquipmentFormContoller.swift" afterPath="$PROJECT_DIR$/SkiClock/SkierEquipmentFormContoller.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/SkierInfoController.swift" afterPath="$PROJECT_DIR$/SkiClock/SkierInfoController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/SkierListController.swift" afterPath="$PROJECT_DIR$/SkiClock/SkierListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/SkisOutController.swift" afterPath="$PROJECT_DIR$/SkiClock/SkisOutController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/TodaysReturnsListController.swift" afterPath="$PROJECT_DIR$/SkiClock/TodaysReturnsListController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/TomorrowsPickUpsController.swift" afterPath="$PROJECT_DIR$/SkiClock/TomorrowsPickUpsController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SkiClock/TomorrowsReturnsListController.swift" afterPath="$PROJECT_DIR$/SkiClock/TomorrowsReturnsListController.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +50,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-709">
-              <caret line="993" column="153" lean-forward="false" selection-start-line="993" selection-start-column="36" selection-end-line="993" selection-end-column="153" />
+            <state relative-caret-position="-3004">
+              <caret line="1056" column="27" lean-forward="false" selection-start-line="1056" selection-start-column="27" selection-end-line="1056" selection-end-column="27" />
               <folding>
                 <marker date="1555654437323" expanded="true" signature="524:625" ph="SELECT ski_i... SKIS" />
                 <marker date="1555654437323" expanded="true" signature="1229:1329" ph="SELECT ski_i... SKIS" />
@@ -155,10 +181,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1280" />
-    <option name="y" value="30" />
-    <option name="width" value="1281" />
-    <option name="height" value="769" />
+    <option name="y" value="23" />
+    <option name="width" value="1360" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -239,10 +264,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1360" height="768" extended-state="6" />
+    <frame x="0" y="32" width="1280" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24338235" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25859374" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1724,8 +1749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SkiClockAPI/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-709">
-          <caret line="993" column="153" lean-forward="false" selection-start-line="993" selection-start-column="36" selection-end-line="993" selection-end-column="153" />
+        <state relative-caret-position="-3004">
+          <caret line="1056" column="27" lean-forward="false" selection-start-line="1056" selection-start-column="27" selection-end-line="1056" selection-end-column="27" />
           <folding>
             <marker date="1555654437323" expanded="true" signature="524:625" ph="SELECT ski_i... SKIS" />
             <marker date="1555654437323" expanded="true" signature="1229:1329" ph="SELECT ski_i... SKIS" />

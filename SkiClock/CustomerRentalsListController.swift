@@ -58,7 +58,7 @@ class CustomerRentalsListController: UIViewController, UITableViewDataSource, UI
     }
     
     func getCustomerRentals(){
-        let rentalsUrl = "http://10.0.0.7:5000/customer_rentals/" + String(customer_id)
+        let rentalsUrl = "http://146.86.199.28:5000/customer_rentals/" + String(customer_id)
         
         guard let url = URL(string: rentalsUrl) else { return }
         
@@ -71,9 +71,9 @@ class CustomerRentalsListController: UIViewController, UITableViewDataSource, UI
                 
                 for info in self.rentals {
                     self.rental_id.append(info.rental_id ?? 0)
-                    self.date_out.append(info.date_out ?? "00/00/0000/")
-                    self.due_date.append(info.due_date ?? "00/00/0000/")
-                    self.date_in.append(info.date_in ?? "00/00/0000/")
+                    self.date_out.append(info.date_out ?? "00/00/0000")
+                    self.due_date.append(info.due_date ?? "00/00/0000")
+                    self.date_in.append(info.date_in ?? "00/00/0000")
                     
                     DispatchQueue.main.async {
                         self.CustomerRentalsTable.reloadData()

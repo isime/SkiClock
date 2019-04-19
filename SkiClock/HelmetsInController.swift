@@ -33,7 +33,7 @@ class HelmetsInController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func getEquipment(){
-        let equipmentUrl = "http://10.0.0.7:5000/in_stock_helmets"
+        let equipmentUrl = "http://146.86.199.28:5000/in_stock_helmets"
         guard let url = URL(string: equipmentUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

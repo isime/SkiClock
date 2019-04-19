@@ -58,7 +58,7 @@ class RentalsListController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func getRentals(){
-        let rentalsUrl = "http://10.0.0.7:5000/todays_rentals"
+        let rentalsUrl = "http://146.86.199.28:5000/todays_rentals"
         guard let url = URL(string: rentalsUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
