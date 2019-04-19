@@ -496,6 +496,14 @@ def add_skier_equipment():
         ski_id = "NULL"
 
     cursor = db.cursor()
+    settingsQuery = 'UPDATE skier_settings set latest_setting = FALSE WHERE skier_id = {};'.format(skier_id)
+    cursor.execute(settingsQuery)
+    db.commit()
+    cursor.close()
+
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    cursor = db.cursor()
     settingsQuery = 'INSERT INTO skier_settings (skier_id, boot_sole_length, skier_code, reccomended_din, actual_din) VALUES ({}, {}, "{}", {}, {});'.format(skier_id, sole_length, skier_code, din, din)
     # print(settingsQuery)
     cursor.execute(settingsQuery)
@@ -595,30 +603,32 @@ def get_return(asset_id):
         returnData = cursor.fetchall()
         for element in returnData:
             infoList.append(dict(zip(skiers, element)))
+        cursor.close()
+
     if infoList == []:
         noInfo = {
-            "boot_id": 0,
-            "boot_manufacture": "NO",
+            "boot_id": asset_id,
+            "boot_manufacture": "No",
             "boot_model": "Record",
-            "boot_size": 0.5,
+            "boot_size": 1.0,
             "boots_returned": "00/00/0000",
             "color": "N/A",
             "customer_first_name": "No",
-            "customer_id": 0,
+            "customer_id": 1,
             "customer_last_name": "Record",
-            "helmet_id": 0,
+            "helmet_id": asset_id,
             "helmet_returned": "00/00/0000",
             "helmet_size": "N/A",
-            "length": 0,
-            "rental_id": 0,
-            "ski_id": 0,
+            "length": 1,
+            "rental_id": 1,
+            "ski_id": asset_id,
             "ski_manufacture": "No",
             "ski_model": "Record",
-            "skier_first_name": "No",
-            "skier_id": 0,
-            "skier_last_name": "Record",
+            "skier_first_name": "Number Enterned",
+            "skier_id": 1,
+            "skier_last_name": str(asset_id),
             "skis_returned": "00/00/0000",
-            "sole_length": 0
+            "sole_length": 1
             }
         return jsonify(noInfo)
 
@@ -797,39 +807,22 @@ def get_skier_return(skier_id):
         for element in returnData:
             infoList.append(dict(zip(skiers, element)))
 
-    if infoList == []:
+    if infoList != []:
+        ski_id = infoList[0]["ski_id"]
+        boot_id = infoList[0]["boot_id"]
+        helmet_id = infoList[0]["helmet_id"]
+        skis_returned = infoList[0]["skis_returned"]
+        boots_returned = infoList[0]["boots_returned"]
+        helmet_returned = infoList[0]["helmet_returned"]
+    else:
         noInfo = {
-            "boot_id": 0,
-            "boot_manufacture": "NO",
-            "boot_model": "Record",
-            "boot_size": 0.5,
-            "boots_returned": "00/00/0000",
-            "color": "N/A",
             "customer_first_name": "No",
-            "customer_id": 0,
             "customer_last_name": "Record",
-            "helmet_id": 0,
-            "helmet_returned": "00/00/0000",
-            "helmet_size": "N/A",
-            "length": 0,
             "rental_id": 0,
-            "ski_id": 0,
-            "ski_manufacture": "No",
-            "ski_model": "Record",
             "skier_first_name": "No",
             "skier_id": 0,
             "skier_last_name": "Record",
-            "skis_returned": "00/00/0000",
-            "sole_length": 0
-            }
-        return jsonify(noInfo)
-
-    ski_id = infoList[0]["ski_id"]
-    boot_id = infoList[0]["boot_id"]
-    helmet_id = infoList[0]["helmet_id"]
-    skis_returned = infoList[0]["skis_returned"]
-    boots_returned = infoList[0]["boots_returned"]
-    helmet_returned = infoList[0]["helmet_returned"]
+        }
 
     if skis_returned is None:
         skis_returned = "00/00/0000"
@@ -861,7 +854,7 @@ def get_skier_return(skier_id):
         returnDict = {**returnDict, **skiList[0]}
         cursor.close()
     else:
-        noSkiDict = {'ski_id': 0,
+        noSkiDict = {'ski_id': int(0),
                      'length': 0,
                      'ski_manufacturer': 'N/A',
                      'ski_model': 'N/A'}
@@ -914,6 +907,7 @@ def get_skier_return(skier_id):
                      'helmet_size': 'N/A',
                      'Color': 'N/A'}
         returnDict = {**returnDict, **noHelmetDict}
+
 
     if cursor is not None:
         cursor.close()

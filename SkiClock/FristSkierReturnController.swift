@@ -330,14 +330,14 @@ class FristSkierReturnController: UIViewController {
             
             do {
                 let returnData = try JSONDecoder().decode(SkierReturnInfo.self, from: data)
-                
+                    print(returnData)
                     self.skier_f_name = returnData.skier_first_name
                     self.skier_l_name = returnData.skier_last_name
                     self.skier_id = returnData.skier_id ?? 0
                     self.customer_f_name = returnData.customer_first_name
                 self.customer_l_name = returnData.customer_last_name
                     self.customer_id = returnData.customer_id
-                    self.ski_id = returnData.ski_id
+                    self.ski_id = returnData.ski_id ?? 0
                 self.ski_manufacture = returnData.ski_manufacture
                     self.ski_model = returnData.ski_model
                     self.ski_length = returnData.length
@@ -367,9 +367,36 @@ class FristSkierReturnController: UIViewController {
                 //                print("BREAK HERE")
                 //                print(self.skiers)
             } catch let jsonErr {
-                
+                self.noReturnData()
             }
             }.resume()
+    }
+    
+    func noReturnData() {
+        self.skier_f_name = String(assetID)
+        self.skier_l_name = "Searched"
+        self.skier_id = 0
+        self.customer_f_name = "No"
+        self.customer_l_name = "Record"
+        self.customer_id = 0
+        self.ski_id = 0
+        self.ski_manufacture = "N/A"
+        self.ski_model = "N/A"
+        self.ski_length = 0
+        self.skis_returned = "00/00/0000"
+        self.boot_id = 0
+        self.boot_manufacture = "N/A"
+        self.boot_model = "N/A"
+        self.boot_size = 0.0
+        self.boot_sole_length = 0
+        self.boots_returned = "00/00/0000"
+        self.helmet_id = 0
+        self.helmet_size = "N/A"
+        self.helmet_color = "N/A"
+        self.helmet_returned = "00/00/0000"
+        self.rental_id = 0
+        
+        
     }
     
     func initialText(){

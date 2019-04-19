@@ -78,6 +78,8 @@ class RentalAgreementController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setAgreementLabels()
+//        print(rental_id)
+//        print(skier_id)
         // Do any additional setup after loading the view.
     }
     

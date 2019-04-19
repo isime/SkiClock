@@ -19,6 +19,14 @@ class SkierEquipmentFormContoller: UIViewController {
     var skier_id: Int!
     var rental_id: Int!
     var customer_id: Int!
+    
+//    var upperSkierCodes: [String] = ["A", "B", "C", "D" , "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P"]
+//    var lowerSkierCodes: [String] = ["a", "b", "c", "d" , "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
+//
+//    var realIds: Bool = false
+//    var realSkierCode: Bool = false
+//    var realDin: Bool = false
+//    var realSoleLength: Bool = false
 
     @IBOutlet weak var fNameLabel: UILabel!
     @IBOutlet weak var lNameLabel: UILabel!
@@ -28,23 +36,70 @@ class SkierEquipmentFormContoller: UIViewController {
     @IBOutlet weak var skierTypeLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
+    @IBOutlet weak var ErrorLabel: UILabel!
     
-    @IBOutlet weak var bootSizeBox: UITextField!
+    
     
     @IBOutlet weak var soleLengthBox: UITextField!
-    @IBOutlet weak var bootModelBox: UITextField!
     @IBOutlet weak var bootIDBox: UITextField!
     @IBOutlet weak var skierCodeBox: UITextField!
     @IBOutlet weak var dinBox: UITextField!
-    @IBOutlet weak var skiModelBox: UITextField!
-    @IBOutlet weak var skiLengthBox: UITextField!
     @IBOutlet weak var skiIDBox: UITextField!
     @IBOutlet weak var helmetIDBox: UITextField!
     
     @IBAction func ToRentalAgreementButtonPress(_ sender: Any) {
+//        checkDin()
+//        checkIDS()
+//        checkSkierCode()
+//        checkSoleLength()
+//        if realSoleLength && realDin && realSkierCode && realIds{
+//            sendSkierEquipment()
+//        }
+//        else {
+//            ErrorLabel.textColor = UIColor.red
+//        }
         sendSkierEquipment()
     }
     
+//    func checkIDS(){
+//        let bootInput = bootIDBox.text ?? "0"
+//        let skiInput = skiIDBox.text ?? "0"
+//        let helmetInput = helmetIDBox.text ?? "0"
+//        let bootNum = Int(bootInput)
+//        let skiNum = Int(skiInput)
+//        let helmetNum = Int(skiInput)
+//
+//        if (bootInput.count == 6 || bootInput == nil) && (skiInput.count == 6 || skiInput == nil) && (helmetInput.count == 6 || helmetInput == nil){
+//        if bootNum != nil && skiNum != nil && helmetNum != nil{
+//                print("valid ids")
+//            realIds = true
+//        }
+//        }
+//    }
+//
+//    func checkSkierCode(){
+//        let skierCodeInput = bootIDBox.text ?? "0"
+//        if upperSkierCodes.contains(skierCodeInput) || lowerSkierCodes.contains(skierCodeInput){
+//            realSkierCode = true
+//        }
+//    }
+//
+//    func checkDin(){
+//        let dinInput = dinBox.text ?? "N/A"
+//        let dinFloat = Float(dinInput)
+//        if dinFloat != nil{
+//            realDin = true
+//        }
+//    }
+//
+//    func checkSoleLength(){
+//        let soleIput = soleLengthBox.text ?? "N/A"
+//        let soleInt = Int(soleIput)
+//        if soleInt != nil {
+//            realSoleLength = true
+//        }
+//    }
+//
     func initialText() {
         fNameLabel.text = first_name
         lNameLabel.text = last_name
