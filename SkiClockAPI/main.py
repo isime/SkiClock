@@ -1293,6 +1293,25 @@ def get_customer_rentals(customer_id):
 
     return jsonify(rentalList)
 
+@app.route('/customers')
+def get_customers():
+    db = pymysql.connect("localhost", "admin", "admin", "Ski_Clock_DB")
+
+    customerQuery = 'SELECT customer_id, first_name FROM customer;'
+
+    cursor = db.cursor()
+    cursor.execute(customerQuery)
+    customers = [rentals[0] for rentals in cursor.description]
+
+    customerData = cursor.fetchall()
+    customerList=[]
+    for element in customerData:
+        customerList.append(dict(zip(customers,element)))
+    cursor.close()
+
+    return jsonify(customerList)
+
+
 @app.route('/get_skier_code_din/<height>/<weight>/<age>/<skier_type>/<sole_length>')
 def get_skier_code_din(height, weight, age, skier_type, sole_length):
     skier_code = helperFunctions.get_skier_code(int(height), int(weight), int(age), int(skier_type))

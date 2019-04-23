@@ -69,7 +69,6 @@
                                 </state>
                                 <connections>
                                     <action selector="LoginButtonPress:" destination="b1K-vO-oKl" eventType="touchUpInside" id="oVx-yX-KUc"/>
-                                    <segue destination="aM1-0T-2P0" kind="show" identifier="CustomerLoginToCustomerHome" id="zFz-ay-zRr"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euq-a7-cpf">
@@ -79,12 +78,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invalid Customer ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-dB-S5E">
+                                <rect key="frame" x="304" y="205" width="344" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CustomerLogOut" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POZ-Vr-jTR">
+                                <rect key="frame" x="457" y="709" width="110" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ToCustomerHomeButtonPress:" destination="7wi-Eq-Dsm" eventType="touchUpInside" id="Qxe-LV-ZIV"/>
+                                    <action selector="ToHomeButtonPress:" destination="WH3-Cd-ggP" eventType="touchUpInside" id="Xd5-Tl-Ozf"/>
+                                    <segue destination="924-WT-IVi" kind="show" id="2qj-d9-ngB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tUN-cs-oLL"/>
                     </view>
                     <connections>
+                        <outlet property="ErrorLabel" destination="Fnx-dB-S5E" id="aCl-ol-XCm"/>
                         <outlet property="customerIDEntery" destination="euq-a7-cpf" id="bfm-RV-DG2"/>
+                        <segue destination="aM1-0T-2P0" kind="show" identifier="customerLoginToCustomerHome" id="FVS-K6-FRE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaG-Zt-o61" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -586,14 +608,24 @@
                                     <segue destination="924-WT-IVi" kind="show" id="mbF-Lo-VOQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsm-e7-D0T">
+                                <rect key="frame" x="20" y="20" width="335" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jph-QR-oww"/>
                     </view>
+                    <connections>
+                        <outlet property="WelcomLabel" destination="Dsm-e7-D0T" id="gTi-dx-ayg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpc-92-QQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1530" y="-1245"/>
+            <point key="canvasLocation" x="1529.8828125" y="-1245.3125"/>
         </scene>
         <!--Customer Skier List Controller-->
         <scene sceneID="GH6-ci-3xB">
@@ -1155,6 +1187,20 @@
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="yzJ-bb-kG6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CustomerLogOut" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPB-Da-5MZ">
+                                <rect key="frame" x="457" y="709" width="110" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ToCustomerHomeButtonPress:" destination="7wi-Eq-Dsm" eventType="touchUpInside" id="t9D-BI-Wd8"/>
+                                    <action selector="ToHomeButtonPress:" destination="WH3-Cd-ggP" eventType="touchUpInside" id="LKY-wX-Qff"/>
+                                    <segue destination="b1K-vO-oKl" kind="show" id="zR7-Fo-Jrd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -4624,12 +4670,13 @@
         <segue reference="gli-9Y-JyR"/>
         <segue reference="weN-rC-xco"/>
         <segue reference="3yr-7T-43I"/>
-        <segue reference="Zhp-Vu-HoI"/>
+        <segue reference="yzJ-bb-kG6"/>
         <segue reference="BqZ-eu-WRI"/>
         <segue reference="sfP-pC-TCO"/>
-        <segue reference="OiK-lG-b0d"/>
+        <segue reference="FVS-K6-FRE"/>
         <segue reference="jZJ-cZ-NNI"/>
         <segue reference="GRU-ce-nTU"/>
-        <segue reference="cOV-SV-TCY"/>
+        <segue reference="zR7-Fo-Jrd"/>
+        <segue reference="2qj-d9-ngB"/>
     </inferredMetricsTieBreakers>
 </document>

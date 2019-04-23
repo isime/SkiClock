@@ -10,6 +10,9 @@ import UIKit
 
 class CustomerHomeController: UIViewController {
     var customer_id: Int!
+//    var first_name: String!
+    
+    @IBOutlet weak var WelcomLabel: UILabel!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CustomerHomeToSkierList"{
@@ -24,6 +27,7 @@ class CustomerHomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        WelcomLabel.text = "Welcome " + first_name
         // Do any additional setup after loading the view.
     }
     
