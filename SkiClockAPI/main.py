@@ -1293,6 +1293,15 @@ def get_customer_rentals(customer_id):
 
     return jsonify(rentalList)
 
+@app.route('/get_skier_code_din/<height>/<weight>/<age>/<skier_type>/<sole_length>')
+def get_skier_code_din(height, weight, age, skier_type, sole_length):
+    skier_code = helperFunctions.get_skier_code(int(height), int(weight), int(age), int(skier_type))
+    din = helperFunctions.get_din(skier_code, int(sole_length))
+
+    infoDict = {"skier_code": skier_code, "din": str(din)}
+
+    return jsonify(infoDict)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)

@@ -2142,13 +2142,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="DinLabel" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-an-mAs">
-                                <rect key="frame" x="55" y="537" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SoleLengthBox" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9l-Cu-x8g">
                                 <rect key="frame" x="55" y="424" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2189,13 +2182,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="DinBox" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WC8-rf-QHu">
-                                <rect key="frame" x="411" y="537" width="202" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiM-3L-Aur">
                                 <rect key="frame" x="411" y="123" width="94" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2259,18 +2245,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="submitSkierEquipment" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGL-Kw-Pba">
-                                <rect key="frame" x="887" y="717" width="117" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="ToRentalAgreementButtonPress:" destination="P3k-4g-hMf" eventType="touchUpInside" id="jvl-PJ-nzV"/>
-                                    <segue destination="MD2-kT-pdo" kind="show" identifier="SkierEquipmentToRentalAgreeMent" id="kqZ-ZZ-1rC"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFH-wb-rd2">
                                 <rect key="frame" x="180" y="123" width="202" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2292,6 +2266,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIn-VV-Rxe">
+                                <rect key="frame" x="55" y="537" width="202" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gq-mC-Ps0">
+                                <rect key="frame" x="411" y="534" width="202" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="GetDinandSkierCodeButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMa-o3-oDF">
+                                <rect key="frame" x="251" y="539" width="145" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Get Skier Code &amp; Din">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getInfoButtonPress:" destination="P3k-4g-hMf" eventType="touchUpInside" id="r18-Wo-8TL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SubmtSkierEquipment" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfs-cc-V3D">
+                                <rect key="frame" x="828" y="717" width="117" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SubmitButtonPress:" destination="P3k-4g-hMf" eventType="touchUpInside" id="0o7-oj-TkZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ulx-tU-I0P"/>
@@ -2300,17 +2311,18 @@
                         <outlet property="ErrorLabel" destination="TdR-A3-jHU" id="Xwe-uP-HqL"/>
                         <outlet property="ageLabel" destination="ocP-bA-35h" id="adL-vP-TEr"/>
                         <outlet property="bootIDBox" destination="5b6-FB-jyV" id="q7i-49-Y8U"/>
-                        <outlet property="dinBox" destination="WC8-rf-QHu" id="wq0-yU-Sa7"/>
+                        <outlet property="dinLabel" destination="2gq-mC-Ps0" id="Ef4-V2-XZh"/>
                         <outlet property="fNameLabel" destination="RWt-8k-Quk" id="b9J-BW-eCE"/>
                         <outlet property="feetLabel" destination="d3K-WQ-MyW" id="8nX-Ef-anz"/>
                         <outlet property="helmetIDBox" destination="wEF-2E-ul8" id="HCP-hq-EdP"/>
                         <outlet property="inchesLabel" destination="wNs-5c-Oqv" id="7iL-EA-vJP"/>
                         <outlet property="lNameLabel" destination="KFH-wb-rd2" id="mWS-iO-ngY"/>
                         <outlet property="skiIDBox" destination="tKV-d5-beb" id="8ok-IL-70a"/>
-                        <outlet property="skierCodeBox" destination="9OR-an-mAs" id="2vG-Rq-lwj"/>
+                        <outlet property="skierCodeLabel" destination="fIn-VV-Rxe" id="mzp-1J-fSc"/>
                         <outlet property="skierTypeLabel" destination="D0Z-z1-0Yc" id="sWw-gj-BBw"/>
                         <outlet property="soleLengthBox" destination="I9l-Cu-x8g" id="CAo-9E-Gfs"/>
                         <outlet property="weightLabel" destination="yiM-3L-Aur" id="flv-l9-Zv2"/>
+                        <segue destination="MD2-kT-pdo" kind="show" identifier="skierEquipmentToRentalAgreement" id="zkS-Df-3vr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="og3-hY-RcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3403,17 +3415,17 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="assetIDSearch" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Asset ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfA-Pn-5pM">
-                                <rect key="frame" x="417" y="181" width="191" height="30"/>
+                                <rect key="frame" x="417" y="369" width="191" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="SubmitRentalSearch" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-n5-f3D">
-                                <rect key="frame" x="635" y="181" width="117" height="31"/>
+                                <rect key="frame" x="681" y="369" width="117" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Searh">
+                                <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -4600,11 +4612,11 @@
         <segue reference="CUR-Mn-uLW"/>
         <segue reference="BhL-zW-jjl"/>
         <segue reference="mxB-0M-Ulv"/>
-        <segue reference="YOi-Aq-E5Z"/>
+        <segue reference="9TI-AC-OZ1"/>
         <segue reference="lUW-wJ-78P"/>
         <segue reference="gVk-6y-m9o"/>
         <segue reference="lrP-BH-mN6"/>
-        <segue reference="kqZ-ZZ-1rC"/>
+        <segue reference="zkS-Df-3vr"/>
         <segue reference="Pzt-xP-fnb"/>
         <segue reference="O9x-ke-PEf"/>
         <segue reference="PZp-mm-aaM"/>

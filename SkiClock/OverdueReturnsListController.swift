@@ -46,7 +46,7 @@ class OverdueReturnsListController: UIViewController, UITableViewDataSource, UIT
     }
     
     func getOverdueReturns(){
-    let overdueReturnsUrl = "http://146.86.199.28:5000/overdue_returns"
+    let overdueReturnsUrl = "http://10.0.0.7:5000/overdue_returns"
         guard let url = URL(string: overdueReturnsUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

@@ -35,7 +35,7 @@ class BootsOutController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func getEquipment(){
-        let equipmentUrl = "http://146.86.199.28:5000/currently_out_boots"
+        let equipmentUrl = "http://10.0.0.7:5000/currently_out_boots"
         guard let url = URL(string: equipmentUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

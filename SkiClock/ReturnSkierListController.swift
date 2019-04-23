@@ -65,7 +65,7 @@ class ReturnSkierListController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func getRenturnSkiers(){
-        let returnSkiersUrl = "http://146.86.199.28:5000/skiers/" + String(rental_id)
+        let returnSkiersUrl = "http://10.0.0.7:5000/skiers/" + String(rental_id)
         
         guard let url = URL(string: returnSkiersUrl) else { return }
         

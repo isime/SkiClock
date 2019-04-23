@@ -35,7 +35,7 @@ class BootsInController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func getEquipment(){
-        let equipmentUrl = "http://146.86.199.28:5000/in_stock_boots"
+        let equipmentUrl = "http://10.0.0.7:5000/in_stock_boots"
         guard let url = URL(string: equipmentUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in

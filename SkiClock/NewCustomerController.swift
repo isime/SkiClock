@@ -42,7 +42,7 @@ class NewCustomerController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         let jsonData = try? JSONSerialization.data(withJSONObject: cusJson)
         
-        let url = URL(string: "http://146.86.199.28:5000/new_customer")
+        let url = URL(string: "http://10.0.0.7:5000/new_customer")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         
